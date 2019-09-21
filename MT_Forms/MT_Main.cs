@@ -2,9 +2,9 @@
 using Core;
 using PageObjects;
 
-namespace MT_Scripts
+namespace MT_Main
 {
-    public class MT_Scripts
+    public class MT_Main
     {
         IWebDriver driver;
         LoginPage loginPage;

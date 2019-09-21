@@ -3,7 +3,7 @@ using Core;
 using OpenQA.Selenium;
 using CommonMethods;
 
-namespace NUnit.Tests1.Scripts
+namespace Scripts
 {
     class VisokaiaTemnitsa
     {
@@ -11,7 +11,7 @@ namespace NUnit.Tests1.Scripts
         DungeonButtons dungeonButtons;
         QuestsButtons questsButtons;
 
-        VisokaiaTemnitsa()
+        public VisokaiaTemnitsa()
         {
             dungeonButtons = new DungeonButtons(driver);
             questsButtons = new QuestsButtons(driver);
