@@ -20,7 +20,7 @@ namespace PageObjects
 
         [FindsBy(How = How.XPath, Using = "//a[contains(text(), 'Войти')]")]
         public IWebElement enterInDungeon;
-        [FindsBy(How = How.XPath, Using = "//a[contains(text(), 'Начать бой')]")]
+        [FindsBy(How = How.XPath, Using = "//a[contains(., 'Начать бой')]")]
         public IWebElement startBattle;
         [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Добивать') or contains(text(),'Бить')]")]
         public IWebElement firstAttackButton;

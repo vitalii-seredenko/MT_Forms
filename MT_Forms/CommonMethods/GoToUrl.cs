@@ -27,9 +27,13 @@ namespace CommonMethods
             driver.Manage().Window.Maximize();
             NavigateToUrl("https://m.vten.ru/");
             loginPage.startGameButton.Click();
-            loginPage.inputLogin.SendKeys("Друг Инженера");
-            loginPage.inputPassword.SendKeys("paleksanov4194");
+            loginPage.inputLogin.SendKeys("Lampovaia");     //Друг Инженера
+            loginPage.inputPassword.SendKeys("45amber98"); //paleksanov4194
             loginPage.submitButton.Click();
+            while (baseTownPage.checkContinueButtonIsPresent())
+            {
+                baseTownPage.continueButton.Click();
+            }
             baseTownPage.lightVersionButton.Click();
         }
     }

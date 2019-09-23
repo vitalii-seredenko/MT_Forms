@@ -25,18 +25,20 @@ namespace Scripts
             dungeonButtons.startBattle.Click();
 
             while (true)
-            {
-                dungeonButtons.clickOnFirstAttackButton();
-                if (dungeonButtons.checkStopWave())
+            { 
+                if (!dungeonButtons.checkStopWave())
                 {
                     dungeonButtons.clickOnFirstAttackButton();
+                }
+                else if (dungeonButtons.checkStopWave())
+                {
+                    dungeonButtons.continueBattle.Click();
                 }
                 else if (dungeonButtons.checkDungeonIsComplete())
                 {
                     break;
                 }
             }
-
             dungeonButtons.giveReward.Click();
             questsButtons.continueAdventures.Click();
         }
