@@ -35,7 +35,7 @@
             // 
             // captchaTextBox
             // 
-            this.captchaTextBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.captchaTextBox.ForeColor = System.Drawing.SystemColors.MenuText;
             this.captchaTextBox.Location = new System.Drawing.Point(113, 12);
             this.captchaTextBox.Name = "captchaTextBox";
             this.captchaTextBox.Size = new System.Drawing.Size(143, 20);
