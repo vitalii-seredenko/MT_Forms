@@ -20,17 +20,25 @@ namespace PageObjects
         [FindsBy(How = How.XPath, Using = "//a[contains(@class, 'go-btn') && not(*[contains(., 'В подземелье')])]")]
         public IWebElement continueButton;
 
-        public bool checkContinueButtonIsPresent()
+        public bool CheckContinueButtonIsPresent()
         {
             try
             {
-                bool a = continueButton.Displayed;
-                return true;
+                return continueButton.Displayed;
             }
             catch (NoSuchElementException)
             {
                 return false;
             }
+        }
+
+        public void SwitchToLightVersion()
+        {
+            while (CheckContinueButtonIsPresent())
+            {
+                continueButton.Click();
+            }
+            lightVersionButton.Click();
         }
     }
 }

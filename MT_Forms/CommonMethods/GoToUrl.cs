@@ -1,4 +1,5 @@
 ﻿using Core;
+using MT_Forms;
 using OpenQA.Selenium;
 using PageObjects;
 
@@ -9,6 +10,9 @@ namespace CommonMethods
         IWebDriver driver;
         LoginPage loginPage;
         BaseTownPage baseTownPage;
+        public static string loginName; //Друг Инженера
+        public static string password;  //paleksanov4194
+        public static string captcha;  
 
         public GoToUrl()
         {
@@ -22,19 +26,29 @@ namespace CommonMethods
             driver.Navigate().GoToUrl(url);
         }
 
-        public void LoginToMt()
+        public void GoToMt()
         {
             driver.Manage().Window.Maximize();
             NavigateToUrl("https://m.vten.ru/");
             loginPage.startGameButton.Click();
-            loginPage.inputLogin.SendKeys("Lampovaia");     //Друг Инженера
-            loginPage.inputPassword.SendKeys("45amber98"); //paleksanov4194
+            Login();
+        }
+
+        public void Login()
+        {
+            loginPage.inputLogin.SendKeys(loginName);
+            loginPage.inputPassword.SendKeys(password);
             loginPage.submitButton.Click();
-            while (baseTownPage.checkContinueButtonIsPresent())
+            CaptchaProcessing();
+        }
+
+        public void CaptchaProcessing()
+        {
+            if (loginPage.captchaTextBox.Displayed)
             {
-                baseTownPage.continueButton.Click();
+                Form2 form2 = new Form2();
+                form2.Show();
             }
-            baseTownPage.lightVersionButton.Click();
         }
     }
 }

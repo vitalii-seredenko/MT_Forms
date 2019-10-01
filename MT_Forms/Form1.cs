@@ -24,7 +24,27 @@ namespace MT_Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new GoToUrl().LoginToMt();
+            new GoToUrl().GoToMt();
+        }
+
+        private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBox4_TextChanged(object sender, EventArgs e)
+        {
+            GoToUrl.password = passwordTextBox.Text;
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            GoToUrl.loginName = loginTextBox.Text;
+        }
+
+        private void TextBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
