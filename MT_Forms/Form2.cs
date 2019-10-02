@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using CommonMethods;
-using Core;
-using OpenQA.Selenium;
 using PageObjects;
 using Keys = OpenQA.Selenium.Keys;
 

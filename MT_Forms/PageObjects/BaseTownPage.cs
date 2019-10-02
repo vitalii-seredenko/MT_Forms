@@ -1,8 +1,6 @@
-﻿using System.Runtime.Remoting.Messaging;
-using Core;
+﻿using Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using OpenQA.Selenium.Support.UI;
 
 namespace PageObjects
 {

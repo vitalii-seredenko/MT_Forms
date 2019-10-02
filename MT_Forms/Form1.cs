@@ -2,9 +2,7 @@
 using System.Windows.Forms;
 using CommonMethods;
 using Core;
-using MT_Forms.PageObjects;
 using OpenQA.Selenium;
-using PageObjects;
 using Scripts;
 
 namespace MT_Forms
