@@ -44,7 +44,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Пройти \"Высокая Темница\"";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.VisokayaTemnitsaButton_Click);
             // 
             // button2
             // 
@@ -54,7 +54,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Войти в Мир Теней";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.GoToMTButton_Click);
             // 
             // loginTextBox
             // 
@@ -62,7 +62,7 @@
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(100, 20);
             this.loginTextBox.TabIndex = 2;
-            this.loginTextBox.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            this.loginTextBox.TextChanged += new System.EventHandler(this.LoginTextBox_TextChanged);
             // 
             // textBox2
             // 
@@ -76,7 +76,6 @@
             this.textBox2.TabIndex = 3;
             this.textBox2.Text = "Имя персонажа ";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox2.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -90,7 +89,6 @@
             this.textBox3.TabIndex = 4;
             this.textBox3.Text = "Пароль";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox3.TextChanged += new System.EventHandler(this.TextBox3_TextChanged);
             // 
             // passwordTextBox
             // 
@@ -99,7 +97,7 @@
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
             this.passwordTextBox.TabIndex = 5;
-            this.passwordTextBox.TextChanged += new System.EventHandler(this.TextBox4_TextChanged);
+            this.passwordTextBox.TextChanged += new System.EventHandler(this.PasswordTextBox_TextChanged);
             // 
             // Form1
             // 

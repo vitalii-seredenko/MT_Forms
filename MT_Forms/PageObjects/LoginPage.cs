@@ -12,9 +12,6 @@ namespace PageObjects
             _driver = driver;
             PageFactory.InitElements(driver, this);
         }
-        public LoginPage() { }
-
-        WebDriverWait explicitWait;
 
         [FindsBy(How = How.XPath, Using = "//span[@class='go-btn-in']")]
         public IWebElement startGameButton;
@@ -26,10 +23,24 @@ namespace PageObjects
         public IWebElement submitButton;
         [FindsBy(How = How.XPath, Using = "//input[@id='captcha']")]
         public IWebElement captchaTextBox;
+        [FindsBy(How = How.XPath, Using = "//span[@class='feedbackPanelERROR' and text()='Введен неверный код']")]
+        public IWebElement invalidCaptchaErrorMessage;
 
         public void SendKeys(string valueForInput)
         {
             captchaTextBox.SendKeys(valueForInput);
+        }
+
+        public bool CheckInvalidCaptchaErrorMessageIsPresent()
+        {
+            try
+            {
+                return invalidCaptchaErrorMessage.Displayed;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
         }
     }
 }

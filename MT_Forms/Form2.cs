@@ -1,18 +1,19 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 using CommonMethods;
 using Core;
 using OpenQA.Selenium;
 using PageObjects;
+using Keys = OpenQA.Selenium.Keys;
 
 namespace MT_Forms
 {
     public partial class Form2 : Form
     {
-        IWebDriver driver = DriverSingletone.Driver;
+        readonly IWebDriver _driver;
         public Form2()
         {
+            _driver = DriverSingletone.Driver;
             InitializeComponent();
         }
 
@@ -23,10 +24,20 @@ namespace MT_Forms
 
         private void EnterCaptchaButton_Click(object sender, EventArgs e)
         {
-            new LoginPage(driver).SendKeys(GoToUrl.captcha);
-            new Form2().Dispose();
-            new LoginPage(driver).submitButton.Click();
-            new BaseTownPage(driver).SwitchToLightVersion();
+            //do
+            //{
+                new LoginPage(_driver).SendKeys(Keys.Control + "a");
+                new LoginPage(_driver).SendKeys(GoToUrl.captcha);
+                new LoginPage(_driver).submitButton.Click();
+                if (new LoginPage(_driver).CheckInvalidCaptchaErrorMessageIsPresent())
+                {
+                    MessageBox.Show("Введите капчу заново!", "Ошибка");
+                }
+            //}
+            //while (new LoginPage(driver).CheckInvalidCaptchaErrorMessageIsPresent());
+
+            new Form2().Hide();
+            
         }
     }
 }

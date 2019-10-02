@@ -69,9 +69,11 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="LogicForForms\ShowOrHideButton.cs" />
     <Compile Include="MT_Main.cs" />
     <Compile Include="PageObjects\BaseTownPage.cs" />
     <Compile Include="PageObjects\DungeonButtons.cs" />
+    <Compile Include="PageObjects\GeneralBasePage.cs" />
     <Compile Include="PageObjects\LoginPage.cs" />
     <Compile Include="PageObjects\QuestsButtons.cs" />
     <Compile Include="Program.cs" />

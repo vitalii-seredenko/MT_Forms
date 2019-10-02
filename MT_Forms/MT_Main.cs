@@ -27,7 +27,6 @@ namespace MT_Main
             loginPage.inputLogin.SendKeys("Друг Инженера");
             loginPage.inputPassword.SendKeys("paleksanov4194");
             loginPage.submitButton.Click();
-            baseTownPage.lightVersionButton.Click();
         }
 
         public void TearDown()

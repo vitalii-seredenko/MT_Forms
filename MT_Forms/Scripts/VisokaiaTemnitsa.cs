@@ -7,40 +7,40 @@ namespace Scripts
 {
     class VisokaiaTemnitsa
     {
-        IWebDriver driver = DriverSingletone.Driver;
-        DungeonButtons dungeonButtons;
-        QuestsButtons questsButtons;
+        readonly IWebDriver _driver = DriverSingletone.Driver;
+        readonly DungeonButtons _dungeonButtons;
+        readonly QuestsButtons _questsButtons;
 
         public VisokaiaTemnitsa()
         {
-            dungeonButtons = new DungeonButtons(driver);
-            questsButtons = new QuestsButtons(driver);
+            _dungeonButtons = new DungeonButtons(_driver);
+            _questsButtons = new QuestsButtons(_driver);
         }
 
         public void VisokaiaTemnitsaScript()
         {
             new GoToUrl().NavigateToUrl("https://m.vten.ru/quest/qHeroicHighDungeonDaily");
-            questsButtons.findGangButton.Click();
-            dungeonButtons.enterInDungeon.Click();
-            dungeonButtons.startBattle.Click();
+            _questsButtons.findGangButton.Click();
+            _dungeonButtons.enterInDungeon.Click();
+            _dungeonButtons.startBattle.Click();
 
             while (true)
             { 
-                if (!dungeonButtons.checkStopWave())
+                if (!_dungeonButtons.checkStopWave())
                 {
-                    dungeonButtons.clickOnFirstAttackButton();
+                    _dungeonButtons.clickOnFirstAttackButton();
                 }
-                else if (dungeonButtons.checkStopWave())
+                else if (_dungeonButtons.checkStopWave())
                 {
-                    dungeonButtons.continueBattle.Click();
+                    _dungeonButtons.continueBattle.Click();
                 }
-                else if (dungeonButtons.checkDungeonIsComplete())
+                else if (_dungeonButtons.checkDungeonIsComplete())
                 {
                     break;
                 }
             }
-            dungeonButtons.giveReward.Click();
-            questsButtons.continueAdventures.Click();
+            _dungeonButtons.giveReward.Click();
+            _questsButtons.continueAdventures.Click();
         }
     }
 }

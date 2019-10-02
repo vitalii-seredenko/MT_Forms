@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System.Runtime.Remoting.Messaging;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 
@@ -12,14 +13,16 @@ namespace PageObjects
             _driver = driver;
             PageFactory.InitElements(driver, this);
         }
+        public BaseTownPage() { }
 
-        WebDriverWait explicitWait;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Облегченная версия']")] 
-        public IWebElement lightVersionButton;
         [FindsBy(How = How.XPath, Using = "//a[contains(@class, 'go-btn') && not(*[contains(., 'В подземелье')])]")]
         public IWebElement continueButton;
+        [FindsBy(How = How.XPath, Using = "//div[@class='billboard _promo']")]
+        public IWebElement billboardElement;
+        [FindsBy(How = How.XPath, Using = "//a[@class='popup-close']")]
+        public IWebElement closePopUpButton;
 
+        
         public bool CheckContinueButtonIsPresent()
         {
             try
@@ -32,13 +35,16 @@ namespace PageObjects
             }
         }
 
-        public void SwitchToLightVersion()
+        public bool CheckBillboardElementIsPresent()
         {
-            while (CheckContinueButtonIsPresent())
+            try
             {
-                continueButton.Click();
+                return billboardElement.Displayed;
             }
-            lightVersionButton.Click();
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
         }
     }
 }
