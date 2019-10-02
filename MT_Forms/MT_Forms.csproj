@@ -70,7 +70,6 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="LogicForForms\ShowOrHideButton.cs" />
-    <Compile Include="MT_Main.cs" />
     <Compile Include="PageObjects\BaseTownPage.cs" />
     <Compile Include="PageObjects\DungeonButtons.cs" />
     <Compile Include="PageObjects\GeneralBasePage.cs" />

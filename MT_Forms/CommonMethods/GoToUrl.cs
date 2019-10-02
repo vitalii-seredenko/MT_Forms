@@ -13,11 +13,12 @@ namespace CommonMethods
         public static string loginName; //Друг Инженера
         public static string password;  //paleksanov4194
         public static string captcha;  
+        public static Form2 form2 = new Form2();  
 
         public GoToUrl()
         {
             _driver = DriverSingletone.Driver;
-            _loginPage = new LoginPage(_driver);
+            _loginPage = new LoginPage();
         }
 
         public void NavigateToUrl(string url)
@@ -39,14 +40,13 @@ namespace CommonMethods
             _loginPage.inputLogin.SendKeys(loginName);
             _loginPage.inputPassword.SendKeys(password);
             _loginPage.submitButton.Click();
-            CaptchaProcessing();
+            CallCaptchaProcessingDialogWindow();
         }
 
-        public void CaptchaProcessing()
+        public void CallCaptchaProcessingDialogWindow()
         {
             if (_loginPage.captchaTextBox.Displayed)
             {
-                Form2 form2 = new Form2();
                 form2.ShowDialog();
             }
         }

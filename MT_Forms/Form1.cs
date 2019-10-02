@@ -18,6 +18,8 @@ namespace MT_Forms
             InitializeComponent();
         }
 
+        public CheckBox GoForTheCasketCheckBox => goForTheCasketCheckBox;
+
         private void Form1_Load(object sender, EventArgs e)
         {
 

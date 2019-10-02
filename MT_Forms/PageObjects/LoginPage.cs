@@ -1,16 +1,16 @@
-﻿using OpenQA.Selenium;
+﻿using Core;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using OpenQA.Selenium.Support.UI;
 
 namespace PageObjects
 {
     class LoginPage
     {
         private IWebDriver _driver;
-        public LoginPage(IWebDriver driver)
+        public LoginPage()
         {
-            _driver = driver;
-            PageFactory.InitElements(driver, this);
+            _driver = DriverSingletone.Driver;
+            PageFactory.InitElements(_driver, this);
         }
 
         [FindsBy(How = How.XPath, Using = "//span[@class='go-btn-in']")]

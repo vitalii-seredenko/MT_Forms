@@ -10,10 +10,8 @@ namespace MT_Forms
 {
     public partial class Form2 : Form
     {
-        readonly IWebDriver _driver;
         public Form2()
         {
-            _driver = DriverSingletone.Driver;
             InitializeComponent();
         }
 
@@ -24,20 +22,18 @@ namespace MT_Forms
 
         private void EnterCaptchaButton_Click(object sender, EventArgs e)
         {
-            //do
-            //{
-                new LoginPage(_driver).SendKeys(Keys.Control + "a");
-                new LoginPage(_driver).SendKeys(GoToUrl.captcha);
-                new LoginPage(_driver).submitButton.Click();
-                if (new LoginPage(_driver).CheckInvalidCaptchaErrorMessageIsPresent())
-                {
-                    MessageBox.Show("Введите капчу заново!", "Ошибка");
-                }
-            //}
-            //while (new LoginPage(driver).CheckInvalidCaptchaErrorMessageIsPresent());
-
-            new Form2().Hide();
-            
+            LoginPage loginPage = new LoginPage();
+            loginPage.SendKeys(Keys.Control + "a");
+            loginPage.SendKeys(GoToUrl.captcha);
+            loginPage.submitButton.Click();
+            if (loginPage.CheckInvalidCaptchaErrorMessageIsPresent())
+            {
+                MessageBox.Show("Введите капчу заново!", "Ошибка");
+            }
+            if (new BaseTownPage().CheckCityPictureIsPresent())
+            {
+                GoToUrl.form2.Hide();
+            }
         }
     }
 }

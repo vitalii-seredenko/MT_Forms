@@ -3,19 +3,19 @@ using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Threading;
+using Core;
 
 namespace PageObjects
 {
     class DungeonButtons
     {
         private IWebDriver _driver;
-        public DungeonButtons(IWebDriver driver)
+        public DungeonButtons()
         {
-            _driver = driver;
-            PageFactory.InitElements(driver, this);
+            _driver = DriverSingletone.Driver;
+            PageFactory.InitElements(_driver, this);
         }
 
-        WebDriverWait explicitWait;
         Random random = new Random();
 
         [FindsBy(How = How.XPath, Using = "//a[contains(text(), 'Войти')]")]
@@ -33,7 +33,7 @@ namespace PageObjects
         [FindsBy(How = How.XPath, Using = "//a[contains(., 'Продолжить бой')]")]
         public IWebElement continueBattle;
         [FindsBy(How = How.XPath, Using = "//a[contains(., 'Получить награду')]")]
-        public IWebElement giveReward;
+        public IWebElement giveRewardLink;
 
         public void clickOnFirstAttackButton()
         {
@@ -41,12 +41,11 @@ namespace PageObjects
             firstAttackButton.Click();
         }
 
-        public bool checkStopWave()
+        public bool checkWaveIsComplete()
         {
             try
             {
-                bool a = waveIsCompleteTextBlock.Displayed;
-                return true;
+                return waveIsCompleteTextBlock.Displayed;
             }
             catch (NoSuchElementException)
             {
@@ -54,12 +53,23 @@ namespace PageObjects
             }
         }
 
-        public bool checkDungeonIsComplete()
+        public bool CheckDungeonIsComplete()
         {
             try
             {
-                bool a = dungeonIsCompleteTextBlock.Displayed;
-                return true;
+                return dungeonIsCompleteTextBlock.Displayed;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+        }
+
+        public bool checkGiveRewardLinkIsVisible()
+        {
+            try
+            {
+                return giveRewardLink.Displayed;
             }
             catch (NoSuchElementException)
             {

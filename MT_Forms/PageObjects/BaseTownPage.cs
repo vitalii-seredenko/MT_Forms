@@ -1,4 +1,5 @@
 ﻿using System.Runtime.Remoting.Messaging;
+using Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
@@ -8,12 +9,11 @@ namespace PageObjects
     class BaseTownPage
     {
         private IWebDriver _driver;
-        public BaseTownPage(IWebDriver driver)
+        public BaseTownPage()
         {
-            _driver = driver;
-            PageFactory.InitElements(driver, this);
+            _driver = DriverSingletone.Driver;
+            PageFactory.InitElements(_driver, this);
         }
-        public BaseTownPage() { }
 
         [FindsBy(How = How.XPath, Using = "//a[contains(@class, 'go-btn') && not(*[contains(., 'В подземелье')])]")]
         public IWebElement continueButton;
@@ -21,8 +21,9 @@ namespace PageObjects
         public IWebElement billboardElement;
         [FindsBy(How = How.XPath, Using = "//a[@class='popup-close']")]
         public IWebElement closePopUpButton;
+        [FindsBy(How = How.XPath, Using = "//img[@alt='Мир Теней']")]
+        public IWebElement cityPicture;
 
-        
         public bool CheckContinueButtonIsPresent()
         {
             try
@@ -40,6 +41,18 @@ namespace PageObjects
             try
             {
                 return billboardElement.Displayed;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+        }
+
+        public bool CheckCityPictureIsPresent()
+        {
+            try
+            {
+                return cityPicture.Displayed;
             }
             catch (NoSuchElementException)
             {
