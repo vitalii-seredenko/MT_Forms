@@ -21,15 +21,17 @@ namespace MT_Forms
         private void EnterCaptchaButton_Click(object sender, EventArgs e)
         {
             LoginPage loginPage = new LoginPage();
-            loginPage.SendKeys(Keys.Control + "a");
-            loginPage.SendKeys(GoToUrl.captcha);
+            BaseTownPage baseTownPage = new BaseTownPage();
+            loginPage.captchaTextBox.SendKeys(Keys.Control + "a");
+            loginPage.captchaTextBox.SendKeys(GoToUrl.captcha);
             loginPage.submitButton.Click();
             if (loginPage.CheckInvalidCaptchaErrorMessageIsPresent())
             {
                 MessageBox.Show("Введите капчу заново!", "Ошибка");
             }
-            if (new BaseTownPage().CheckCityPictureIsPresent())
+            if (baseTownPage.CheckCityPictureIsPresent())
             {
+                baseTownPage.GetHeroesHealth();
                 GoToUrl.form2.Hide();
             }
         }

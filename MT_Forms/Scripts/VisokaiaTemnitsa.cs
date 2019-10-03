@@ -37,7 +37,7 @@ namespace Scripts
         {
             while (true)
             {
-                if (!_dungeonButtons.checkWaveIsComplete() && !_dungeonButtons.CheckDungeonIsComplete())
+                if (!_dungeonButtons.checkWaveIsComplete() && !_dungeonButtons.CheckDungeonIsComplete() && !_dungeonButtons.checkGiveRewardLinkIsVisible())
                 {
                     _dungeonButtons.clickOnFirstAttackButton();
                 }
