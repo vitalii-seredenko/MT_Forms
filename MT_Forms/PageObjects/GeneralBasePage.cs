@@ -1,4 +1,4 @@
-﻿using Core;
+﻿using MT_Forms.Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -6,10 +6,10 @@ namespace MT_Forms.PageObjects
 {
     class GeneralBasePage
     {
-        private IWebDriver _driver;
+        private readonly IWebDriver _driver;
         public GeneralBasePage()
         {
-             _driver = DriverSingletone.Driver;
+             _driver = DriverSingleton.Driver;
             PageFactory.InitElements(_driver, this);
         }
 

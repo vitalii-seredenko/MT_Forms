@@ -1,17 +1,17 @@
-﻿using Core;
+﻿using MT_Forms.Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace PageObjects
+namespace MT_Forms.PageObjects
 {
     class BaseTownPage
     {
         private readonly IWebDriver _driver;
-        private int heroesHealth;
+        private int _heroesHealth;
 
         public BaseTownPage()
         {
-            _driver = DriverSingletone.Driver;
+            _driver = DriverSingleton.Driver;
             PageFactory.InitElements(_driver, this);
         }
 
@@ -64,12 +64,12 @@ namespace PageObjects
 
         public void GetHeroesHealth()
         {
-            heroesHealth = int.Parse(heroesHealthTextBox.Text);
+            _heroesHealth = int.Parse(heroesHealthTextBox.Text);
         }
 
         public bool CheckHeroesHealthLessThenTwentyPercent()
         {
-            return heroesHealth * 0.2 < int.Parse(heroesHealthTextBox.Text);
+            return _heroesHealth * 0.2 < int.Parse(heroesHealthTextBox.Text);
         }
     }
 }

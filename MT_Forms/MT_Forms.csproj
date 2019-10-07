@@ -64,7 +64,7 @@
   <ItemGroup>
     <Compile Include="CommonMethods\GoToUrl.cs" />
     <Compile Include="Core\DriverFactory.cs" />
-    <Compile Include="Core\DriverSingletone.cs" />
+    <Compile Include="Core\DriverSingleton.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

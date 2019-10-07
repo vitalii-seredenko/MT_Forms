@@ -1,27 +1,25 @@
-﻿using Core;
-using MT_Forms;
+﻿using System.Windows.Forms;
+using MT_Forms.Core;
 using MT_Forms.PageObjects;
 using NLog;
 using OpenQA.Selenium;
-using PageObjects;
-using System.Windows.Forms;
 using Keys = OpenQA.Selenium.Keys;
 
-namespace CommonMethods
+namespace MT_Forms.CommonMethods
 {
     class GoToUrl
     {
-        readonly IWebDriver _driver;
-        readonly LoginPage _loginPage;
         public static string loginName; //Друг Инженера
         public static string password;  //paleksanov4194
-        public static string captcha;  
+        public static string captcha;
         public static Form2 form2 = new Form2();
         private Logger _log = LogManager.GetCurrentClassLogger();
+        private readonly IWebDriver _driver;
+        private readonly LoginPage _loginPage;
 
         public GoToUrl()
         {
-            _driver = DriverSingletone.Driver;
+            _driver = DriverSingleton.Driver;
             _loginPage = new LoginPage();
         }
 
@@ -55,7 +53,7 @@ namespace CommonMethods
             CallCaptchaProcessingDialogWindow();
             if (_loginPage.CheckInvalidLoginOrPasswordErrorMessageIsPresent())
             {
-                MessageBox.Show("Неверный имя или пароль!", "Ошибка");
+                MessageBox.Show("Неверное имя или пароль!", "Ошибка");
             }
         }
 

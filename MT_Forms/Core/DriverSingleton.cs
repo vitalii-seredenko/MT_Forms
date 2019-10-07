@@ -1,12 +1,12 @@
 ﻿using NLog;
 using OpenQA.Selenium;
 
-namespace Core
+namespace MT_Forms.Core
 {
-    class DriverSingletone
+    class DriverSingleton
     {
-        private static IWebDriver _driver;
         private static Logger _log = LogManager.GetCurrentClassLogger();
+        private static IWebDriver _driver;
 
         public static IWebDriver Driver
         {

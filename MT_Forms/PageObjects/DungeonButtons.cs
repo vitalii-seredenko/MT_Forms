@@ -1,17 +1,17 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
-using System;
+﻿using System;
 using System.Threading;
-using Core;
+using MT_Forms.Core;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.PageObjects;
 
-namespace PageObjects
+namespace MT_Forms.PageObjects
 {
     class DungeonButtons
     {
-        private IWebDriver _driver;
+        private readonly IWebDriver _driver;
         public DungeonButtons()
         {
-            _driver = DriverSingletone.Driver;
+            _driver = DriverSingleton.Driver;
             PageFactory.InitElements(_driver, this);
         }
 
@@ -34,13 +34,13 @@ namespace PageObjects
         [FindsBy(How = How.XPath, Using = "//a[contains(., 'Получить награду')]")]
         public IWebElement giveRewardLink;
 
-        public void clickOnFirstAttackButton()
+        public void ClickOnFirstAttackButton()
         {
             Thread.Sleep(random.Next(1500, 2500));
             firstAttackButton.Click();
         }
 
-        public bool checkWaveIsComplete()
+        public bool CheckWaveIsComplete()
         {
             try
             {
@@ -64,7 +64,7 @@ namespace PageObjects
             }
         }
 
-        public bool checkGiveRewardLinkIsVisible()
+        public bool CheckGiveRewardLinkIsVisible()
         {
             try
             {

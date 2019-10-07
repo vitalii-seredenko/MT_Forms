@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using CommonMethods;
-using PageObjects;
+using MT_Forms.CommonMethods;
+using MT_Forms.PageObjects;
 using Keys = OpenQA.Selenium.Keys;
 
 namespace MT_Forms

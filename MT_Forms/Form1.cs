@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
-using CommonMethods;
-using Core;
+using MT_Forms.CommonMethods;
+using MT_Forms.Core;
+using MT_Forms.Scripts;
 using OpenQA.Selenium;
-using Scripts;
 
 namespace MT_Forms
 {
@@ -43,7 +43,7 @@ namespace MT_Forms
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            DriverSingletone.DisposeDriver();
+            DriverSingleton.DisposeDriver();
         }
     }
 }

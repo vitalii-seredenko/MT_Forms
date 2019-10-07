@@ -1,16 +1,15 @@
 ﻿using System.Windows.Forms;
-using PageObjects;
-using CommonMethods;
-using MT_Forms;
+using MT_Forms.CommonMethods;
+using MT_Forms.PageObjects;
 using NLog;
 
-namespace Scripts
+namespace MT_Forms.Scripts
 {
     class VisokaiaTemnitsa
     {
-        readonly DungeonButtons _dungeonButtons;
-        readonly QuestsButtons _questsButtons;
         private Logger _log = LogManager.GetCurrentClassLogger();
+        private readonly DungeonButtons _dungeonButtons;
+        private readonly QuestsButtons _questsButtons;
 
         public VisokaiaTemnitsa()
         {
@@ -37,14 +36,14 @@ namespace Scripts
 
         private void GoInDungeonForTheCasketAndItems()
         {
-            _log.Info("User go in Vysokaia Temnitsa for the casket and items");
+            _log.Info("User go in 'Vysokaia Temnitsa' for the casket and items");
             while (true)
             {
-                if (!_dungeonButtons.checkWaveIsComplete() && !_dungeonButtons.CheckDungeonIsComplete() && !_dungeonButtons.checkGiveRewardLinkIsVisible())
+                if (!_dungeonButtons.CheckWaveIsComplete() && !_dungeonButtons.CheckDungeonIsComplete() && !_dungeonButtons.CheckGiveRewardLinkIsVisible())
                 {
-                    _dungeonButtons.clickOnFirstAttackButton();
+                    _dungeonButtons.ClickOnFirstAttackButton();
                 }
-                else if (_dungeonButtons.checkWaveIsComplete())
+                else if (_dungeonButtons.CheckWaveIsComplete())
                 {
                     _dungeonButtons.continueBattle.Click();
                 }
@@ -59,18 +58,18 @@ namespace Scripts
 
         private void GoInDungeonOnlyForTheCasket()
         {
-            _log.Info("User go in Vysokaia Temnitsa only for the casket");
+            _log.Info("User go in 'Vysokaia Temnitsa' only for the casket");
             while (true)
             {
-                if (!_dungeonButtons.checkWaveIsComplete() && !_dungeonButtons.CheckDungeonIsComplete() && !_dungeonButtons.checkGiveRewardLinkIsVisible())
+                if (!_dungeonButtons.CheckWaveIsComplete() && !_dungeonButtons.CheckDungeonIsComplete() && !_dungeonButtons.CheckGiveRewardLinkIsVisible())
                 {
-                    _dungeonButtons.clickOnFirstAttackButton();
+                    _dungeonButtons.ClickOnFirstAttackButton();
                 }
-                else if (_dungeonButtons.checkWaveIsComplete())
+                else if (_dungeonButtons.CheckWaveIsComplete())
                 {
                     _dungeonButtons.continueBattle.Click();
                 }
-                else if (_dungeonButtons.checkGiveRewardLinkIsVisible())
+                else if (_dungeonButtons.CheckGiveRewardLinkIsVisible())
                 {
                     _dungeonButtons.giveRewardLink.Click();
                     _questsButtons.continueAdventures.Click();

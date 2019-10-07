@@ -1,15 +1,15 @@
-﻿using Core;
+﻿using MT_Forms.Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace PageObjects
+namespace MT_Forms.PageObjects
 {
     class QuestsButtons
     {
-        private IWebDriver _driver;
+        private readonly IWebDriver _driver;
         public QuestsButtons()
         {
-            _driver = DriverSingletone.Driver;
+            _driver = DriverSingleton.Driver;
             PageFactory.InitElements(_driver, this);
         }
 
