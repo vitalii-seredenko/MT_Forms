@@ -23,7 +23,6 @@ namespace MT_Forms.Core
         internal static void DisposeDriver()
         {
             _driver.Dispose();
-            _log.Info("<-----------Application finished----------->");
         }
     }
 }
