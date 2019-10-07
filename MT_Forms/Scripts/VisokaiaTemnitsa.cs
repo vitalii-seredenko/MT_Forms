@@ -2,6 +2,7 @@
 using PageObjects;
 using CommonMethods;
 using MT_Forms;
+using NLog;
 
 namespace Scripts
 {
@@ -9,6 +10,7 @@ namespace Scripts
     {
         readonly DungeonButtons _dungeonButtons;
         readonly QuestsButtons _questsButtons;
+        private Logger _log = LogManager.GetCurrentClassLogger();
 
         public VisokaiaTemnitsa()
         {
@@ -35,6 +37,7 @@ namespace Scripts
 
         private void GoInDungeonForTheCasketAndItems()
         {
+            _log.Info("User go in Vysokaia Temnitsa for the casket and items");
             while (true)
             {
                 if (!_dungeonButtons.checkWaveIsComplete() && !_dungeonButtons.CheckDungeonIsComplete())
@@ -56,6 +59,7 @@ namespace Scripts
 
         private void GoInDungeonOnlyForTheCasket()
         {
+            _log.Info("User go in Vysokaia Temnitsa only for the casket");
             while (true)
             {
                 if (!_dungeonButtons.checkWaveIsComplete() && !_dungeonButtons.CheckDungeonIsComplete() && !_dungeonButtons.checkGiveRewardLinkIsVisible())

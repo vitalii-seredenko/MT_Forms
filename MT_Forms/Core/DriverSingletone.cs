@@ -1,21 +1,29 @@
-﻿using OpenQA.Selenium;
+﻿using NLog;
+using OpenQA.Selenium;
 
 namespace Core
 {
     class DriverSingletone
     {
-        public static IWebDriver driver;
+        private static IWebDriver _driver;
+        private static Logger _log = LogManager.GetCurrentClassLogger();
 
         public static IWebDriver Driver
         {
             get
             {
-                if (driver == null)
+                if (_driver == null)
                 {
-                    driver = new DriverFactory().GetDriver("chrome");
+                    _driver = new DriverFactory().GetDriver("chrome");
                 }
-                return driver;
+                return _driver;
             }
+        }
+
+        public static void DisposeDriver()
+        {
+            _driver.Dispose();
+            _log.Info("<-----------Application finished----------->\n");
         }
     }
 }
