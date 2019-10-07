@@ -5,7 +5,6 @@ namespace MT_Forms.Core
 {
     internal class DriverSingleton
     {
-        private static Logger _log = LogManager.GetCurrentClassLogger();
         private static IWebDriver _driver;
 
         internal static IWebDriver Driver
