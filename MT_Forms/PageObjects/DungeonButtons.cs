@@ -10,7 +10,7 @@ namespace MT_Forms.PageObjects
     {
         private readonly IWebDriver _driver;
         private readonly Random _random;
-        public DungeonButtons()
+        internal DungeonButtons()
         {
             _driver = DriverSingleton.Driver;
             _random = new Random();
@@ -20,31 +20,31 @@ namespace MT_Forms.PageObjects
         #region WebElements
 
         [FindsBy(How = How.XPath, Using = "//a[contains(text(), 'Войти')]")]
-        public IWebElement enterInDungeon;
+        internal IWebElement enterInDungeon;
         [FindsBy(How = How.XPath, Using = "//a[contains(., 'Начать бой')]")]
-        public IWebElement startBattle;
+        internal IWebElement startBattle;
         [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Добивать') or contains(text(),'Бить')]")]
-        public IWebElement firstAttackButton;
+        internal IWebElement firstAttackButton;
         [FindsBy(How = How.XPath, Using = "//span[contains(text(), 'Этап подземелья ') or contains(text(), 'Подземелье ')]")]
-        public IWebElement dungeonOrWaveIsCompleteTextBlock;
+        internal IWebElement dungeonOrWaveIsCompleteTextBlock;
         [FindsBy(How = How.XPath, Using = "//span[contains(contains(text(), 'Подземелье ')]")]
-        public IWebElement dungeonIsCompleteTextBlock;
+        internal IWebElement dungeonIsCompleteTextBlock;
         [FindsBy(How = How.XPath, Using = "//span[contains(text(), 'Этап подземелья ')]")]
-        public IWebElement waveIsCompleteTextBlock;
+        internal IWebElement waveIsCompleteTextBlock;
         [FindsBy(How = How.XPath, Using = "//a[contains(., 'Продолжить бой')]")]
-        public IWebElement continueBattle;
+        internal IWebElement continueBattle;
         [FindsBy(How = How.XPath, Using = "//a[contains(., 'Получить награду')]")]
-        public IWebElement giveRewardLink;
+        internal IWebElement giveRewardLink;
 
         #endregion
 
-        public void ClickOnFirstAttackButton()
+        internal void ClickOnFirstAttackButton()
         {
             Thread.Sleep(_random.Next(1500, 2500));
             firstAttackButton.Click();
         }
 
-        public bool CheckWaveIsComplete()
+        internal bool CheckWaveIsComplete()
         {
             try
             {
@@ -56,7 +56,7 @@ namespace MT_Forms.PageObjects
             }
         }
 
-        public bool CheckDungeonIsComplete()
+        internal bool CheckDungeonIsComplete()
         {
             try
             {
@@ -68,7 +68,7 @@ namespace MT_Forms.PageObjects
             }
         }
 
-        public bool CheckGiveRewardLinkIsPresent()
+        internal bool CheckGiveRewardLinkIsPresent()
         {
             try
             {

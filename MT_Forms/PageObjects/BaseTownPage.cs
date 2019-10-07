@@ -9,7 +9,7 @@ namespace MT_Forms.PageObjects
         private readonly IWebDriver _driver;
         private int _heroesHealth;
 
-        public BaseTownPage()
+        internal BaseTownPage()
         {
             _driver = DriverSingleton.Driver;
             PageFactory.InitElements(_driver, this);
@@ -18,21 +18,21 @@ namespace MT_Forms.PageObjects
         #region WebElements
 
         [FindsBy(How = How.XPath, Using = "//a[contains(@class, 'go-btn') && not(*[contains(., 'В подземелье')])]")]
-        public IWebElement continueButton;
+        internal IWebElement continueButton;
         [FindsBy(How = How.XPath, Using = "//div[@class='billboard _promo']")]
-        public IWebElement billboardElement;
+        internal IWebElement billboardElement;
         [FindsBy(How = How.XPath, Using = "//a[@class='popup-close']")]
-        public IWebElement closePopUpButton;
+        internal IWebElement closePopUpButton;
         [FindsBy(How = How.XPath, Using = "//img[@alt='Мир Теней']")]
-        public IWebElement cityPicture;
+        internal IWebElement cityPicture;
         [FindsBy(How = How.XPath, Using = "//span[@class='info']")]
-        public IWebElement heroesHealthTextBox;
+        internal IWebElement heroesHealthTextBox;
 
         #endregion
 
         #region CheckElementIsPresent
 
-        public bool CheckContinueButtonIsPresent()
+        internal bool CheckContinueButtonIsPresent()
         {
             try
             {
@@ -44,7 +44,7 @@ namespace MT_Forms.PageObjects
             }
         }
 
-        public bool CheckBillboardElementIsPresent()
+        internal bool CheckBillboardElementIsPresent()
         {
             try
             {
@@ -56,7 +56,7 @@ namespace MT_Forms.PageObjects
             }
         }
 
-        public bool CheckCityPictureIsPresent()
+        internal bool CheckCityPictureIsPresent()
         {
             try
             {
@@ -70,12 +70,12 @@ namespace MT_Forms.PageObjects
 
         #endregion
 
-        public void GetHeroesHealth()
+        internal void GetHeroesHealth()
         {
             _heroesHealth = int.Parse(heroesHealthTextBox.Text);
         }
 
-        public bool CheckHeroesHealthLessThenTwentyPercent()
+        internal bool CheckHeroesHealthLessThenTwentyPercent()
         {
             return _heroesHealth * 0.2 < int.Parse(heroesHealthTextBox.Text);
         }

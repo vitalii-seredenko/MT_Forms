@@ -7,14 +7,14 @@ using OpenQA.Selenium;
 
 namespace MT_Forms
 {
-    public partial class Form1 : Form
+    internal partial class Form1 : Form
     {
-        public Form1()
+        internal Form1()
         {
             InitializeComponent();
         }
 
-        public CheckBox GoForTheCasketCheckBox => goForTheCasketCheckBox;
+        internal CheckBox GoForTheCasketCheckBox => goForTheCasketCheckBox;
 
         private void Form1_Load(object sender, EventArgs e)
         {

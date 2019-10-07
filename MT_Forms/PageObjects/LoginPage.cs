@@ -7,7 +7,7 @@ namespace MT_Forms.PageObjects
     internal class LoginPage
     {
         private readonly IWebDriver _driver;
-        public LoginPage()
+        internal LoginPage()
         {
             _driver = DriverSingleton.Driver;
             PageFactory.InitElements(_driver, this);
@@ -16,25 +16,25 @@ namespace MT_Forms.PageObjects
         #region WebElements
 
         [FindsBy(How = How.XPath, Using = "//a[@title='Войти']//span[@class='go-btn-in']")]
-        public IWebElement startGameButton;
+        internal IWebElement startGameButton;
         [FindsBy(How = How.XPath, Using = "//input[@id='login']")]
-        public IWebElement inputLoginForm;
+        internal IWebElement inputLoginForm;
         [FindsBy(How = How.XPath, Using = "//input[@id='password']")]
-        public IWebElement inputPasswordForm;
+        internal IWebElement inputPasswordForm;
         [FindsBy(How = How.XPath, Using = "//input[@id='submit']")]
-        public IWebElement submitButton;
+        internal IWebElement submitButton;
         [FindsBy(How = How.XPath, Using = "//input[@id='captcha']")]
-        public IWebElement captchaTextBox;
+        internal IWebElement captchaTextBox;
         [FindsBy(How = How.XPath, Using = "//span[@class='feedbackPanelERROR' and text()='Введен неверный код']")]
-        public IWebElement invalidCaptchaErrorMessage;
+        internal IWebElement invalidCaptchaErrorMessage;
         [FindsBy(How = How.XPath, Using = "//span[@class='feedbackPanelERROR' and contains(text(), 'Неверное имя или пароль')]")]
-        public IWebElement invalidLoginOrPasswordErrorMessage;
+        internal IWebElement invalidLoginOrPasswordErrorMessage;
 
         #endregion
 
         #region CheckElementIsPresent
 
-        public bool CheckInvalidLoginOrPasswordErrorMessageIsPresent()
+        internal bool CheckInvalidLoginOrPasswordErrorMessageIsPresent()
         {
             try
             {
@@ -46,7 +46,7 @@ namespace MT_Forms.PageObjects
             }
         }
 
-        public bool CheckInvalidCaptchaErrorMessageIsPresent()
+        internal bool CheckInvalidCaptchaErrorMessageIsPresent()
         {
             try
             {
@@ -58,7 +58,7 @@ namespace MT_Forms.PageObjects
             }
         }
 
-        public bool CheckСaptchaTextBoxIsPresent()
+        internal bool CheckСaptchaTextBoxIsPresent()
         {
             try
             {

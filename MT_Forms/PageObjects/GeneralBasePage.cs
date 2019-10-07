@@ -7,21 +7,21 @@ namespace MT_Forms.PageObjects
     internal class GeneralBasePage
     {
         private readonly IWebDriver _driver;
-        public GeneralBasePage()
+        internal GeneralBasePage()
         {
              _driver = DriverSingleton.Driver;
             PageFactory.InitElements(_driver, this);
         }
 
         [FindsBy(How = How.XPath, Using = "//span[text()='Облегченная версия']")]
-        public IWebElement lightVersionButton;
+        internal IWebElement lightVersionButton;
 
-        public void SwitchToLightVersion()
+        internal void SwitchToLightVersion()
         {
             lightVersionButton.Click();
         }
 
-        public bool CheckLightVersionButtonIsPresent()
+        internal bool CheckLightVersionButtonIsPresent()
         {
             try
             {

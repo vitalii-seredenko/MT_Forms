@@ -7,7 +7,7 @@ namespace MT_Forms.PageObjects
     internal class QuestsButtons
     {
         private readonly IWebDriver _driver;
-        public QuestsButtons()
+        internal QuestsButtons()
         {
             _driver = DriverSingleton.Driver;
             PageFactory.InitElements(_driver, this);
@@ -16,9 +16,9 @@ namespace MT_Forms.PageObjects
         #region WebElements
 
         [FindsBy(How = How.XPath, Using = "//a[contains(., 'Найти банду')]")]
-        public IWebElement findGangButton;
+        internal IWebElement findGangButton;
         [FindsBy(How = How.XPath, Using = "//a[contains(., 'Продолжить приключения')]")]
-        public IWebElement continueAdventures;
+        internal IWebElement continueAdventures;
 
         #endregion
     }

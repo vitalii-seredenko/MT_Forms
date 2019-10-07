@@ -11,13 +11,13 @@ namespace MT_Forms.Scripts
         private readonly DungeonButtons _dungeonButtons;
         private readonly QuestsButtons _questsButtons;
 
-        public VisokaiaTemnitsa()
+        internal VisokaiaTemnitsa()
         {
             _dungeonButtons = new DungeonButtons();
             _questsButtons = new QuestsButtons();
         }
 
-        public void VisokaiaTemnitsaScript()
+        internal void VisokaiaTemnitsaScript()
         {
             new GoToUrl().NavigateToUrl("https://m.vten.ru/quest/qHeroicHighDungeonDaily");
             _questsButtons.findGangButton.Click();

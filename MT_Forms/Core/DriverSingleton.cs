@@ -8,7 +8,7 @@ namespace MT_Forms.Core
         private static Logger _log = LogManager.GetCurrentClassLogger();
         private static IWebDriver _driver;
 
-        public static IWebDriver Driver
+        internal static IWebDriver Driver
         {
             get
             {
@@ -20,7 +20,7 @@ namespace MT_Forms.Core
             }
         }
 
-        public static void DisposeDriver()
+        internal static void DisposeDriver()
         {
             _driver.Dispose();
             _log.Info("<-----------Application finished----------->\n");

@@ -9,27 +9,27 @@ namespace MT_Forms.CommonMethods
 {
     internal class GoToUrl
     {
-        public static string loginName; //Друг Инженера
-        public static string password;  //paleksanov4194
-        public static string captcha;
-        public static Form2 form2 = new Form2();
+        internal static string loginName; //Друг Инженера
+        internal static string password;  //paleksanov4194
+        internal static string captcha;
+        internal static Form2 form2 = new Form2();
         private Logger _log = LogManager.GetCurrentClassLogger();
         private readonly IWebDriver _driver;
         private readonly LoginPage _loginPage;
 
-        public GoToUrl()
+        internal GoToUrl()
         {
             _driver = DriverSingleton.Driver;
             _loginPage = new LoginPage();
         }
 
-        public void NavigateToUrl(string url)
+        internal void NavigateToUrl(string url)
         {
             _driver.Navigate().GoToUrl(url);
             _log.Info($"User navigates to '{url}'");
         }
 
-        public void GoToMt()
+        internal void GoToMt()
         {
             var generalBasePage = new GeneralBasePage();
             _driver.Manage().Window.Maximize();
@@ -43,7 +43,7 @@ namespace MT_Forms.CommonMethods
             _log.Info("Program successfully logged in MT");
         }
 
-        public void Login()
+        internal void Login()
         {
             _loginPage.inputLoginForm.SendKeys(Keys.Control + "a");
             _loginPage.inputLoginForm.SendKeys(loginName);
@@ -57,7 +57,7 @@ namespace MT_Forms.CommonMethods
             }
         }
 
-        public void CallCaptchaProcessingDialogWindow()
+        internal void CallCaptchaProcessingDialogWindow()
         {
             if (_loginPage.CheckСaptchaTextBoxIsPresent())
             {

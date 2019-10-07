@@ -6,9 +6,9 @@ using Keys = OpenQA.Selenium.Keys;
 
 namespace MT_Forms
 {
-    public partial class Form2 : Form
+    internal partial class Form2 : Form
     {
-        public Form2()
+        internal Form2()
         {
             InitializeComponent();
         }
