@@ -11,7 +11,7 @@ namespace MT_Forms
         [STAThread]
         private static void Main()
         {
-            _log.Info("<-----------New application session started----------->");
+            _log.Info("\n<-----------New application session started----------->");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
