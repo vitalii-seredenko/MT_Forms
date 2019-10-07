@@ -4,7 +4,7 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace MT_Forms.PageObjects
 {
-    class GeneralBasePage
+    internal class GeneralBasePage
     {
         private readonly IWebDriver _driver;
         public GeneralBasePage()

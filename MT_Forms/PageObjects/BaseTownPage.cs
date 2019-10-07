@@ -4,7 +4,7 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace MT_Forms.PageObjects
 {
-    class BaseTownPage
+    internal class BaseTownPage
     {
         private readonly IWebDriver _driver;
         private int _heroesHealth;

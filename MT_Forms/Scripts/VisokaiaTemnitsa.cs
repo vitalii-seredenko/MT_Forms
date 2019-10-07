@@ -5,7 +5,7 @@ using NLog;
 
 namespace MT_Forms.Scripts
 {
-    class VisokaiaTemnitsa
+    internal class VisokaiaTemnitsa
     {
         private Logger _log = LogManager.GetCurrentClassLogger();
         private readonly DungeonButtons _dungeonButtons;

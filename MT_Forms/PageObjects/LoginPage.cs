@@ -4,7 +4,7 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace MT_Forms.PageObjects
 {
-    class LoginPage
+    internal class LoginPage
     {
         private readonly IWebDriver _driver;
         public LoginPage()

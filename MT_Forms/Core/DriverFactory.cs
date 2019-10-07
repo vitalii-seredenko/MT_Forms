@@ -5,7 +5,7 @@ using OpenQA.Selenium.Firefox;
 
 namespace MT_Forms.Core
 {
-    class DriverFactory
+    internal class DriverFactory
     {
         internal IWebDriver GetDriver(string driverName)
         {

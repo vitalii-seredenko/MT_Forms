@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MT_Forms.LogicForForms
 {
-    class ShowOrHideButton
+    internal class ShowOrHideButton
     {
 
     }

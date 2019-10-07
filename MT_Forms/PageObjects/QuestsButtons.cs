@@ -4,7 +4,7 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace MT_Forms.PageObjects
 {
-    class QuestsButtons
+    internal class QuestsButtons
     {
         private readonly IWebDriver _driver;
         public QuestsButtons()

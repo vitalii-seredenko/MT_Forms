@@ -6,7 +6,7 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace MT_Forms.PageObjects
 {
-    class DungeonButtons
+    internal class DungeonButtons
     {
         private readonly IWebDriver _driver;
         public DungeonButtons()

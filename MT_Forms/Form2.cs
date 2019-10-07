@@ -20,8 +20,8 @@ namespace MT_Forms
 
         private void EnterCaptchaButton_Click(object sender, EventArgs e)
         {
-            LoginPage loginPage = new LoginPage();
-            BaseTownPage baseTownPage = new BaseTownPage();
+            var loginPage = new LoginPage();
+            var baseTownPage = new BaseTownPage();
             loginPage.captchaTextBox.SendKeys(Keys.Control + "a");
             loginPage.captchaTextBox.SendKeys(GoToUrl.captcha);
             loginPage.submitButton.Click();

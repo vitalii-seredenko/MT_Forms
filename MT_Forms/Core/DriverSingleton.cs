@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 
 namespace MT_Forms.Core
 {
-    class DriverSingleton
+    internal class DriverSingleton
     {
         private static Logger _log = LogManager.GetCurrentClassLogger();
         private static IWebDriver _driver;

@@ -7,7 +7,7 @@ using Keys = OpenQA.Selenium.Keys;
 
 namespace MT_Forms.CommonMethods
 {
-    class GoToUrl
+    internal class GoToUrl
     {
         public static string loginName; //Друг Инженера
         public static string password;  //paleksanov4194
@@ -31,7 +31,7 @@ namespace MT_Forms.CommonMethods
 
         public void GoToMt()
         {
-            GeneralBasePage generalBasePage = new GeneralBasePage();
+            var generalBasePage = new GeneralBasePage();
             _driver.Manage().Window.Maximize();
             NavigateToUrl("https://m.vten.ru/");
             _loginPage.startGameButton.Click();
