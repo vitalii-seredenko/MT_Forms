@@ -15,6 +15,8 @@ namespace MT_Forms.PageObjects
             PageFactory.InitElements(_driver, this);
         }
 
+        #region WebElements
+
         [FindsBy(How = How.XPath, Using = "//a[contains(@class, 'go-btn') && not(*[contains(., 'В подземелье')])]")]
         public IWebElement continueButton;
         [FindsBy(How = How.XPath, Using = "//div[@class='billboard _promo']")]
@@ -25,6 +27,10 @@ namespace MT_Forms.PageObjects
         public IWebElement cityPicture;
         [FindsBy(How = How.XPath, Using = "//span[@class='info']")]
         public IWebElement heroesHealthTextBox;
+
+        #endregion
+
+        #region CheckElementIsPresent
 
         public bool CheckContinueButtonIsPresent()
         {
@@ -61,6 +67,8 @@ namespace MT_Forms.PageObjects
                 return false;
             }
         }
+
+        #endregion
 
         public void GetHeroesHealth()
         {

@@ -13,6 +13,8 @@ namespace MT_Forms.PageObjects
             PageFactory.InitElements(_driver, this);
         }
 
+        #region WebElements
+
         [FindsBy(How = How.XPath, Using = "//a[@title='Войти']//span[@class='go-btn-in']")]
         public IWebElement startGameButton;
         [FindsBy(How = How.XPath, Using = "//input[@id='login']")]
@@ -27,7 +29,11 @@ namespace MT_Forms.PageObjects
         public IWebElement invalidCaptchaErrorMessage;
         [FindsBy(How = How.XPath, Using = "//span[@class='feedbackPanelERROR' and contains(text(), 'Неверное имя или пароль')]")]
         public IWebElement invalidLoginOrPasswordErrorMessage;
-        
+
+        #endregion
+
+        #region CheckElementIsPresent
+
         public bool CheckInvalidLoginOrPasswordErrorMessageIsPresent()
         {
             try
@@ -63,6 +69,8 @@ namespace MT_Forms.PageObjects
                 return false;
             }
         }
+
+        #endregion
     }
 }
 

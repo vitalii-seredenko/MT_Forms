@@ -9,13 +9,15 @@ namespace MT_Forms.PageObjects
     internal class DungeonButtons
     {
         private readonly IWebDriver _driver;
+        private readonly Random _random;
         public DungeonButtons()
         {
             _driver = DriverSingleton.Driver;
+            _random = new Random();
             PageFactory.InitElements(_driver, this);
         }
 
-        Random random = new Random();
+        #region WebElements
 
         [FindsBy(How = How.XPath, Using = "//a[contains(text(), 'Войти')]")]
         public IWebElement enterInDungeon;
@@ -34,9 +36,11 @@ namespace MT_Forms.PageObjects
         [FindsBy(How = How.XPath, Using = "//a[contains(., 'Получить награду')]")]
         public IWebElement giveRewardLink;
 
+        #endregion
+
         public void ClickOnFirstAttackButton()
         {
-            Thread.Sleep(random.Next(1500, 2500));
+            Thread.Sleep(_random.Next(1500, 2500));
             firstAttackButton.Click();
         }
 
@@ -64,7 +68,7 @@ namespace MT_Forms.PageObjects
             }
         }
 
-        public bool CheckGiveRewardLinkIsVisible()
+        public bool CheckGiveRewardLinkIsPresent()
         {
             try
             {

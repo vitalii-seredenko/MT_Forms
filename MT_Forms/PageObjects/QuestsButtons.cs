@@ -13,9 +13,13 @@ namespace MT_Forms.PageObjects
             PageFactory.InitElements(_driver, this);
         }
 
+        #region WebElements
+
         [FindsBy(How = How.XPath, Using = "//a[contains(., 'Найти банду')]")]
         public IWebElement findGangButton;
         [FindsBy(How = How.XPath, Using = "//a[contains(., 'Продолжить приключения')]")]
         public IWebElement continueAdventures;
+
+        #endregion
     }
 }
