@@ -6,7 +6,9 @@ namespace PageObjects
 {
     class BaseTownPage
     {
-        private IWebDriver _driver;
+        private readonly IWebDriver _driver;
+        private int heroesHealth;
+
         public BaseTownPage()
         {
             _driver = DriverSingletone.Driver;
@@ -21,6 +23,8 @@ namespace PageObjects
         public IWebElement closePopUpButton;
         [FindsBy(How = How.XPath, Using = "//img[@alt='Мир Теней']")]
         public IWebElement cityPicture;
+        [FindsBy(How = How.XPath, Using = "//span[@class='info']")]
+        public IWebElement heroesHealthTextBox;
 
         public bool CheckContinueButtonIsPresent()
         {
@@ -56,6 +60,16 @@ namespace PageObjects
             {
                 return false;
             }
+        }
+
+        public void GetHeroesHealth()
+        {
+            heroesHealth = int.Parse(heroesHealthTextBox.Text);
+        }
+
+        public bool CheckHeroesHealthLessThenTwentyPercent()
+        {
+            return heroesHealth * 0.2 < int.Parse(heroesHealthTextBox.Text);
         }
     }
 }

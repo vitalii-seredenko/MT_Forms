@@ -13,22 +13,31 @@ namespace PageObjects
             PageFactory.InitElements(_driver, this);
         }
 
-        [FindsBy(How = How.XPath, Using = "//span[@class='go-btn-in']")]
+        [FindsBy(How = How.XPath, Using = "//a[@title='Войти']//span[@class='go-btn-in']")]
         public IWebElement startGameButton;
         [FindsBy(How = How.XPath, Using = "//input[@id='login']")]
-        public IWebElement inputLogin;
+        public IWebElement inputLoginForm;
         [FindsBy(How = How.XPath, Using = "//input[@id='password']")]
-        public IWebElement inputPassword;
+        public IWebElement inputPasswordForm;
         [FindsBy(How = How.XPath, Using = "//input[@id='submit']")]
         public IWebElement submitButton;
         [FindsBy(How = How.XPath, Using = "//input[@id='captcha']")]
         public IWebElement captchaTextBox;
         [FindsBy(How = How.XPath, Using = "//span[@class='feedbackPanelERROR' and text()='Введен неверный код']")]
         public IWebElement invalidCaptchaErrorMessage;
-
-        public void SendKeys(string valueForInput)
+        [FindsBy(How = How.XPath, Using = "//span[@class='feedbackPanelERROR' and contains(text(), 'Неверное имя или пароль')]")]
+        public IWebElement invalidLoginOrPasswordErrorMessage;
+        
+        public bool CheckInvalidLoginOrPasswordErrorMessageIsPresent()
         {
-            captchaTextBox.SendKeys(valueForInput);
+            try
+            {
+                return invalidLoginOrPasswordErrorMessage.Displayed;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
         }
 
         public bool CheckInvalidCaptchaErrorMessageIsPresent()
@@ -36,6 +45,18 @@ namespace PageObjects
             try
             {
                 return invalidCaptchaErrorMessage.Displayed;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+        }
+
+        public bool CheckСaptchaTextBoxIsPresent()
+        {
+            try
+            {
+                return captchaTextBox.Displayed;
             }
             catch (NoSuchElementException)
             {

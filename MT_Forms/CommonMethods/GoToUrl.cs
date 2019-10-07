@@ -4,6 +4,8 @@ using MT_Forms.PageObjects;
 using NLog;
 using OpenQA.Selenium;
 using PageObjects;
+using System.Windows.Forms;
+using Keys = OpenQA.Selenium.Keys;
 
 namespace CommonMethods
 {
@@ -31,25 +33,35 @@ namespace CommonMethods
 
         public void GoToMt()
         {
+            GeneralBasePage generalBasePage = new GeneralBasePage();
             _driver.Manage().Window.Maximize();
             NavigateToUrl("https://m.vten.ru/");
             _loginPage.startGameButton.Click();
-            new GeneralBasePage().SwitchToLightVersion();
+            if (generalBasePage.CheckLightVersionButtonIsPresent())
+            {
+                generalBasePage.SwitchToLightVersion();
+            }
             Login();
             _log.Info("Program successfully logged in MT");
         }
 
         public void Login()
         {
-            _loginPage.inputLogin.SendKeys(loginName);
-            _loginPage.inputPassword.SendKeys(password);
+            _loginPage.inputLoginForm.SendKeys(Keys.Control + "a");
+            _loginPage.inputLoginForm.SendKeys(loginName);
+            _loginPage.inputPasswordForm.SendKeys(Keys.Control + "a");
+            _loginPage.inputPasswordForm.SendKeys(password);
             _loginPage.submitButton.Click();
             CallCaptchaProcessingDialogWindow();
+            if (_loginPage.CheckInvalidLoginOrPasswordErrorMessageIsPresent())
+            {
+                MessageBox.Show("Неверный имя или пароль!", "Ошибка");
+            }
         }
 
         public void CallCaptchaProcessingDialogWindow()
         {
-            if (_loginPage.captchaTextBox.Displayed)
+            if (_loginPage.CheckСaptchaTextBoxIsPresent())
             {
                 form2.ShowDialog();
             }

@@ -40,7 +40,7 @@ namespace Scripts
             _log.Info("User go in Vysokaia Temnitsa for the casket and items");
             while (true)
             {
-                if (!_dungeonButtons.checkWaveIsComplete() && !_dungeonButtons.CheckDungeonIsComplete())
+                if (!_dungeonButtons.checkWaveIsComplete() && !_dungeonButtons.CheckDungeonIsComplete() && !_dungeonButtons.checkGiveRewardLinkIsVisible())
                 {
                     _dungeonButtons.clickOnFirstAttackButton();
                 }

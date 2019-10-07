@@ -20,5 +20,17 @@ namespace MT_Forms.PageObjects
         {
             lightVersionButton.Click();
         }
+
+        public bool CheckLightVersionButtonIsPresent()
+        {
+            try
+            {
+                return lightVersionButton.Displayed;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+        }
     }
 }
