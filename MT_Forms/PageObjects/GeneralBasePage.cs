@@ -1,27 +1,27 @@
-﻿using Core;
+﻿using MT_Forms.Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace MT_Forms.PageObjects
 {
-    class GeneralBasePage
+    internal class GeneralBasePage
     {
-        private IWebDriver _driver;
-        public GeneralBasePage()
+        private readonly IWebDriver _driver;
+        internal GeneralBasePage()
         {
-             _driver = DriverSingletone.Driver;
+             _driver = DriverSingleton.Driver;
             PageFactory.InitElements(_driver, this);
         }
 
         [FindsBy(How = How.XPath, Using = "//span[text()='Облегченная версия']")]
-        public IWebElement lightVersionButton;
+        internal IWebElement lightVersionButton;
 
-        public void SwitchToLightVersion()
+        internal void SwitchToLightVersion()
         {
             lightVersionButton.Click();
         }
 
-        public bool CheckLightVersionButtonIsPresent()
+        internal bool CheckLightVersionButtonIsPresent()
         {
             try
             {

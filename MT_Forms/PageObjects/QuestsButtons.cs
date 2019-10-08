@@ -1,21 +1,25 @@
-﻿using Core;
+﻿using MT_Forms.Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace PageObjects
+namespace MT_Forms.PageObjects
 {
-    class QuestsButtons
+    internal class QuestsButtons
     {
-        private IWebDriver _driver;
-        public QuestsButtons()
+        private readonly IWebDriver _driver;
+        internal QuestsButtons()
         {
-            _driver = DriverSingletone.Driver;
+            _driver = DriverSingleton.Driver;
             PageFactory.InitElements(_driver, this);
         }
 
+        #region WebElements
+
         [FindsBy(How = How.XPath, Using = "//a[contains(., 'Найти банду')]")]
-        public IWebElement findGangButton;
+        internal IWebElement findGangButton;
         [FindsBy(How = How.XPath, Using = "//a[contains(., 'Продолжить приключения')]")]
-        public IWebElement continueAdventures;
+        internal IWebElement continueAdventures;
+
+        #endregion
     }
 }

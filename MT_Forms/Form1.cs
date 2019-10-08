@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
-using CommonMethods;
-using Core;
+using MT_Forms.CommonMethods;
+using MT_Forms.Core;
+using MT_Forms.Scripts;
 using OpenQA.Selenium;
-using Scripts;
 
 namespace MT_Forms
 {
-    public partial class Form1 : Form
+    internal partial class Form1 : Form
     {
-        private readonly IWebDriver _driver;
-        public Form1()
+        internal Form1()
         {
-            _driver = DriverSingletone.Driver;
             InitializeComponent();
         }
 
@@ -54,6 +52,11 @@ namespace MT_Forms
         {
             goForTheCasketAndToEndCheckBox.CheckState = CheckState.Checked;
             goForTheCasketCheckBox.CheckState = CheckState.Unchecked;
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            DriverSingleton.DisposeDriver();
         }
     }
 }

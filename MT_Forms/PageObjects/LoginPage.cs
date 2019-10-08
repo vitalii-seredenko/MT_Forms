@@ -1,34 +1,40 @@
-﻿using Core;
+﻿using MT_Forms.Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace PageObjects
+namespace MT_Forms.PageObjects
 {
-    class LoginPage
+    internal class LoginPage
     {
-        private IWebDriver _driver;
-        public LoginPage()
+        private readonly IWebDriver _driver;
+        internal LoginPage()
         {
-            _driver = DriverSingletone.Driver;
+            _driver = DriverSingleton.Driver;
             PageFactory.InitElements(_driver, this);
         }
 
+        #region WebElements
+
         [FindsBy(How = How.XPath, Using = "//a[@title='Войти']//span[@class='go-btn-in']")]
-        public IWebElement startGameButton;
+        internal IWebElement startGameButton;
         [FindsBy(How = How.XPath, Using = "//input[@id='login']")]
-        public IWebElement inputLoginForm;
+        internal IWebElement inputLoginForm;
         [FindsBy(How = How.XPath, Using = "//input[@id='password']")]
-        public IWebElement inputPasswordForm;
+        internal IWebElement inputPasswordForm;
         [FindsBy(How = How.XPath, Using = "//input[@id='submit']")]
-        public IWebElement submitButton;
+        internal IWebElement submitButton;
         [FindsBy(How = How.XPath, Using = "//input[@id='captcha']")]
-        public IWebElement captchaTextBox;
+        internal IWebElement captchaTextBox;
         [FindsBy(How = How.XPath, Using = "//span[@class='feedbackPanelERROR' and text()='Введен неверный код']")]
-        public IWebElement invalidCaptchaErrorMessage;
+        internal IWebElement invalidCaptchaErrorMessage;
         [FindsBy(How = How.XPath, Using = "//span[@class='feedbackPanelERROR' and contains(text(), 'Неверное имя или пароль')]")]
-        public IWebElement invalidLoginOrPasswordErrorMessage;
-        
-        public bool CheckInvalidLoginOrPasswordErrorMessageIsPresent()
+        internal IWebElement invalidLoginOrPasswordErrorMessage;
+
+        #endregion
+
+        #region CheckElementIsPresent
+
+        internal bool CheckInvalidLoginOrPasswordErrorMessageIsPresent()
         {
             try
             {
@@ -40,7 +46,7 @@ namespace PageObjects
             }
         }
 
-        public bool CheckInvalidCaptchaErrorMessageIsPresent()
+        internal bool CheckInvalidCaptchaErrorMessageIsPresent()
         {
             try
             {
@@ -52,7 +58,7 @@ namespace PageObjects
             }
         }
 
-        public bool CheckСaptchaTextBoxIsPresent()
+        internal bool CheckСaptchaTextBoxIsPresent()
         {
             try
             {
@@ -63,6 +69,8 @@ namespace PageObjects
                 return false;
             }
         }
+
+        #endregion
     }
 }
 

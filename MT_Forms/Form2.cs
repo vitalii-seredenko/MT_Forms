@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
-using CommonMethods;
-using PageObjects;
+using MT_Forms.CommonMethods;
+using MT_Forms.PageObjects;
 using Keys = OpenQA.Selenium.Keys;
 
 namespace MT_Forms
 {
-    public partial class Form2 : Form
+    internal partial class Form2 : Form
     {
-        public Form2()
+        internal Form2()
         {
             InitializeComponent();
         }
@@ -20,8 +20,8 @@ namespace MT_Forms
 
         private void EnterCaptchaButton_Click(object sender, EventArgs e)
         {
-            LoginPage loginPage = new LoginPage();
-            BaseTownPage baseTownPage = new BaseTownPage();
+            var loginPage = new LoginPage();
+            var baseTownPage = new BaseTownPage();
             loginPage.captchaTextBox.SendKeys(Keys.Control + "a");
             loginPage.captchaTextBox.SendKeys(GoToUrl.captcha);
             loginPage.submitButton.Click();

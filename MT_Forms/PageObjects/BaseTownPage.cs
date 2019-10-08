@@ -1,32 +1,38 @@
-﻿using Core;
+﻿using MT_Forms.Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace PageObjects
+namespace MT_Forms.PageObjects
 {
-    class BaseTownPage
+    internal class BaseTownPage
     {
         private readonly IWebDriver _driver;
-        private int heroesHealth;
+        private int _heroesHealth;
 
-        public BaseTownPage()
+        internal BaseTownPage()
         {
-            _driver = DriverSingletone.Driver;
+            _driver = DriverSingleton.Driver;
             PageFactory.InitElements(_driver, this);
         }
 
-        [FindsBy(How = How.XPath, Using = "//a[contains(@class, 'go-btn') && not(*[contains(., 'В подземелье')])]")]
-        public IWebElement continueButton;
-        [FindsBy(How = How.XPath, Using = "//div[@class='billboard _promo']")]
-        public IWebElement billboardElement;
-        [FindsBy(How = How.XPath, Using = "//a[@class='popup-close']")]
-        public IWebElement closePopUpButton;
-        [FindsBy(How = How.XPath, Using = "//img[@alt='Мир Теней']")]
-        public IWebElement cityPicture;
-        [FindsBy(How = How.XPath, Using = "//span[@class='info']")]
-        public IWebElement heroesHealthTextBox;
+        #region WebElements
 
-        public bool CheckContinueButtonIsPresent()
+        [FindsBy(How = How.XPath, Using = "//a[contains(@class, 'go-btn') && not(*[contains(., 'В подземелье')])]")]
+        internal IWebElement continueButton;
+        [FindsBy(How = How.XPath, Using = "//div[@class='billboard _promo']")]
+        internal IWebElement billboardElement;
+        [FindsBy(How = How.XPath, Using = "//a[@class='popup-close']")]
+        internal IWebElement closePopUpButton;
+        [FindsBy(How = How.XPath, Using = "//img[@alt='Мир Теней']")]
+        internal IWebElement cityPicture;
+        [FindsBy(How = How.XPath, Using = "//span[@class='info']")]
+        internal IWebElement heroesHealthTextBox;
+
+        #endregion
+
+        #region CheckElementIsPresent
+
+        internal bool CheckContinueButtonIsPresent()
         {
             try
             {
@@ -38,7 +44,7 @@ namespace PageObjects
             }
         }
 
-        public bool CheckBillboardElementIsPresent()
+        internal bool CheckBillboardElementIsPresent()
         {
             try
             {
@@ -50,7 +56,7 @@ namespace PageObjects
             }
         }
 
-        public bool CheckCityPictureIsPresent()
+        internal bool CheckCityPictureIsPresent()
         {
             try
             {
@@ -62,14 +68,16 @@ namespace PageObjects
             }
         }
 
-        public void GetHeroesHealth()
+        #endregion
+
+        internal void GetHeroesHealth()
         {
-            heroesHealth = int.Parse(heroesHealthTextBox.Text);
+            _heroesHealth = int.Parse(heroesHealthTextBox.Text);
         }
 
-        public bool CheckHeroesHealthLessThenTwentyPercent()
+        internal bool CheckHeroesHealthLessThenTwentyPercent()
         {
-            return heroesHealth * 0.2 < int.Parse(heroesHealthTextBox.Text);
+            return _heroesHealth * 0.2 < int.Parse(heroesHealthTextBox.Text);
         }
     }
 }

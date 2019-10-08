@@ -1,11 +1,11 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using System;
 
-namespace Core
+namespace MT_Forms.Core
 {
-    class DriverFactory
+    internal class DriverFactory
     {
         internal IWebDriver GetDriver(string driverName)
         {
@@ -24,7 +24,7 @@ namespace Core
                         break;
                     }
                 default:
-                    throw new ArgumentOutOfRangeException(driverName, "This driver does not support");
+                    throw new ArgumentOutOfRangeException(driverName, $"Driver {driverName} does not support");
             }
             return driver;
         }

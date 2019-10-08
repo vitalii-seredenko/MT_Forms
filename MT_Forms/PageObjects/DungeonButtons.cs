@@ -1,46 +1,50 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
-using System;
+﻿using System;
 using System.Threading;
-using Core;
+using MT_Forms.Core;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.PageObjects;
 
-namespace PageObjects
+namespace MT_Forms.PageObjects
 {
-    class DungeonButtons
+    internal class DungeonButtons
     {
-        private IWebDriver _driver;
-        public DungeonButtons()
+        private readonly IWebDriver _driver;
+        private readonly Random _random;
+        internal DungeonButtons()
         {
-            _driver = DriverSingletone.Driver;
+            _driver = DriverSingleton.Driver;
+            _random = new Random();
             PageFactory.InitElements(_driver, this);
         }
 
-        Random random = new Random();
+        #region WebElements
 
         [FindsBy(How = How.XPath, Using = "//a[contains(text(), 'Войти')]")]
-        public IWebElement enterInDungeon;
+        internal IWebElement enterInDungeon;
         [FindsBy(How = How.XPath, Using = "//a[contains(., 'Начать бой')]")]
-        public IWebElement startBattle;
+        internal IWebElement startBattle;
         [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Добивать') or contains(text(),'Бить')]")]
-        public IWebElement firstAttackButton;
+        internal IWebElement firstAttackButton;
         [FindsBy(How = How.XPath, Using = "//span[contains(text(), 'Этап подземелья ') or contains(text(), 'Подземелье ')]")]
-        public IWebElement dungeonOrWaveIsCompleteTextBlock;
+        internal IWebElement dungeonOrWaveIsCompleteTextBlock;
         [FindsBy(How = How.XPath, Using = "//span[contains(contains(text(), 'Подземелье ')]")]
-        public IWebElement dungeonIsCompleteTextBlock;
+        internal IWebElement dungeonIsCompleteTextBlock;
         [FindsBy(How = How.XPath, Using = "//span[contains(text(), 'Этап подземелья ')]")]
-        public IWebElement waveIsCompleteTextBlock;
+        internal IWebElement waveIsCompleteTextBlock;
         [FindsBy(How = How.XPath, Using = "//a[contains(., 'Продолжить бой')]")]
-        public IWebElement continueBattle;
+        internal IWebElement continueBattle;
         [FindsBy(How = How.XPath, Using = "//a[contains(., 'Получить награду')]")]
-        public IWebElement giveRewardLink;
+        internal IWebElement giveRewardLink;
 
-        public void clickOnFirstAttackButton()
+        #endregion
+
+        internal void ClickOnFirstAttackButton()
         {
-            Thread.Sleep(random.Next(1500, 2500));
+            Thread.Sleep(_random.Next(1500, 2500));
             firstAttackButton.Click();
         }
 
-        public bool checkWaveIsComplete()
+        internal bool CheckWaveIsComplete()
         {
             try
             {
@@ -52,7 +56,7 @@ namespace PageObjects
             }
         }
 
-        public bool CheckDungeonIsComplete()
+        internal bool CheckDungeonIsComplete()
         {
             try
             {
@@ -64,7 +68,7 @@ namespace PageObjects
             }
         }
 
-        public bool checkGiveRewardLinkIsVisible()
+        internal bool CheckGiveRewardLinkIsPresent()
         {
             try
             {
