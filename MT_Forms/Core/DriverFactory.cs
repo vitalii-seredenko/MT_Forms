@@ -7,24 +7,20 @@ namespace MT_Forms.Core
 {
     internal class DriverFactory
     {
-        internal IWebDriver GetDriver(string driverName)
+        internal IWebDriver GetDriver(Drivers driverName)
         {
-            IWebDriver driver;
+           IWebDriver driver;
 
             switch (driverName)
             {
-                case "chrome":
-                    {
-                        driver = new ChromeDriver();
-                        break;
-                    }
-                case "firefox":
-                    {
-                        driver = new FirefoxDriver();
-                        break;
-                    }
+                case Drivers.Chrome:
+                    driver = new ChromeDriver();
+                    break;
+                case Drivers.FireFox:
+                    driver = new FirefoxDriver();
+                    break;
                 default:
-                    throw new ArgumentOutOfRangeException(driverName, $"Driver {driverName} does not support");
+                    throw new ArgumentException($"Driver {driverName} does not support");
             }
             return driver;
         }

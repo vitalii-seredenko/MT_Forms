@@ -1,18 +1,19 @@
-﻿using System.Windows.Forms;
-using MT_Forms.CommonMethods;
-using DungeonUrl = MT_Forms.CommonMethods.CommonUrls.DungeonUrl;
+﻿using MT_Forms.Common;
 using MT_Forms.PageObjects;
 using NLog;
 
 namespace MT_Forms.Scripts
 {
-    class VysokaiaTemnitsa
+    internal class VysokaiaTemnitsa
     {
         private Logger _log = LogManager.GetCurrentClassLogger();
+        private Form1 _form1 = new Form1();
         private readonly DungeonButtons _dungeonButtons;
         private readonly QuestsButtons _questsButtons;
+        private const string DungeonName = "VysokaiaTemnitsa";
+        private const string DailyQuestName = "Спокойствие Высокой Темницы";
 
-        public VysokaiaTemnitsa()
+        internal VysokaiaTemnitsa()
         {
             _dungeonButtons = new DungeonButtons();
             _questsButtons = new QuestsButtons();
@@ -20,29 +21,53 @@ namespace MT_Forms.Scripts
 
         public void VysokaiaTemnitsaScript()
         {
-            
-            if (new Form1().GoForTheCasketAndToEndCheckBox.CheckState == CheckState.Unchecked && new Form1().GoForTheCasketCheckBox.CheckState == CheckState.Checked)
+            var goToUrl = new GoToUrl();
+            var commonUrls = new CommonUrls();
+            var difficulty = new Difficulty();
+            if (_form1.GoForTheCasketAndToEndCheckBox.Checked == false && _form1.GoForTheCasketCheckBox.Checked == false)
             {
-                new GoToUrl().NavigateToUrl(new CommonUrls().GetDungeonUrlAndChooseDifficulty(DungeonUrl.VysokaiaTemnitsa, "normal"));
+                goToUrl.NavigateToUrl(commonUrls.GetDungeonUrlAndChooseDifficulty(DungeonName, difficulty.GetDungeonDifficulty()));
                 _dungeonButtons.enterInDungeon.Click();
                 _dungeonButtons.startBattle.Click();
+                GoInDungeonForTheItems();
             }
-            else if (new Form1().GoForTheCasketAndToEndCheckBox.CheckState == CheckState.Checked)
+            else if (_form1.GoForTheCasketAndToEndCheckBox.Checked)
             {
-                new GoToUrl().NavigateToUrl("https://m.vten.ru/quest/qHeroicHighDungeonDaily");
+                goToUrl.NavigateToUrl(commonUrls.GetQuestUrl(DailyQuestName));
                 _questsButtons.findGangButton.Click();
                 _dungeonButtons.enterInDungeon.Click();
                 _dungeonButtons.startBattle.Click();
                 GoInDungeonForTheCasketAndItems();
             }
-            else if (new Form1().GoForTheCasketCheckBox.CheckState == CheckState.Checked)
+            else if (_form1.GoForTheCasketCheckBox.Checked)
             {
-                new GoToUrl().NavigateToUrl("https://m.vten.ru/quest/qHeroicHighDungeonDaily");
+                goToUrl.NavigateToUrl(commonUrls.GetQuestUrl(DailyQuestName));
                 _questsButtons.findGangButton.Click();
                 _dungeonButtons.enterInDungeon.Click();
                 _dungeonButtons.startBattle.Click();
                 GoInDungeonOnlyForTheCasket();
             }
+        }
+
+        private void GoInDungeonForTheItems()
+        {
+            _log.Info("User go in 'Vysokaia Temnitsa' for the items");
+            while (true)
+            {
+                if (!_dungeonButtons.CheckWaveIsComplete() && !_dungeonButtons.CheckDungeonIsComplete() && !_dungeonButtons.CheckGiveRewardLinkIsPresent())
+                {
+                    _dungeonButtons.ClickOnFirstAttackButton();
+                }
+                else if (_dungeonButtons.CheckWaveIsComplete())
+                {
+                    _dungeonButtons.continueBattle.Click();
+                }
+                else if (_dungeonButtons.CheckDungeonIsComplete())
+                {
+                    break;
+                }
+            }
+            //Дописать
         }
 
         private void GoInDungeonForTheCasketAndItems()

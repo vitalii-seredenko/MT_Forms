@@ -29,21 +29,26 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.goToMTButton = new System.Windows.Forms.Button();
             this.loginTextBox = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.LoginGroupBox = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.loginGroupBox = new System.Windows.Forms.GroupBox();
+            this.exitButton = new System.Windows.Forms.Button();
             this.goForTheCasketCheckBox = new System.Windows.Forms.CheckBox();
             this.goForTheCasketAndToEndCheckBox = new System.Windows.Forms.CheckBox();
-            this.LoginGroupBox.SuspendLayout();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.normalDifficultyRadioButton = new System.Windows.Forms.RadioButton();
+            this.hardDifficultyRadioButton = new System.Windows.Forms.RadioButton();
+            this.impossibleDifficultyRadioButton = new System.Windows.Forms.RadioButton();
+            this.difficultyCheckBoxesGroupBox = new System.Windows.Forms.GroupBox();
+            this.loginGroupBox.SuspendLayout();
+            this.difficultyCheckBoxesGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 146);
+            this.button1.Location = new System.Drawing.Point(12, 196);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(106, 84);
             this.button1.TabIndex = 0;
@@ -51,15 +56,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.VisokayaTemnitsaButton_Click);
             // 
-            // button2
+            // goToMTButton
             // 
-            this.button2.Location = new System.Drawing.Point(31, 68);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(181, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Войти в Мир Теней";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.GoToMTButton_Click);
+            this.goToMTButton.Location = new System.Drawing.Point(31, 68);
+            this.goToMTButton.Name = "goToMTButton";
+            this.goToMTButton.Size = new System.Drawing.Size(181, 23);
+            this.goToMTButton.TabIndex = 1;
+            this.goToMTButton.Text = "Войти в Мир Теней";
+            this.goToMTButton.UseVisualStyleBackColor = true;
+            this.goToMTButton.Click += new System.EventHandler(this.GoToMTButton_Click);
             // 
             // loginTextBox
             // 
@@ -68,32 +73,6 @@
             this.loginTextBox.Size = new System.Drawing.Size(113, 20);
             this.loginTextBox.TabIndex = 2;
             this.loginTextBox.TextChanged += new System.EventHandler(this.LoginTextBox_TextChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(6, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox2.Size = new System.Drawing.Size(100, 13);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "Имя персонажа ";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(6, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox3.Size = new System.Drawing.Size(100, 13);
-            this.textBox3.TabIndex = 4;
-            this.textBox3.Text = "Пароль";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // passwordTextBox
             // 
@@ -104,35 +83,35 @@
             this.passwordTextBox.TabIndex = 5;
             this.passwordTextBox.TextChanged += new System.EventHandler(this.PasswordTextBox_TextChanged);
             // 
-            // LoginGroupBox
+            // loginGroupBox
             // 
-            this.LoginGroupBox.Controls.Add(this.button3);
-            this.LoginGroupBox.Controls.Add(this.textBox2);
-            this.LoginGroupBox.Controls.Add(this.passwordTextBox);
-            this.LoginGroupBox.Controls.Add(this.button2);
-            this.LoginGroupBox.Controls.Add(this.textBox3);
-            this.LoginGroupBox.Controls.Add(this.loginTextBox);
-            this.LoginGroupBox.Location = new System.Drawing.Point(12, 12);
-            this.LoginGroupBox.Name = "LoginGroupBox";
-            this.LoginGroupBox.Size = new System.Drawing.Size(241, 128);
-            this.LoginGroupBox.TabIndex = 6;
-            this.LoginGroupBox.TabStop = false;
-            this.LoginGroupBox.Text = "Логин";
+            this.loginGroupBox.Controls.Add(this.label3);
+            this.loginGroupBox.Controls.Add(this.label2);
+            this.loginGroupBox.Controls.Add(this.exitButton);
+            this.loginGroupBox.Controls.Add(this.passwordTextBox);
+            this.loginGroupBox.Controls.Add(this.goToMTButton);
+            this.loginGroupBox.Controls.Add(this.loginTextBox);
+            this.loginGroupBox.Location = new System.Drawing.Point(12, 12);
+            this.loginGroupBox.Name = "loginGroupBox";
+            this.loginGroupBox.Size = new System.Drawing.Size(241, 128);
+            this.loginGroupBox.TabIndex = 6;
+            this.loginGroupBox.TabStop = false;
+            this.loginGroupBox.Text = "Логин";
             // 
-            // button3
+            // exitButton
             // 
-            this.button3.Location = new System.Drawing.Point(31, 97);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(181, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Выход";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.ExitButton_Click);
+            this.exitButton.Location = new System.Drawing.Point(31, 97);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(181, 23);
+            this.exitButton.TabIndex = 6;
+            this.exitButton.Text = "Выход";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // goForTheCasketCheckBox
             // 
             this.goForTheCasketCheckBox.AutoSize = true;
-            this.goForTheCasketCheckBox.Location = new System.Drawing.Point(129, 151);
+            this.goForTheCasketCheckBox.Location = new System.Drawing.Point(128, 204);
             this.goForTheCasketCheckBox.Name = "goForTheCasketCheckBox";
             this.goForTheCasketCheckBox.Size = new System.Drawing.Size(132, 30);
             this.goForTheCasketCheckBox.TabIndex = 7;
@@ -143,7 +122,7 @@
             // goForTheCasketAndToEndCheckBox
             // 
             this.goForTheCasketAndToEndCheckBox.AutoSize = true;
-            this.goForTheCasketAndToEndCheckBox.Location = new System.Drawing.Point(124, 181);
+            this.goForTheCasketAndToEndCheckBox.Location = new System.Drawing.Point(128, 237);
             this.goForTheCasketAndToEndCheckBox.Name = "goForTheCasketAndToEndCheckBox";
             this.goForTheCasketAndToEndCheckBox.Size = new System.Drawing.Size(129, 43);
             this.goForTheCasketAndToEndCheckBox.TabIndex = 8;
@@ -151,19 +130,86 @@
             this.goForTheCasketAndToEndCheckBox.UseVisualStyleBackColor = true;
             this.goForTheCasketAndToEndCheckBox.Click += new System.EventHandler(this.goForTheCasketAndToEndCheckBox_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(28, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Пароль";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Имя персонажа";
+            // 
+            // normalDifficultyRadioButton
+            // 
+            this.normalDifficultyRadioButton.AutoSize = true;
+            this.normalDifficultyRadioButton.Checked = true;
+            this.normalDifficultyRadioButton.Location = new System.Drawing.Point(6, 19);
+            this.normalDifficultyRadioButton.Name = "normalDifficultyRadioButton";
+            this.normalDifficultyRadioButton.Size = new System.Drawing.Size(59, 17);
+            this.normalDifficultyRadioButton.TabIndex = 10;
+            this.normalDifficultyRadioButton.TabStop = true;
+            this.normalDifficultyRadioButton.Text = "Норма";
+            this.normalDifficultyRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // hardDifficultyRadioButton
+            // 
+            this.hardDifficultyRadioButton.AutoSize = true;
+            this.hardDifficultyRadioButton.Location = new System.Drawing.Point(95, 19);
+            this.hardDifficultyRadioButton.Name = "hardDifficultyRadioButton";
+            this.hardDifficultyRadioButton.Size = new System.Drawing.Size(55, 17);
+            this.hardDifficultyRadioButton.TabIndex = 11;
+            this.hardDifficultyRadioButton.TabStop = true;
+            this.hardDifficultyRadioButton.Text = "Герой";
+            this.hardDifficultyRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // impossibleDifficultyRadioButton
+            // 
+            this.impossibleDifficultyRadioButton.AutoSize = true;
+            this.impossibleDifficultyRadioButton.Location = new System.Drawing.Point(175, 19);
+            this.impossibleDifficultyRadioButton.Name = "impossibleDifficultyRadioButton";
+            this.impossibleDifficultyRadioButton.Size = new System.Drawing.Size(60, 17);
+            this.impossibleDifficultyRadioButton.TabIndex = 12;
+            this.impossibleDifficultyRadioButton.TabStop = true;
+            this.impossibleDifficultyRadioButton.Text = "Брутал";
+            this.impossibleDifficultyRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // difficultyCheckBoxesGroupBox
+            // 
+            this.difficultyCheckBoxesGroupBox.Controls.Add(this.impossibleDifficultyRadioButton);
+            this.difficultyCheckBoxesGroupBox.Controls.Add(this.normalDifficultyRadioButton);
+            this.difficultyCheckBoxesGroupBox.Controls.Add(this.hardDifficultyRadioButton);
+            this.difficultyCheckBoxesGroupBox.Location = new System.Drawing.Point(12, 146);
+            this.difficultyCheckBoxesGroupBox.Name = "difficultyCheckBoxesGroupBox";
+            this.difficultyCheckBoxesGroupBox.Size = new System.Drawing.Size(241, 44);
+            this.difficultyCheckBoxesGroupBox.TabIndex = 13;
+            this.difficultyCheckBoxesGroupBox.TabStop = false;
+            this.difficultyCheckBoxesGroupBox.Text = "Сложность подземелий";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(269, 236);
+            this.ClientSize = new System.Drawing.Size(269, 290);
+            this.Controls.Add(this.difficultyCheckBoxesGroupBox);
             this.Controls.Add(this.goForTheCasketAndToEndCheckBox);
             this.Controls.Add(this.goForTheCasketCheckBox);
-            this.Controls.Add(this.LoginGroupBox);
+            this.Controls.Add(this.loginGroupBox);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.LoginGroupBox.ResumeLayout(false);
-            this.LoginGroupBox.PerformLayout();
+            this.loginGroupBox.ResumeLayout(false);
+            this.loginGroupBox.PerformLayout();
+            this.difficultyCheckBoxesGroupBox.ResumeLayout(false);
+            this.difficultyCheckBoxesGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,15 +218,19 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button goToMTButton;
         private System.Windows.Forms.TextBox loginTextBox;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox passwordTextBox;
-        private System.Windows.Forms.GroupBox LoginGroupBox;
+        private System.Windows.Forms.GroupBox loginGroupBox;
         private System.Windows.Forms.CheckBox goForTheCasketCheckBox;
         private System.Windows.Forms.CheckBox goForTheCasketAndToEndCheckBox;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton normalDifficultyRadioButton;
+        private System.Windows.Forms.RadioButton hardDifficultyRadioButton;
+        private System.Windows.Forms.RadioButton impossibleDifficultyRadioButton;
+        private System.Windows.Forms.GroupBox difficultyCheckBoxesGroupBox;
     }
 }
 

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using MT_Forms.CommonMethods;
+using MT_Forms.Common;
 using MT_Forms.PageObjects;
 using Keys = OpenQA.Selenium.Keys;
 

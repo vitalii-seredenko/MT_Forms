@@ -62,8 +62,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommonMethods\CommonUrls.cs" />
-    <Compile Include="CommonMethods\GoToUrl.cs" />
+    <Compile Include="Common\CommonUrls.cs" />
+    <Compile Include="Common\Difficulty.cs" />
+    <Compile Include="Common\GoToUrl.cs" />
     <Compile Include="Core\DriverFactory.cs" />
     <Compile Include="Core\DriverSingleton.cs" />
     <Compile Include="Form1.cs">

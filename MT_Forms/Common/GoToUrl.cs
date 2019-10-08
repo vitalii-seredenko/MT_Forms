@@ -5,7 +5,7 @@ using NLog;
 using OpenQA.Selenium;
 using Keys = OpenQA.Selenium.Keys;
 
-namespace MT_Forms.CommonMethods
+namespace MT_Forms.Common
 {
     internal class GoToUrl
     {

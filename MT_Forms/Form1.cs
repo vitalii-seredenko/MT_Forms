@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using MT_Forms.CommonMethods;
+using MT_Forms.Common;
 using MT_Forms.Core;
 using MT_Forms.Scripts;
-using OpenQA.Selenium;
 
 namespace MT_Forms
 {
@@ -14,8 +13,10 @@ namespace MT_Forms
             InitializeComponent();
         }
 
-        public CheckBox GoForTheCasketCheckBox => goForTheCasketCheckBox;
-        public CheckBox GoForTheCasketAndToEndCheckBox => goForTheCasketAndToEndCheckBox;
+        internal CheckBox GoForTheCasketCheckBox => goForTheCasketCheckBox;
+        internal CheckBox GoForTheCasketAndToEndCheckBox => goForTheCasketAndToEndCheckBox;
+        internal RadioButton HardDifficultyRadioButton => hardDifficultyRadioButton;
+        internal RadioButton ImpossibleDifficultyRadioButton => impossibleDifficultyRadioButton;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -37,6 +38,11 @@ namespace MT_Forms
             new GoToUrl().GoToMt();
         }
 
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            DriverSingleton.DisposeDriver();
+        }
+
         private void VisokayaTemnitsaButton_Click(object sender, EventArgs e)
         {
             new VysokaiaTemnitsa().VysokaiaTemnitsaScript();
@@ -44,19 +50,14 @@ namespace MT_Forms
 
         private void goForTheCasketCheckBox_Click(object sender, EventArgs e)
         {
-            goForTheCasketCheckBox.CheckState = CheckState.Checked;
-            goForTheCasketAndToEndCheckBox.CheckState = CheckState.Unchecked;
+            goForTheCasketCheckBox.Checked = goForTheCasketCheckBox.CheckState == CheckState.Checked;
+            goForTheCasketAndToEndCheckBox.Checked = false;
         }
 
         private void goForTheCasketAndToEndCheckBox_Click(object sender, EventArgs e)
         {
-            goForTheCasketAndToEndCheckBox.CheckState = CheckState.Checked;
-            goForTheCasketCheckBox.CheckState = CheckState.Unchecked;
-        }
-
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            DriverSingleton.DisposeDriver();
+            goForTheCasketAndToEndCheckBox.Checked = goForTheCasketAndToEndCheckBox.CheckState == CheckState.Checked;
+            goForTheCasketCheckBox.Checked = false;
         }
     }
 }
