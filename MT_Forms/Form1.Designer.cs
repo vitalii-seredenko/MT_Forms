@@ -36,6 +36,7 @@
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.LoginGroupBox = new System.Windows.Forms.GroupBox();
             this.goForTheCasketCheckBox = new System.Windows.Forms.CheckBox();
+            this.goForTheCasketAndToEndCheckBox = new System.Windows.Forms.CheckBox();
             this.LoginGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +44,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(12, 121);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 39);
+            this.button1.Size = new System.Drawing.Size(106, 84);
             this.button1.TabIndex = 0;
             this.button1.Text = "Пройти \"Высокая Темница\"";
             this.button1.UseVisualStyleBackColor = true;
@@ -53,7 +54,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(31, 68);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(154, 23);
+            this.button2.Size = new System.Drawing.Size(181, 23);
             this.button2.TabIndex = 1;
             this.button2.Text = "Войти в Мир Теней";
             this.button2.UseVisualStyleBackColor = true;
@@ -63,7 +64,7 @@
             // 
             this.loginTextBox.Location = new System.Drawing.Point(117, 16);
             this.loginTextBox.Name = "loginTextBox";
-            this.loginTextBox.Size = new System.Drawing.Size(100, 20);
+            this.loginTextBox.Size = new System.Drawing.Size(113, 20);
             this.loginTextBox.TabIndex = 2;
             this.loginTextBox.TextChanged += new System.EventHandler(this.LoginTextBox_TextChanged);
             // 
@@ -98,7 +99,7 @@
             this.passwordTextBox.Location = new System.Drawing.Point(117, 42);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
-            this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
+            this.passwordTextBox.Size = new System.Drawing.Size(113, 20);
             this.passwordTextBox.TabIndex = 5;
             this.passwordTextBox.TextChanged += new System.EventHandler(this.PasswordTextBox_TextChanged);
             // 
@@ -111,7 +112,7 @@
             this.LoginGroupBox.Controls.Add(this.loginTextBox);
             this.LoginGroupBox.Location = new System.Drawing.Point(12, 12);
             this.LoginGroupBox.Name = "LoginGroupBox";
-            this.LoginGroupBox.Size = new System.Drawing.Size(234, 103);
+            this.LoginGroupBox.Size = new System.Drawing.Size(246, 103);
             this.LoginGroupBox.TabIndex = 6;
             this.LoginGroupBox.TabStop = false;
             this.LoginGroupBox.Text = "Логин";
@@ -121,16 +122,29 @@
             this.goForTheCasketCheckBox.AutoSize = true;
             this.goForTheCasketCheckBox.Location = new System.Drawing.Point(129, 126);
             this.goForTheCasketCheckBox.Name = "goForTheCasketCheckBox";
-            this.goForTheCasketCheckBox.Size = new System.Drawing.Size(113, 30);
+            this.goForTheCasketCheckBox.Size = new System.Drawing.Size(132, 30);
             this.goForTheCasketCheckBox.TabIndex = 7;
-            this.goForTheCasketCheckBox.Text = "Пойти только за \r\nшкатулкой";
+            this.goForTheCasketCheckBox.Text = "Взять квест и пойти \r\nза шкатулкой";
             this.goForTheCasketCheckBox.UseVisualStyleBackColor = true;
+            this.goForTheCasketCheckBox.Click += new System.EventHandler(this.goForTheCasketCheckBox_Click);
+            // 
+            // goForTheCasketAndToEndCheckBox
+            // 
+            this.goForTheCasketAndToEndCheckBox.AutoSize = true;
+            this.goForTheCasketAndToEndCheckBox.Location = new System.Drawing.Point(129, 162);
+            this.goForTheCasketAndToEndCheckBox.Name = "goForTheCasketAndToEndCheckBox";
+            this.goForTheCasketAndToEndCheckBox.Size = new System.Drawing.Size(129, 43);
+            this.goForTheCasketAndToEndCheckBox.TabIndex = 8;
+            this.goForTheCasketAndToEndCheckBox.Text = "Взять квест и\r\nпройти подземелье \r\nполностью";
+            this.goForTheCasketAndToEndCheckBox.UseVisualStyleBackColor = true;
+            this.goForTheCasketAndToEndCheckBox.Click += new System.EventHandler(this.goForTheCasketAndToEndCheckBox_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(258, 184);
+            this.ClientSize = new System.Drawing.Size(269, 229);
+            this.Controls.Add(this.goForTheCasketAndToEndCheckBox);
             this.Controls.Add(this.goForTheCasketCheckBox);
             this.Controls.Add(this.LoginGroupBox);
             this.Controls.Add(this.button1);
@@ -153,6 +167,7 @@
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.GroupBox LoginGroupBox;
         private System.Windows.Forms.CheckBox goForTheCasketCheckBox;
+        private System.Windows.Forms.CheckBox goForTheCasketAndToEndCheckBox;
     }
 }
 

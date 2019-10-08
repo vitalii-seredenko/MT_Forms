@@ -2,33 +2,45 @@
 using PageObjects;
 using CommonMethods;
 using MT_Forms;
+using MT_Forms.CommonMethods;
+using DungeonUrl = MT_Forms.CommonMethods.CommonUrls.DungeonUrl;
 
 namespace Scripts
 {
-    class VisokaiaTemnitsa
+    class VysokaiaTemnitsa
     {
         readonly DungeonButtons _dungeonButtons;
         readonly QuestsButtons _questsButtons;
 
-        public VisokaiaTemnitsa()
+        public VysokaiaTemnitsa()
         {
             _dungeonButtons = new DungeonButtons();
             _questsButtons = new QuestsButtons();
         }
 
-        public void VisokaiaTemnitsaScript()
+        public void VysokaiaTemnitsaScript()
         {
-            new GoToUrl().NavigateToUrl("https://m.vten.ru/quest/qHeroicHighDungeonDaily");
-            _questsButtons.findGangButton.Click();
-            _dungeonButtons.enterInDungeon.Click();
-            _dungeonButtons.startBattle.Click();
-
-            if (new Form1().GoForTheCasketCheckBox.CheckState == CheckState.Unchecked)
+            
+            if (new Form1().GoForTheCasketAndToEndCheckBox.CheckState == CheckState.Unchecked && new Form1().GoForTheCasketCheckBox.CheckState == CheckState.Checked)
             {
+                new GoToUrl().NavigateToUrl(new CommonUrls().GetDungeonUrlAndChooseDifficulty(DungeonUrl.VysokaiaTemnitsa, "normal"));
+                _dungeonButtons.enterInDungeon.Click();
+                _dungeonButtons.startBattle.Click();
+            }
+            else if (new Form1().GoForTheCasketAndToEndCheckBox.CheckState == CheckState.Checked)
+            {
+                new GoToUrl().NavigateToUrl("https://m.vten.ru/quest/qHeroicHighDungeonDaily");
+                _questsButtons.findGangButton.Click();
+                _dungeonButtons.enterInDungeon.Click();
+                _dungeonButtons.startBattle.Click();
                 GoInDungeonForTheCasketAndItems();
             }
             else if (new Form1().GoForTheCasketCheckBox.CheckState == CheckState.Checked)
             {
+                new GoToUrl().NavigateToUrl("https://m.vten.ru/quest/qHeroicHighDungeonDaily");
+                _questsButtons.findGangButton.Click();
+                _dungeonButtons.enterInDungeon.Click();
+                _dungeonButtons.startBattle.Click();
                 GoInDungeonOnlyForTheCasket();
             }
         }

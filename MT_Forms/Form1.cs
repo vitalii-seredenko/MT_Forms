@@ -17,6 +17,7 @@ namespace MT_Forms
         }
 
         public CheckBox GoForTheCasketCheckBox => goForTheCasketCheckBox;
+        public CheckBox GoForTheCasketAndToEndCheckBox => goForTheCasketAndToEndCheckBox;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -40,7 +41,19 @@ namespace MT_Forms
 
         private void VisokayaTemnitsaButton_Click(object sender, EventArgs e)
         {
-            new VisokaiaTemnitsa().VisokaiaTemnitsaScript();
+            new VysokaiaTemnitsa().VysokaiaTemnitsaScript();
+        }
+
+        private void goForTheCasketCheckBox_Click(object sender, EventArgs e)
+        {
+            goForTheCasketCheckBox.CheckState = CheckState.Checked;
+            goForTheCasketAndToEndCheckBox.CheckState = CheckState.Unchecked;
+        }
+
+        private void goForTheCasketAndToEndCheckBox_Click(object sender, EventArgs e)
+        {
+            goForTheCasketAndToEndCheckBox.CheckState = CheckState.Checked;
+            goForTheCasketCheckBox.CheckState = CheckState.Unchecked;
         }
     }
 }
