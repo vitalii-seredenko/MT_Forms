@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using MT_Forms.Common;
-using MT_Forms.Core;
 using MT_Forms.Scripts;
 
 namespace MT_Forms
@@ -25,22 +24,22 @@ namespace MT_Forms
 
         private void LoginTextBox_TextChanged(object sender, EventArgs e)
         {
-            GoToUrl.loginName = loginTextBox.Text;
+            Login.loginName = loginTextBox.Text;
         }
 
         private void PasswordTextBox_TextChanged(object sender, EventArgs e)
         {
-            GoToUrl.password = passwordTextBox.Text;
+            Login.password = passwordTextBox.Text;
         }
 
         private void GoToMTButton_Click(object sender, EventArgs e)
         {
-            new GoToUrl().GoToMt();
+            new Login().GoToMt();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            DriverSingleton.DisposeDriver();
+            new Core.Application().DisposeDriver();
         }
 
         private void VisokayaTemnitsaButton_Click(object sender, EventArgs e)

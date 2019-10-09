@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Windows.Forms;
+using MT_Forms.Core;
 using NLog;
 
 namespace MT_Forms
@@ -12,9 +12,8 @@ namespace MT_Forms
         private static void Main()
         {
             _log.Info("<-----------New application session started----------->");
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            System.Windows.Forms.Application.EnableVisualStyles();
+            System.Windows.Forms.Application.Run(FormsInitialization.form1);
             _log.Info("<-----------Application finished----------->\n");
         }
     }

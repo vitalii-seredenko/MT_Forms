@@ -1,4 +1,6 @@
-﻿using MT_Forms.Common;
+﻿using MT_Forms.ApplicationData;
+using MT_Forms.Common;
+using MT_Forms.Core;
 using MT_Forms.PageObjects;
 using NLog;
 
@@ -7,7 +9,6 @@ namespace MT_Forms.Scripts
     internal class VysokaiaTemnitsa
     {
         private Logger _log = LogManager.GetCurrentClassLogger();
-        private Form1 _form1 = new Form1();
         private readonly DungeonButtons _dungeonButtons;
         private readonly QuestsButtons _questsButtons;
         private const string DungeonName = "VysokaiaTemnitsa";
@@ -21,27 +22,27 @@ namespace MT_Forms.Scripts
 
         public void VysokaiaTemnitsaScript()
         {
-            var goToUrl = new GoToUrl();
+            var application = new Core.Application();
             var commonUrls = new CommonUrls();
             var difficulty = new Difficulty();
-            if (_form1.GoForTheCasketAndToEndCheckBox.Checked == false && _form1.GoForTheCasketCheckBox.Checked == false)
+            if (!FormsInitialization.form1.GoForTheCasketAndToEndCheckBox.Checked && !FormsInitialization.form1.GoForTheCasketCheckBox.Checked)
             {
-                goToUrl.NavigateToUrl(commonUrls.GetDungeonUrlAndChooseDifficulty(DungeonName, difficulty.GetDungeonDifficulty()));
+                application.NavigateToUrl(commonUrls.GetDungeonUrlAndChooseDifficulty(DungeonName, difficulty.GetDungeonDifficulty()));
                 _dungeonButtons.enterInDungeon.Click();
                 _dungeonButtons.startBattle.Click();
                 GoInDungeonForTheItems();
             }
-            else if (_form1.GoForTheCasketAndToEndCheckBox.Checked)
+            else if (FormsInitialization.form1.GoForTheCasketAndToEndCheckBox.Checked == false)
             {
-                goToUrl.NavigateToUrl(commonUrls.GetQuestUrl(DailyQuestName));
+                application.NavigateToUrl(commonUrls.GetQuestUrl(DailyQuestName));
                 _questsButtons.findGangButton.Click();
                 _dungeonButtons.enterInDungeon.Click();
                 _dungeonButtons.startBattle.Click();
                 GoInDungeonForTheCasketAndItems();
             }
-            else if (_form1.GoForTheCasketCheckBox.Checked)
+            else if (FormsInitialization.form1.GoForTheCasketCheckBox.Checked == false)
             {
-                goToUrl.NavigateToUrl(commonUrls.GetQuestUrl(DailyQuestName));
+                application.NavigateToUrl(commonUrls.GetQuestUrl(DailyQuestName));
                 _questsButtons.findGangButton.Click();
                 _dungeonButtons.enterInDungeon.Click();
                 _dungeonButtons.startBattle.Click();

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using DungeonDifficulty = MT_Forms.Common.Difficulty.DungeonDifficulty;
 
-namespace MT_Forms.Common
+namespace MT_Forms.ApplicationData
 {
     internal class CommonUrls
     {

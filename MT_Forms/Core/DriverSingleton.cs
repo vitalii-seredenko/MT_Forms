@@ -21,10 +21,5 @@ namespace MT_Forms.Core
                 return _driver;
             }
         }
-
-        internal static void DisposeDriver()
-        {
-            _driver.Dispose();
-        }
     }
 }
