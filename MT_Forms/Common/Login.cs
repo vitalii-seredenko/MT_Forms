@@ -9,7 +9,6 @@ namespace MT_Forms.Common
     {
         internal static string loginName; //Друг Инженера
         internal static string password;  //paleksanov4194
-        private Logger _log = LogManager.GetCurrentClassLogger();
         private readonly LoginPage _loginPage;
 
         internal Login()
@@ -28,7 +27,7 @@ namespace MT_Forms.Common
                 generalBasePage.SwitchToLightVersion();
             }
             LoginWithParameters();
-            _log.Info("Program successfully logged in MT");
+            LogManager.GetCurrentClassLogger().Info("Program successfully logged in MT");
         }
 
         internal void LoginWithParameters()

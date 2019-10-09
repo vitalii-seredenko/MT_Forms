@@ -8,7 +8,7 @@ namespace MT_Forms.Scripts
 {
     internal class VysokaiaTemnitsa
     {
-        private Logger _log = LogManager.GetCurrentClassLogger();
+        private readonly Logger _log;
         private readonly DungeonButtons _dungeonButtons;
         private readonly QuestsButtons _questsButtons;
         private const string DungeonName = "VysokaiaTemnitsa";
@@ -16,6 +16,7 @@ namespace MT_Forms.Scripts
 
         internal VysokaiaTemnitsa()
         {
+            _log = LogManager.GetCurrentClassLogger();
             _dungeonButtons = new DungeonButtons();
             _questsButtons = new QuestsButtons();
         }
