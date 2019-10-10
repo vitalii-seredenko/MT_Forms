@@ -7,6 +7,8 @@ namespace MT_Forms.PageObjects
     internal class GeneralBasePage
     {
         private readonly IWebDriver _driver;
+
+        [System.Obsolete]
         internal GeneralBasePage()
         {
              _driver = DriverSingleton.Driver;

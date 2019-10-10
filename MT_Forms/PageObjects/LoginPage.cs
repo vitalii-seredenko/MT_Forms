@@ -7,6 +7,8 @@ namespace MT_Forms.PageObjects
     internal class LoginPage
     {
         private readonly IWebDriver _driver;
+
+        [System.Obsolete]
         internal LoginPage()
         {
             _driver = DriverSingleton.Driver;

@@ -23,7 +23,7 @@ namespace MT_Forms.Scripts
 
         public void VysokaiaTemnitsaScript()
         {
-            var application = new Core.Application();
+            var application = new Application();
             var commonUrls = new CommonUrls();
             var difficulty = new Difficulty();
             if (!FormsInitialization.form1.GoForTheCasketAndToEndCheckBox.Checked && !FormsInitialization.form1.GoForTheCasketCheckBox.Checked)
