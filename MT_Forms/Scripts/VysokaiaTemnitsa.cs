@@ -28,7 +28,7 @@ namespace MT_Forms.Scripts
             var difficulty = new Difficulty();
             if (!FormsInitialization.form1.GoForTheCasketAndToEndCheckBox.Checked && !FormsInitialization.form1.GoForTheCasketCheckBox.Checked)
             {
-                application.NavigateToUrl(commonUrls.GetDungeonUrlAndChooseDifficulty(DungeonName, difficulty.GetDungeonDifficulty()));
+                application.NavigateToUrl(difficulty.ChooseDungeonDifficulty(DungeonName, difficulty.GetDungeonDifficulty()));
                 _dungeonButtons.enterInDungeon.Click();
                 _dungeonButtons.startBattle.Click();
                 GoInDungeonForTheItems();

@@ -19,17 +19,6 @@ namespace MT_Forms.ApplicationData
         {
             {"Спокойствие Высокой Темницы", "https://m.vten.ru/quest/qHeroicHighDungeonDaily"},
         };
-        
-        internal string GetDungeonUrlAndChooseDifficulty(string dungeonName, DungeonDifficulty difficulty)
-        {
-            var dungeonUrl = GetDungeonUrl(dungeonName);
-            dungeonUrl = difficulty.Equals(DungeonDifficulty.Normal) ? dungeonUrl + "/normal" :
-                            difficulty.Equals(DungeonDifficulty.Hard) ? dungeonUrl + "/hard" :
-                            difficulty.Equals(DungeonDifficulty.Impossible) ? dungeonUrl + "/impossible" :
-                            throw new ArgumentException($"Specified complexity ({difficulty}) " +
-                                                    "does not match any of the existing ones: 'normal', 'hard', 'impossible'");
-            return dungeonUrl;
-        }
 
         internal string GetDungeonUrl(string dungeonName)
         {
