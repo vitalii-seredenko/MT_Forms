@@ -9,9 +9,11 @@ namespace MT_Forms.Common
     {
         internal static string captcha;
         private readonly BaseTownPage _baseTownPage;
+        private readonly Logger _logger;
 
         internal CaptchaProcessing()
         {
+            _logger = new Logger();
             _baseTownPage = new BaseTownPage();
         }
 
@@ -19,7 +21,7 @@ namespace MT_Forms.Common
         {
             if (new LoginPage().CheckСaptchaTextBoxIsPresent())
             {
-                FormsInitialization.form2.ShowDialog();
+                FormsInitialization.captchaProcessingForm.ShowDialog();
             }
         }
 
@@ -32,6 +34,7 @@ namespace MT_Forms.Common
             if (loginPage.CheckInvalidCaptchaErrorMessageIsPresent())
             {
                 MessageBox.Show("Введите капчу заново!", "Ошибка");
+                _logger.Error("User entered an invalid captcha");
             }
             CloseCaptchaProcessingDialogWindow();
         }
@@ -41,7 +44,7 @@ namespace MT_Forms.Common
             if (_baseTownPage.CheckCityPictureIsPresent())
             {
                 _baseTownPage.GetHeroesHealth();
-                FormsInitialization.form2.Hide();
+                FormsInitialization.captchaProcessingForm.Hide();
             }
         }
     }

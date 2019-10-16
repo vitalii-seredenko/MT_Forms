@@ -1,6 +1,6 @@
 ﻿namespace MT_Forms
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.button1 = new System.Windows.Forms.Button();
             this.goToMTButton = new System.Windows.Forms.Button();
             this.loginTextBox = new System.Windows.Forms.TextBox();
@@ -43,7 +44,11 @@
             this.impossibleDifficultyRadioButton = new System.Windows.Forms.RadioButton();
             this.difficultyCheckBoxesGroupBox = new System.Windows.Forms.GroupBox();
             this.logBox = new System.Windows.Forms.ListBox();
-            this.logButton = new System.Windows.Forms.Button();
+            this.showOrHideLogButton = new System.Windows.Forms.Button();
+            this.showLogButton = new System.Windows.Forms.Button();
+            this.showInfoLogButton = new System.Windows.Forms.Button();
+            this.showErrorLogButton = new System.Windows.Forms.Button();
+            this.showFatalLogButton = new System.Windows.Forms.Button();
             this.loginGroupBox.SuspendLayout();
             this.difficultyCheckBoxesGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -137,7 +142,7 @@
             this.goForTheCasketCheckBox.TabIndex = 7;
             this.goForTheCasketCheckBox.Text = "Взять квест и пойти \r\nза шкатулкой";
             this.goForTheCasketCheckBox.UseVisualStyleBackColor = true;
-            this.goForTheCasketCheckBox.Click += new System.EventHandler(this.goForTheCasketCheckBox_Click);
+            this.goForTheCasketCheckBox.Click += new System.EventHandler(this.GoForTheCasketCheckBox_Click);
             // 
             // goForTheCasketAndToEndCheckBox
             // 
@@ -148,7 +153,7 @@
             this.goForTheCasketAndToEndCheckBox.TabIndex = 8;
             this.goForTheCasketAndToEndCheckBox.Text = "Взять квест и\r\nпройти подземелье \r\nполностью";
             this.goForTheCasketAndToEndCheckBox.UseVisualStyleBackColor = true;
-            this.goForTheCasketAndToEndCheckBox.Click += new System.EventHandler(this.goForTheCasketAndToEndCheckBox_Click);
+            this.goForTheCasketAndToEndCheckBox.Click += new System.EventHandler(this.GoForTheCasketAndToEndCheckBox_Click);
             // 
             // normalDifficultyRadioButton
             // 
@@ -199,37 +204,89 @@
             // logBox
             // 
             this.logBox.FormattingEnabled = true;
+            this.logBox.HorizontalScrollbar = true;
             this.logBox.Location = new System.Drawing.Point(275, 12);
             this.logBox.Name = "logBox";
-            this.logBox.Size = new System.Drawing.Size(377, 303);
+            this.logBox.Size = new System.Drawing.Size(398, 277);
             this.logBox.TabIndex = 14;
             // 
-            // logButton
+            // showOrHideLogButton
             // 
-            this.logButton.BackColor = System.Drawing.Color.DarkKhaki;
-            this.logButton.Font = new System.Drawing.Font("Tahoma", 6.25F);
-            this.logButton.Location = new System.Drawing.Point(12, 286);
-            this.logButton.Name = "logButton";
-            this.logButton.Size = new System.Drawing.Size(51, 35);
-            this.logButton.TabIndex = 15;
-            this.logButton.Text = "Лог событий";
-            this.logButton.UseVisualStyleBackColor = false;
-            this.logButton.Click += new System.EventHandler(this.logButton_Click);
+            this.showOrHideLogButton.BackColor = System.Drawing.Color.DarkKhaki;
+            this.showOrHideLogButton.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.showOrHideLogButton.Location = new System.Drawing.Point(12, 295);
+            this.showOrHideLogButton.Name = "showOrHideLogButton";
+            this.showOrHideLogButton.Size = new System.Drawing.Size(240, 26);
+            this.showOrHideLogButton.TabIndex = 15;
+            this.showOrHideLogButton.Text = "Показать/Скрыть окно лога событий";
+            this.showOrHideLogButton.UseVisualStyleBackColor = false;
+            this.showOrHideLogButton.Click += new System.EventHandler(this.ShowOrHideLogButton_Click);
             // 
-            // Form1
+            // showLogButton
+            // 
+            this.showLogButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.showLogButton.Location = new System.Drawing.Point(275, 295);
+            this.showLogButton.Name = "showLogButton";
+            this.showLogButton.Size = new System.Drawing.Size(95, 23);
+            this.showLogButton.TabIndex = 16;
+            this.showLogButton.Text = "Показать весь лог";
+            this.showLogButton.UseVisualStyleBackColor = true;
+            this.showLogButton.Click += new System.EventHandler(this.ShowLogButton_Click);
+            // 
+            // showInfoLogButton
+            // 
+            this.showInfoLogButton.Location = new System.Drawing.Point(376, 295);
+            this.showInfoLogButton.Name = "showInfoLogButton";
+            this.showInfoLogButton.Size = new System.Drawing.Size(95, 23);
+            this.showInfoLogButton.TabIndex = 17;
+            this.showInfoLogButton.Text = "Только INFO";
+            this.showInfoLogButton.UseVisualStyleBackColor = true;
+            this.showInfoLogButton.Click += new System.EventHandler(this.ShowInfoLogButton_Click);
+            // 
+            // showErrorLogButton
+            // 
+            this.showErrorLogButton.Location = new System.Drawing.Point(477, 295);
+            this.showErrorLogButton.Name = "showErrorLogButton";
+            this.showErrorLogButton.Size = new System.Drawing.Size(95, 23);
+            this.showErrorLogButton.TabIndex = 18;
+            this.showErrorLogButton.Text = "Только ERROR";
+            this.showErrorLogButton.UseVisualStyleBackColor = true;
+            this.showErrorLogButton.Click += new System.EventHandler(this.ShowErrorLogButton_Click);
+            // 
+            // showFatalLogButton
+            // 
+            this.showFatalLogButton.Location = new System.Drawing.Point(578, 295);
+            this.showFatalLogButton.Name = "showFatalLogButton";
+            this.showFatalLogButton.Size = new System.Drawing.Size(95, 23);
+            this.showFatalLogButton.TabIndex = 19;
+            this.showFatalLogButton.Text = "Только FATAL";
+            this.showFatalLogButton.UseVisualStyleBackColor = true;
+            this.showFatalLogButton.Click += new System.EventHandler(this.ShowFatalLogButton_Click);
+            // 
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(264, 325);
-            this.Controls.Add(this.logButton);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(264, 326);
+            this.Controls.Add(this.showFatalLogButton);
+            this.Controls.Add(this.showErrorLogButton);
+            this.Controls.Add(this.showInfoLogButton);
+            this.Controls.Add(this.showLogButton);
+            this.Controls.Add(this.showOrHideLogButton);
             this.Controls.Add(this.logBox);
             this.Controls.Add(this.difficultyCheckBoxesGroupBox);
             this.Controls.Add(this.goForTheCasketAndToEndCheckBox);
             this.Controls.Add(this.goForTheCasketCheckBox);
             this.Controls.Add(this.loginGroupBox);
             this.Controls.Add(this.button1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "LoginForm";
+            this.ShowIcon = false;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.loginGroupBox.ResumeLayout(false);
             this.loginGroupBox.PerformLayout();
@@ -257,7 +314,11 @@
         private System.Windows.Forms.RadioButton impossibleDifficultyRadioButton;
         private System.Windows.Forms.GroupBox difficultyCheckBoxesGroupBox;
         private System.Windows.Forms.ListBox logBox;
-        private System.Windows.Forms.Button logButton;
+        private System.Windows.Forms.Button showOrHideLogButton;
+        private System.Windows.Forms.Button showLogButton;
+        private System.Windows.Forms.Button showInfoLogButton;
+        private System.Windows.Forms.Button showErrorLogButton;
+        private System.Windows.Forms.Button showFatalLogButton;
     }
 }
 

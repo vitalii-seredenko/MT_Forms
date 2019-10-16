@@ -9,7 +9,6 @@ namespace MT_Forms.PageObjects
         private readonly IWebDriver _driver;
         private int _heroesHealth;
 
-        [System.Obsolete]
         internal BaseTownPage()
         {
             _driver = DriverSingleton.Driver;

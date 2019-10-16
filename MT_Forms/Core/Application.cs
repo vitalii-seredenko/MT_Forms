@@ -5,17 +5,18 @@ namespace MT_Forms.Core
     internal class Application
     {
         private readonly IWebDriver _driver;
+        private readonly Logger _logger;
 
         internal Application()
         {
+            _logger = new Logger();
             _driver = DriverSingleton.Driver;
         }
 
 
         internal void DisposeDriver()
         {
-            if (_driver != null)
-                _driver.Dispose();
+            _driver?.Dispose();
         }
 
         internal void MaximizeBrowserWindow()
@@ -25,8 +26,15 @@ namespace MT_Forms.Core
 
         internal void NavigateToUrl(string url)
         {
-            _driver.Navigate().GoToUrl(url);
-            new Logger().Info($"User navigates to '{url}'");
+            try
+            {
+                _driver.Navigate().GoToUrl(url);
+                _logger.Info($"User navigates to '{url}'");
+            }
+            catch (WebDriverException exception)
+            {
+                _logger.Fatal(exception.Message);
+            }
         }
     }
 }

@@ -25,14 +25,14 @@ namespace MT_Forms.Scripts
             var application = new Application();
             var commonUrls = new CommonUrls();
             var difficulty = new Difficulty();
-            if (!FormsInitialization.form1.GoForTheCasketAndToEndCheckBox.Checked && !FormsInitialization.form1.GoForTheCasketCheckBox.Checked)
+            if (!FormsInitialization.loginForm.GoForTheCasketAndToEndCheckBox.Checked && !FormsInitialization.loginForm.GoForTheCasketCheckBox.Checked)
             {
                 application.NavigateToUrl(difficulty.ChooseDungeonDifficulty(DungeonName, difficulty.GetDungeonDifficulty()));
                 _dungeonButtons.enterInDungeon.Click();
                 _dungeonButtons.startBattle.Click();
                 GoInDungeonForTheItems();
             }
-            else if (FormsInitialization.form1.GoForTheCasketAndToEndCheckBox.Checked == false)
+            else if (FormsInitialization.loginForm.GoForTheCasketAndToEndCheckBox.Checked == false)
             {
                 application.NavigateToUrl(commonUrls.GetQuestUrl(DailyQuestName));
                 _questsButtons.findGangButton.Click();
@@ -40,7 +40,7 @@ namespace MT_Forms.Scripts
                 _dungeonButtons.startBattle.Click();
                 GoInDungeonForTheCasketAndItems();
             }
-            else if (FormsInitialization.form1.GoForTheCasketCheckBox.Checked == false)
+            else if (FormsInitialization.loginForm.GoForTheCasketCheckBox.Checked == false)
             {
                 application.NavigateToUrl(commonUrls.GetQuestUrl(DailyQuestName));
                 _questsButtons.findGangButton.Click();

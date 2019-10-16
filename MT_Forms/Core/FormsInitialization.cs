@@ -2,7 +2,7 @@
 {
     internal class FormsInitialization
     {
-        internal static Form1 form1 = new Form1();
-        internal static Form2 form2 = new Form2();
+        internal static LoginForm loginForm = new LoginForm();
+        internal static CaptchaProcessingForm captchaProcessingForm = new CaptchaProcessingForm();
     }
 }

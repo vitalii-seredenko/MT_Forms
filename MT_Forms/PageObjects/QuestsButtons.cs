@@ -8,7 +8,6 @@ namespace MT_Forms.PageObjects
     {
         private readonly IWebDriver _driver;
 
-        [System.Obsolete]
         internal QuestsButtons()
         {
             _driver = DriverSingleton.Driver;

@@ -4,9 +4,9 @@ using MT_Forms.Common;
 
 namespace MT_Forms
 {
-    internal partial class Form2 : Form
+    internal partial class CaptchaProcessingForm : Form
     {
-        internal Form2()
+        internal CaptchaProcessingForm()
         {
             InitializeComponent();
         }

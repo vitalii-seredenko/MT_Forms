@@ -10,9 +10,11 @@ namespace MT_Forms.Common
         internal static string loginName; //Друг Инженера
         internal static string password;  //paleksanov4194
         private readonly LoginPage _loginPage;
+        private readonly Logger _logger;
 
         internal Login()
         {
+            _logger = new Logger();
             _loginPage = new LoginPage();
         }
 
@@ -41,6 +43,7 @@ namespace MT_Forms.Common
             if (_loginPage.CheckInvalidLoginOrPasswordErrorMessageIsPresent())
             {
                 MessageBox.Show("Неверное имя или пароль!", "Ошибка");
+                _logger.Error("User entered an invalid username or password");
             }
         }
     }

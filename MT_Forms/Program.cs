@@ -8,17 +8,12 @@ namespace MT_Forms
         [STAThread]
         private static void Main()
         {
-            var _logger = new Logger();
-            _logger.Info("<-----------New application session started----------->");
-
-            System.Timers.Timer timer = new System.Timers.Timer();
-            timer.Interval = 1000;
-            timer.Elapsed += new System.Timers.ElapsedEventHandler(Logger.WriteLogInLogBox);
-            timer.Start();
-
+            var logger = new Logger();
+            logger.Info("<-----------New application session started----------->");
             System.Windows.Forms.Application.EnableVisualStyles();
-            System.Windows.Forms.Application.Run(FormsInitialization.form1);
-            _logger.Info("<-----------Application finished----------->\n");
+            System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
+            System.Windows.Forms.Application.Run(FormsInitialization.loginForm);
+            logger.Info("<-----------Application finished----------->\n");
         }
     }
 }

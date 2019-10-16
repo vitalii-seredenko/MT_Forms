@@ -11,7 +11,6 @@ namespace MT_Forms.PageObjects
         private readonly IWebDriver _driver;
         private readonly Random _random;
 
-        [Obsolete]
         internal DungeonButtons()
         {
             _driver = DriverSingleton.Driver;

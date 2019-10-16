@@ -4,10 +4,10 @@
     {
         internal void ChangeForm1Width()
         {
-            if(Core.FormsInitialization.form1.Width == 280)
-                Core.FormsInitialization.form1.Width = 680;
-            else if(Core.FormsInitialization.form1.Width == 680)
-                Core.FormsInitialization.form1.Width = 280;
+            if(Core.FormsInitialization.loginForm.Width == 280)
+                Core.FormsInitialization.loginForm.Width = 700;
+            else if(Core.FormsInitialization.loginForm.Width == 700)
+                Core.FormsInitialization.loginForm.Width = 280;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace MT_Forms
 {
-    partial class Form2
+    partial class CaptchaProcessingForm
     {
         /// <summary>
         /// Required designer variable.
@@ -66,7 +66,7 @@
             this.textBox2.Text = "Введите капчу";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Form2
+            // CaptchaProcessingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -74,7 +74,10 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.captchaTextBox);
-            this.Name = "Form2";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "CaptchaProcessingForm";
+            this.ShowIcon = false;
             this.ResumeLayout(false);
             this.PerformLayout();
 

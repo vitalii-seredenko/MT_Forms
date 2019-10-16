@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Windows.Forms;
 using MT_Forms.Common;
+using MT_Forms.Core;
 using MT_Forms.LogicForForms;
 using MT_Forms.Scripts;
 
 namespace MT_Forms
 {
-    internal partial class Form1 : Form
+    internal partial class LoginForm : Form
     {
-        internal Form1()
+        internal LoginForm()
         {
             InitializeComponent();
         }
@@ -49,21 +50,41 @@ namespace MT_Forms
             new VysokaiaTemnitsa().VysokaiaTemnitsaScript();
         }
 
-        private void goForTheCasketCheckBox_Click(object sender, EventArgs e)
+        private void GoForTheCasketCheckBox_Click(object sender, EventArgs e)
         {
             goForTheCasketCheckBox.Checked = goForTheCasketCheckBox.CheckState == CheckState.Checked;
             goForTheCasketAndToEndCheckBox.Checked = false;
         }
 
-        private void goForTheCasketAndToEndCheckBox_Click(object sender, EventArgs e)
+        private void GoForTheCasketAndToEndCheckBox_Click(object sender, EventArgs e)
         {
             goForTheCasketAndToEndCheckBox.Checked = goForTheCasketAndToEndCheckBox.CheckState == CheckState.Checked;
             goForTheCasketCheckBox.Checked = false;
         }
 
-        private void logButton_Click(object sender, EventArgs e)
+        private void ShowOrHideLogButton_Click(object sender, EventArgs e)
         {
             new ChangeSize().ChangeForm1Width();
+        }
+
+        private void ShowLogButton_Click(object sender, EventArgs e)
+        {
+            Logger.WriteAllLogInLogBox();
+        }
+
+        private void ShowInfoLogButton_Click(object sender, EventArgs e)
+        {
+            Logger.WriteInfoLogInLogBox();
+        }
+
+        private void ShowErrorLogButton_Click(object sender, EventArgs e)
+        {
+            Logger.WriteErrorLogInLogBox();
+        }
+
+        private void ShowFatalLogButton_Click(object sender, EventArgs e)
+        {
+            Logger.WriteFatalLogInLogBox();
         }
     }
 }
