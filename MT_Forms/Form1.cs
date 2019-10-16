@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using MT_Forms.Common;
+using MT_Forms.LogicForForms;
 using MT_Forms.Scripts;
 
 namespace MT_Forms
@@ -16,6 +17,7 @@ namespace MT_Forms
         internal CheckBox GoForTheCasketAndToEndCheckBox => goForTheCasketAndToEndCheckBox;
         internal RadioButton HardDifficultyRadioButton => hardDifficultyRadioButton;
         internal RadioButton ImpossibleDifficultyRadioButton => impossibleDifficultyRadioButton;
+        internal ListBox LogBox => logBox;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -57,6 +59,11 @@ namespace MT_Forms
         {
             goForTheCasketAndToEndCheckBox.Checked = goForTheCasketAndToEndCheckBox.CheckState == CheckState.Checked;
             goForTheCasketCheckBox.Checked = false;
+        }
+
+        private void logButton_Click(object sender, EventArgs e)
+        {
+            new ChangeSize().ChangeForm1Width();
         }
     }
 }

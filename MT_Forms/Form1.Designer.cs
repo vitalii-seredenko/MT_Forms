@@ -33,15 +33,17 @@
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.loginGroupBox = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
             this.goForTheCasketCheckBox = new System.Windows.Forms.CheckBox();
             this.goForTheCasketAndToEndCheckBox = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.normalDifficultyRadioButton = new System.Windows.Forms.RadioButton();
             this.hardDifficultyRadioButton = new System.Windows.Forms.RadioButton();
             this.impossibleDifficultyRadioButton = new System.Windows.Forms.RadioButton();
             this.difficultyCheckBoxesGroupBox = new System.Windows.Forms.GroupBox();
+            this.logBox = new System.Windows.Forms.ListBox();
+            this.logButton = new System.Windows.Forms.Button();
             this.loginGroupBox.SuspendLayout();
             this.difficultyCheckBoxesGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -98,6 +100,24 @@
             this.loginGroupBox.TabStop = false;
             this.loginGroupBox.Text = "Логин";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Имя персонажа";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(28, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Пароль";
+            // 
             // exitButton
             // 
             this.exitButton.Location = new System.Drawing.Point(31, 97);
@@ -129,24 +149,6 @@
             this.goForTheCasketAndToEndCheckBox.Text = "Взять квест и\r\nпройти подземелье \r\nполностью";
             this.goForTheCasketAndToEndCheckBox.UseVisualStyleBackColor = true;
             this.goForTheCasketAndToEndCheckBox.Click += new System.EventHandler(this.goForTheCasketAndToEndCheckBox_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Пароль";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Имя персонажа";
             // 
             // normalDifficultyRadioButton
             // 
@@ -194,16 +196,39 @@
             this.difficultyCheckBoxesGroupBox.TabStop = false;
             this.difficultyCheckBoxesGroupBox.Text = "Сложность подземелий";
             // 
+            // logBox
+            // 
+            this.logBox.FormattingEnabled = true;
+            this.logBox.Location = new System.Drawing.Point(275, 12);
+            this.logBox.Name = "logBox";
+            this.logBox.Size = new System.Drawing.Size(377, 303);
+            this.logBox.TabIndex = 14;
+            // 
+            // logButton
+            // 
+            this.logButton.BackColor = System.Drawing.Color.DarkKhaki;
+            this.logButton.Font = new System.Drawing.Font("Tahoma", 6.25F);
+            this.logButton.Location = new System.Drawing.Point(12, 286);
+            this.logButton.Name = "logButton";
+            this.logButton.Size = new System.Drawing.Size(51, 35);
+            this.logButton.TabIndex = 15;
+            this.logButton.Text = "Лог событий";
+            this.logButton.UseVisualStyleBackColor = false;
+            this.logButton.Click += new System.EventHandler(this.logButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(269, 290);
+            this.ClientSize = new System.Drawing.Size(264, 325);
+            this.Controls.Add(this.logButton);
+            this.Controls.Add(this.logBox);
             this.Controls.Add(this.difficultyCheckBoxesGroupBox);
             this.Controls.Add(this.goForTheCasketAndToEndCheckBox);
             this.Controls.Add(this.goForTheCasketCheckBox);
             this.Controls.Add(this.loginGroupBox);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.loginGroupBox.ResumeLayout(false);
@@ -231,6 +256,8 @@
         private System.Windows.Forms.RadioButton hardDifficultyRadioButton;
         private System.Windows.Forms.RadioButton impossibleDifficultyRadioButton;
         private System.Windows.Forms.GroupBox difficultyCheckBoxesGroupBox;
+        private System.Windows.Forms.ListBox logBox;
+        private System.Windows.Forms.Button logButton;
     }
 }
 

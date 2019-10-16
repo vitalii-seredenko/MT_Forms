@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
+using MT_Forms.Core;
 using MT_Forms.PageObjects;
-using NLog;
 using Keys = OpenQA.Selenium.Keys;
 
 namespace MT_Forms.Common
@@ -27,7 +27,7 @@ namespace MT_Forms.Common
                 generalBasePage.SwitchToLightVersion();
             }
             LoginWithParameters();
-            LogManager.GetCurrentClassLogger().Info("Program successfully logged in MT");
+            new Logger().Info("Program successfully logged in MT");
         }
 
         internal void LoginWithParameters()

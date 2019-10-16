@@ -1,5 +1,4 @@
-﻿using NLog;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace MT_Forms.Core
 {
@@ -12,9 +11,11 @@ namespace MT_Forms.Core
             _driver = DriverSingleton.Driver;
         }
 
+
         internal void DisposeDriver()
         {
-            _driver.Dispose();
+            if (_driver != null)
+                _driver.Dispose();
         }
 
         internal void MaximizeBrowserWindow()
@@ -25,7 +26,7 @@ namespace MT_Forms.Core
         internal void NavigateToUrl(string url)
         {
             _driver.Navigate().GoToUrl(url);
-            LogManager.GetCurrentClassLogger().Info($"User navigates to '{url}'");
+            new Logger().Info($"User navigates to '{url}'");
         }
     }
 }
