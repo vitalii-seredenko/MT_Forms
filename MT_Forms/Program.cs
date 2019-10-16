@@ -11,7 +11,7 @@ namespace MT_Forms
             var logger = new Logger();
             logger.Info("<-----------New application session started----------->");
             System.Windows.Forms.Application.EnableVisualStyles();
-            System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
+            //System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
             System.Windows.Forms.Application.Run(FormsInitialization.loginForm);
             logger.Info("<-----------Application finished----------->\n");
         }
