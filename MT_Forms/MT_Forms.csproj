@@ -42,6 +42,9 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,10 +66,14 @@
     <Compile Include="ApplicationData\CommonUrls.cs" />
     <Compile Include="Common\Difficulty.cs" />
     <Compile Include="Common\Login.cs" />
+    <Compile Include="LogicForCharacters\Hero.cs" />
     <Compile Include="Core\Application.cs" />
     <Compile Include="Core\DriverFactory.cs" />
     <Compile Include="Core\DriverSingleton.cs" />
     <Compile Include="Core\Logger.cs" />
+    <Compile Include="LogicForCharacters\Magician.cs" />
+    <Compile Include="LogicForCharacters\Monk.cs" />
+    <Compile Include="LogicForCharacters\Warrior.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +94,7 @@
     <Compile Include="PageObjects\GeneralBasePage.cs" />
     <Compile Include="PageObjects\LoginPage.cs" />
     <Compile Include="PageObjects\QuestsButtons.cs" />
+    <Compile Include="PageObjects\HeroPage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\VysokaiaTemnitsa.cs" />

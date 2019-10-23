@@ -55,15 +55,15 @@ namespace MT_Forms.Scripts
             _logger.Info("User go in 'Vysokaia Temnitsa' for the items");
             while (true)
             {
-                if (!_dungeonButtons.CheckWaveIsComplete() && !_dungeonButtons.CheckDungeonIsComplete() && !_dungeonButtons.CheckGiveRewardLinkIsPresent())
+                if (!_dungeonButtons.WaveIsComplete() && !_dungeonButtons.DungeonIsComplete() && !_dungeonButtons.GiveRewardLinkIsPresent())
                 {
                     _dungeonButtons.ClickOnFirstAttackButton();
                 }
-                else if (_dungeonButtons.CheckWaveIsComplete())
+                else if (_dungeonButtons.WaveIsComplete())
                 {
                     _dungeonButtons.continueBattle.Click();
                 }
-                else if (_dungeonButtons.CheckDungeonIsComplete())
+                else if (_dungeonButtons.DungeonIsComplete())
                 {
                     break;
                 }
@@ -76,15 +76,15 @@ namespace MT_Forms.Scripts
             _logger.Info("User go in 'Vysokaia Temnitsa' for the casket and items");
             while (true)
             {
-                if (!_dungeonButtons.CheckWaveIsComplete() && !_dungeonButtons.CheckDungeonIsComplete() && !_dungeonButtons.CheckGiveRewardLinkIsPresent())
+                if (!_dungeonButtons.WaveIsComplete() && !_dungeonButtons.DungeonIsComplete() && !_dungeonButtons.GiveRewardLinkIsPresent())
                 {
                     _dungeonButtons.ClickOnFirstAttackButton();
                 }
-                else if (_dungeonButtons.CheckWaveIsComplete())
+                else if (_dungeonButtons.WaveIsComplete())
                 {
                     _dungeonButtons.continueBattle.Click();
                 }
-                else if (_dungeonButtons.CheckDungeonIsComplete())
+                else if (_dungeonButtons.DungeonIsComplete())
                 {
                     break;
                 }
@@ -98,15 +98,15 @@ namespace MT_Forms.Scripts
             _logger.Info("User go in 'Vysokaia Temnitsa' only for the casket");
             while (true)
             {
-                if (!_dungeonButtons.CheckWaveIsComplete() && !_dungeonButtons.CheckDungeonIsComplete() && !_dungeonButtons.CheckGiveRewardLinkIsPresent())
+                if (!_dungeonButtons.WaveIsComplete() && !_dungeonButtons.DungeonIsComplete() && !_dungeonButtons.GiveRewardLinkIsPresent())
                 {
                     _dungeonButtons.ClickOnFirstAttackButton();
                 }
-                else if (_dungeonButtons.CheckWaveIsComplete())
+                else if (_dungeonButtons.WaveIsComplete())
                 {
                     _dungeonButtons.continueBattle.Click();
                 }
-                else if (_dungeonButtons.CheckGiveRewardLinkIsPresent())
+                else if (_dungeonButtons.GiveRewardLinkIsPresent())
                 {
                     _dungeonButtons.giveRewardLink.Click();
                     _questsButtons.continueAdventures.Click();

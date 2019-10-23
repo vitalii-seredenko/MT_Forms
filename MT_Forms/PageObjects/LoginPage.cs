@@ -35,7 +35,7 @@ namespace MT_Forms.PageObjects
 
         #region CheckElementIsPresent
 
-        internal bool CheckInvalidLoginOrPasswordErrorMessageIsPresent()
+        internal bool InvalidLoginOrPasswordErrorMessageIsPresent()
         {
             try
             {
@@ -47,7 +47,7 @@ namespace MT_Forms.PageObjects
             }
         }
 
-        internal bool CheckInvalidCaptchaErrorMessageIsPresent()
+        internal bool InvalidCaptchaErrorMessageIsPresent()
         {
             try
             {
@@ -59,7 +59,7 @@ namespace MT_Forms.PageObjects
             }
         }
 
-        internal bool CheckСaptchaTextBoxIsPresent()
+        internal bool СaptchaTextBoxIsPresent()
         {
             try
             {

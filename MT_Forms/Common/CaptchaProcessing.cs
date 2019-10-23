@@ -19,7 +19,7 @@ namespace MT_Forms.Common
 
         internal void CallCaptchaProcessingDialogWindow()
         {
-            if (new LoginPage().CheckСaptchaTextBoxIsPresent())
+            if (new LoginPage().СaptchaTextBoxIsPresent())
             {
                 FormsInitialization.captchaProcessingForm.ShowDialog();
             }
@@ -31,7 +31,7 @@ namespace MT_Forms.Common
             loginPage.captchaTextBox.SendKeys(Keys.Control + "a");
             loginPage.captchaTextBox.SendKeys(captcha);
             loginPage.submitButton.Click();
-            if (loginPage.CheckInvalidCaptchaErrorMessageIsPresent())
+            if (loginPage.InvalidCaptchaErrorMessageIsPresent())
             {
                 MessageBox.Show("Введите капчу заново!", "Ошибка");
                 _logger.Error("User entered an invalid captcha");
@@ -41,7 +41,7 @@ namespace MT_Forms.Common
 
         internal void CloseCaptchaProcessingDialogWindow()
         {
-            if (_baseTownPage.CheckCityPictureIsPresent())
+            if (_baseTownPage.CityPictureIsPresent())
             {
                 _baseTownPage.GetHeroesHealth();
                 FormsInitialization.captchaProcessingForm.Hide();

@@ -45,7 +45,7 @@ namespace MT_Forms.PageObjects
             firstAttackButton.Click();
         }
 
-        internal bool CheckWaveIsComplete()
+        internal bool WaveIsComplete()
         {
             try
             {
@@ -57,7 +57,7 @@ namespace MT_Forms.PageObjects
             }
         }
 
-        internal bool CheckDungeonIsComplete()
+        internal bool DungeonIsComplete()
         {
             try
             {
@@ -69,7 +69,7 @@ namespace MT_Forms.PageObjects
             }
         }
 
-        internal bool CheckGiveRewardLinkIsPresent()
+        internal bool GiveRewardLinkIsPresent()
         {
             try
             {

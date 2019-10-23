@@ -32,7 +32,7 @@ namespace MT_Forms.PageObjects
 
         #region CheckElementIsPresent
 
-        internal bool CheckContinueButtonIsPresent()
+        internal bool ContinueButtonIsPresent()
         {
             try
             {
@@ -44,7 +44,7 @@ namespace MT_Forms.PageObjects
             }
         }
 
-        internal bool CheckBillboardElementIsPresent()
+        internal bool BillboardElementIsPresent()
         {
             try
             {
@@ -56,7 +56,7 @@ namespace MT_Forms.PageObjects
             }
         }
 
-        internal bool CheckCityPictureIsPresent()
+        internal bool CityPictureIsPresent()
         {
             try
             {

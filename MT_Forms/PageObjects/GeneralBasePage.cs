@@ -22,7 +22,7 @@ namespace MT_Forms.PageObjects
             lightVersionButton.Click();
         }
 
-        internal bool CheckLightVersionButtonIsPresent()
+        internal bool LightVersionButtonIsPresent()
         {
             try
             {

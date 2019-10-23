@@ -24,7 +24,7 @@ namespace MT_Forms.Common
             new Core.Application().MaximizeBrowserWindow();
             new Core.Application().NavigateToUrl("https://m.vten.ru/");
             _loginPage.startGameButton.Click();
-            if (generalBasePage.CheckLightVersionButtonIsPresent())
+            if (generalBasePage.LightVersionButtonIsPresent())
             {
                 generalBasePage.SwitchToLightVersion();
             }
@@ -40,7 +40,7 @@ namespace MT_Forms.Common
             _loginPage.inputPasswordForm.SendKeys(password);
             _loginPage.submitButton.Click();
             new CaptchaProcessing().CallCaptchaProcessingDialogWindow();
-            if (_loginPage.CheckInvalidLoginOrPasswordErrorMessageIsPresent())
+            if (_loginPage.InvalidLoginOrPasswordErrorMessageIsPresent())
             {
                 MessageBox.Show("Неверное имя или пароль!", "Ошибка");
                 _logger.Error("User entered an invalid username or password");
