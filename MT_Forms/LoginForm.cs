@@ -64,7 +64,7 @@ namespace MT_Forms
 
         private void ShowOrHideLogButton_Click(object sender, EventArgs e)
         {
-            new ChangeSize().ChangeForm1Width();
+            new ChangeSize().ChangeForm1WidthForShowLog();
         }
 
         private void ShowLogButton_Click(object sender, EventArgs e)
@@ -85,6 +85,11 @@ namespace MT_Forms
         private void ShowFatalLogButton_Click(object sender, EventArgs e)
         {
             Logger.WriteFatalLogInLogBox();
+        }
+
+        private void ShowOrHideCharacterStatsButton_Click(object sender, EventArgs e)
+        {
+            FormsInitialization.characterStatsForm.ShowDialog();
         }
     }
 }

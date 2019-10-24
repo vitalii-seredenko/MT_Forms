@@ -1,6 +1,6 @@
 ﻿namespace MT_Forms.LogicForCharacters
 {
-    internal class Monk : Hero
+    internal class Monk : Character
     {
         private (string listokLotosa, int listokLotosaLevel) _listokLotosa;
         private (string formaDemona, int formaDemonaLevel) _formaDemona;

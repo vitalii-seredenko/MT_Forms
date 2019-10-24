@@ -62,11 +62,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CharacterStatsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CharacterStatsForm.Designer.cs">
+      <DependentUpon>CharacterStatsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Common\CaptchaProcessing.cs" />
     <Compile Include="ApplicationData\CommonUrls.cs" />
     <Compile Include="Common\Difficulty.cs" />
     <Compile Include="Common\Login.cs" />
-    <Compile Include="LogicForCharacters\Hero.cs" />
+    <Compile Include="Common\UserCharacteristic.cs" />
+    <Compile Include="LogicForCharacters\Character.cs" />
     <Compile Include="Core\Application.cs" />
     <Compile Include="Core\DriverFactory.cs" />
     <Compile Include="Core\DriverSingleton.cs" />
@@ -88,16 +95,18 @@
     </Compile>
     <Compile Include="Core\FormsInitialization.cs" />
     <Compile Include="LogicForForms\ChangeSize.cs" />
-    <Compile Include="LogicForForms\ShowOrHideButton.cs" />
     <Compile Include="PageObjects\BaseTownPage.cs" />
     <Compile Include="PageObjects\DungeonButtons.cs" />
     <Compile Include="PageObjects\GeneralBasePage.cs" />
     <Compile Include="PageObjects\LoginPage.cs" />
     <Compile Include="PageObjects\QuestsButtons.cs" />
-    <Compile Include="PageObjects\HeroPage.cs" />
+    <Compile Include="PageObjects\CharacterPage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\VysokaiaTemnitsa.cs" />
+    <EmbeddedResource Include="CharacterStatsForm.resx">
+      <DependentUpon>CharacterStatsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

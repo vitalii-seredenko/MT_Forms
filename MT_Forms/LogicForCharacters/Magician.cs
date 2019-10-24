@@ -1,6 +1,6 @@
 ﻿namespace MT_Forms.LogicForCharacters
 {
-    internal class Magician : Hero
+    internal class Magician : Character
     {
         private (string vzryvEfira, int vzryvEfiraLevel) _vzryvEfira;
         private (string pritokSily, int pritokSilyLevel) _pritokSily;

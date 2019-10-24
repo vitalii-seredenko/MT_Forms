@@ -49,6 +49,7 @@
             this.showInfoLogButton = new System.Windows.Forms.Button();
             this.showErrorLogButton = new System.Windows.Forms.Button();
             this.showFatalLogButton = new System.Windows.Forms.Button();
+            this.showOrHideCharacterStatsButton = new System.Windows.Forms.Button();
             this.loginGroupBox.SuspendLayout();
             this.difficultyCheckBoxesGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -214,7 +215,7 @@
             // 
             this.showOrHideLogButton.BackColor = System.Drawing.Color.DarkKhaki;
             this.showOrHideLogButton.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.showOrHideLogButton.Location = new System.Drawing.Point(12, 295);
+            this.showOrHideLogButton.Location = new System.Drawing.Point(13, 323);
             this.showOrHideLogButton.Name = "showOrHideLogButton";
             this.showOrHideLogButton.Size = new System.Drawing.Size(240, 26);
             this.showOrHideLogButton.TabIndex = 15;
@@ -263,12 +264,23 @@
             this.showFatalLogButton.UseVisualStyleBackColor = true;
             this.showFatalLogButton.Click += new System.EventHandler(this.ShowFatalLogButton_Click);
             // 
+            // showOrHideCharacterStatsButton
+            // 
+            this.showOrHideCharacterStatsButton.Location = new System.Drawing.Point(13, 294);
+            this.showOrHideCharacterStatsButton.Name = "showOrHideCharacterStatsButton";
+            this.showOrHideCharacterStatsButton.Size = new System.Drawing.Size(239, 23);
+            this.showOrHideCharacterStatsButton.TabIndex = 20;
+            this.showOrHideCharacterStatsButton.Text = "Показать характеристики персонажа";
+            this.showOrHideCharacterStatsButton.UseVisualStyleBackColor = true;
+            this.showOrHideCharacterStatsButton.Click += new System.EventHandler(this.ShowOrHideCharacterStatsButton_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(264, 326);
+            this.ClientSize = new System.Drawing.Size(264, 356);
+            this.Controls.Add(this.showOrHideCharacterStatsButton);
             this.Controls.Add(this.showFatalLogButton);
             this.Controls.Add(this.showErrorLogButton);
             this.Controls.Add(this.showInfoLogButton);
@@ -319,6 +331,7 @@
         private System.Windows.Forms.Button showInfoLogButton;
         private System.Windows.Forms.Button showErrorLogButton;
         private System.Windows.Forms.Button showFatalLogButton;
+        private System.Windows.Forms.Button showOrHideCharacterStatsButton;
     }
 }
 

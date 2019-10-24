@@ -2,7 +2,7 @@
 {
     internal class ChangeSize
     {
-        internal void ChangeForm1Width()
+        internal void ChangeForm1WidthForShowLog()
         {
             if(Core.FormsInitialization.loginForm.Width == 280)
                 Core.FormsInitialization.loginForm.Width = 700;

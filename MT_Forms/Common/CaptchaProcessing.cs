@@ -1,5 +1,6 @@
 ﻿using System.Windows.Forms;
 using MT_Forms.Core;
+using MT_Forms.LogicForCharacters;
 using MT_Forms.PageObjects;
 using Keys = OpenQA.Selenium.Keys;
 
@@ -41,9 +42,10 @@ namespace MT_Forms.Common
 
         internal void CloseCaptchaProcessingDialogWindow()
         {
+            var userCharacteristic = new UserCharacteristic();
             if (_baseTownPage.CityPictureIsPresent())
             {
-                _baseTownPage.GetHeroesHealth();
+                userCharacteristic.GetUser();
                 FormsInitialization.captchaProcessingForm.Hide();
             }
         }

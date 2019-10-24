@@ -27,7 +27,9 @@ namespace MT_Forms.PageObjects
         internal IWebElement cityPicture;
         [FindsBy(How = How.XPath, Using = "//span[@class='info']")]
         internal IWebElement heroesHealthTextBox;
-
+        [FindsBy(How = How.XPath, Using = "//a[@href='https://m.vten.ru/user']")]
+        internal IWebElement characterButton;
+        
         #endregion
 
         #region CheckElementIsPresent

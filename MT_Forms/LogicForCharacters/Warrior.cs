@@ -1,6 +1,6 @@
 ﻿namespace MT_Forms.LogicForCharacters
 {
-    internal class Warrior : Hero
+    internal class Warrior : Character
     {
         private (string zaschitaBogov, int zaschitaBogovLevel) _zaschitaBogov;
         private (string iarostBogov, int iarostBogovLevel) _iarostBogov;
