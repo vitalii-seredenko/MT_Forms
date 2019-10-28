@@ -12,6 +12,16 @@
         private (string prizyv, int prizyvLevel) _prizyv;
         private (string ledianoiUdar, int ledianoiUdarLevel) _ledianoiUdar;
 
+        internal (string, int) ZaschitaBogov => _zaschitaBogov;
+        internal (string, int) IarostBogov => _iarostBogov;
+        internal (string, int) RyvokZhizni => _ryvokZhizni;
+        internal (string, int) GromMolnia => _gromMolnia;
+        internal (string, int) TalismanDoblesti => _talismanDoblesti;
+
+        internal (string, int) Nevidimost => _nevidimost;
+        internal (string, int) Prizyv => _prizyv;
+        internal (string, int) LedianoiUdar => _ledianoiUdar;
+
         internal Warrior(string health, string strange, string protection, string criticalDamage, string blackMagicProtection, string regeneration, string zaschitaBogovLevel, string iarostBogovLevel, string ryvokZhizniLevel, string gromMolniaLevel, string talismanDoblestiLevel, string nevidimostLevel, string prizyvLevel, string ledianoiUdarLevel)
         {
             int.TryParse(health, out _health);

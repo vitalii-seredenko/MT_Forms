@@ -89,7 +89,8 @@ namespace MT_Forms
 
         private void ShowOrHideCharacterStatsButton_Click(object sender, EventArgs e)
         {
-            FormsInitialization.characterStatsForm.ShowDialog();
+            FormsInitialization.characterStatsForm.Show();
+            new UserCharacteristic().ShowUserCharacteristicInForm();
         }
     }
 }

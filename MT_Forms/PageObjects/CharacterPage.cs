@@ -77,5 +77,17 @@ namespace MT_Forms.PageObjects
             var levelMatch = regex.Match(heroAmuletLevelTextBox.Text);
             return levelMatch.Value;
         }
+
+        internal string ReturnBlackMagicProtectionTextBoxTextIfElementPresent()
+        {
+            try
+            {
+                return characterBlackMagicProtectionTextBox.Displayed ? characterBlackMagicProtectionTextBox.Text : "0";
+            }
+            catch (NoSuchElementException)
+            {
+                return "0";
+            }
+        }
     }
 }

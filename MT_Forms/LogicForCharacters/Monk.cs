@@ -12,6 +12,16 @@
         private (string prizyv, int prizyvLevel) _prizyv;
         private (string ledianoiUdar, int ledianoiUdarLevel) _ledianoiUdar;
 
+        internal (string, int) ListokLotosa => _listokLotosa;
+        internal (string, int) FormaDemona => _formaDemona;
+        internal (string, int) ProcliatieGlaiva => _procliatieGlaiva;
+        internal (string, int) GromMolnia => _gromMolnia;
+        internal (string, int) KrovaviiTsvetok => _krovaviiTsvetok;
+
+        internal (string, int) Nevidimost => _nevidimost;
+        internal (string, int) Prizyv => _prizyv;
+        internal (string, int) LedianoiUdar => _ledianoiUdar;
+
         internal Monk(string health, string strange, string protection, string criticalDamage, string blackMagicProtection, string regeneration, string listokLotosaLevel, string formaDemonaLevel, string procliatieGlaivaLevel, string gromMolniaLevel, string krovaviiTsvetokLevel, string nevidimostLevel, string prizyvLevel, string ledianoiUdarLevel)
         {
             int.TryParse(health, out _health);
