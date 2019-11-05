@@ -4,13 +4,13 @@ namespace MT_Forms.LogicForCharacters
 {
     internal class Character
     {
-        private protected string _characterClass;
-        private protected int _health;
-        private protected int _strange;
-        private protected int _protection;
-        private protected int _criticalDamage;
-        private protected int _blackMagicProtection;
-        private protected int _regeneration;
+        protected string _characterClass;
+        protected int _health;
+        protected int _strange;
+        protected int _protection;
+        protected int _criticalDamage;
+        protected int _blackMagicProtection;
+        protected int _regeneration;
 
         internal int Health => _health;
         internal int Strange => _strange;
