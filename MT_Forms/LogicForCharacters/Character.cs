@@ -6,14 +6,14 @@ namespace MT_Forms.LogicForCharacters
     {
         protected string _characterClass;
         protected int _health;
-        protected int _strange;
+        protected int _strength;
         protected int _protection;
         protected int _criticalDamage;
         protected int _blackMagicProtection;
         protected int _regeneration;
 
         internal int Health => _health;
-        internal int Strange => _strange;
+        internal int Strange => _strength;
         internal int Protection => _protection;
         internal int CriticalDamage => _criticalDamage;
         internal int BlackMagicProtection => _blackMagicProtection;
@@ -22,6 +22,7 @@ namespace MT_Forms.LogicForCharacters
         internal string CharacterClass
         {
             get => _characterClass;
+            //change to array
             set
             {
                 switch (value)
@@ -42,7 +43,7 @@ namespace MT_Forms.LogicForCharacters
 
         internal int CharacterSumOfStats()
         {
-            return _health + _strange + _protection;
+            return _health + _strength + _protection;
         }
     }
 }

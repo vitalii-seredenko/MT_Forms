@@ -7,7 +7,7 @@ namespace MT_Forms.Core
 {
     internal class Logger
     {
-        private static List<string> logList= new List<string>();
+        private static List<string> logList = new List<string>();
         private static readonly string LogFilePath = $"{Environment.CurrentDirectory}\\logs\\{DateTime.Now.ToShortDateString()}.txt";
 
         internal static void WriteAllLogInLogBox()
@@ -55,6 +55,7 @@ namespace MT_Forms.Core
             logList.Add(infoLogString);
             using (var logFile = new StreamWriter(LogFilePath, true))
             {
+                //openFile
                 logFile.WriteLine(infoLogString);
                 if(logString.Contains("Application finished"))
                     logFile.Close();
