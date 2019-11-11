@@ -21,15 +21,16 @@ namespace MT_Forms.Common
         internal void GoToMt()
         {
             var generalBasePage = new GeneralBasePage();
-            new Core.Application().MaximizeBrowserWindow();
-            new Core.Application().NavigateToUrl("https://m.vten.ru/");
+            var application = new Core.Application();
+            application.MaximizeBrowserWindow();
+            application.NavigateToUrl("https://m.vten.ru/");
             _loginPage.startGameButton.Click();
             if (generalBasePage.LightVersionButtonIsPresent())
             {
                 generalBasePage.SwitchToLightVersion();
             }
             LoginWithParameters();
-            new Logger().Info("Program successfully logged in MT");
+            _logger.Info("Program successfully logged in MT");
         }
 
         internal void LoginWithParameters()

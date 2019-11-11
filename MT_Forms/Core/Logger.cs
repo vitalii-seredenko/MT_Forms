@@ -51,7 +51,7 @@ namespace MT_Forms.Core
 
         internal void Info(string logString)
         {
-            var infoLogString = logString.Contains("Application started") ? $"\n\n{DateTime.Now.ToLocalTime()} | INFO  | {logString}" : $"{DateTime.Now.ToLocalTime()} | INFO  | {logString}";
+            var infoLogString = logString.Contains("Application started") ? $"\n\n{DateTime.Now} | INFO  | {logString}" : $"{DateTime.Now} | INFO  | {logString}";
             logList.Add(infoLogString);
             using (var logFile = new StreamWriter(LogFilePath, true))
             {
@@ -60,12 +60,11 @@ namespace MT_Forms.Core
                 if(logString.Contains("Application finished"))
                     logFile.Close();
             }
-            
         }
 
         internal void Error(string logString)
         {
-            var errorLogString = $"{DateTime.Now.ToLocalTime()} | ERROR | {logString}";
+            var errorLogString = $"{DateTime.Now} | ERROR | {logString}";
             logList.Add(errorLogString);
             using (var logFile = new StreamWriter(LogFilePath, true))
             {
@@ -77,7 +76,7 @@ namespace MT_Forms.Core
 
         internal void Fatal(string logString)
         {
-            var fatalLogString = $"{DateTime.Now.ToLocalTime()} | FATAL | {logString}";
+            var fatalLogString = $"{DateTime.Now} | FATAL | {logString}";
             logList.Add(fatalLogString);
             using (var logFile = new StreamWriter(LogFilePath, true))
             {

@@ -1,4 +1,5 @@
 ﻿using System;
+using MT_Forms.Core;
 
 namespace MT_Forms.LogicForCharacters
 {
@@ -36,7 +37,9 @@ namespace MT_Forms.LogicForCharacters
                     case "Монах":
                         _characterClass = "Монах";
                         break;
-                    default: throw new ArgumentException($"Value '{0}' does not a character class", value);
+                    default: 
+                        new Logger().Error($"Value '{value}' does not a character class");
+                        throw new ArgumentException($"Value '{0}' does not a character class", value);
                 }
             }
         }
