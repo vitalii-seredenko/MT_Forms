@@ -59,7 +59,6 @@ namespace MT_Forms.Core
                 if(logString.Contains("Application finished"))
                     logFile.Close();
             }
-            
         }
 
         internal void Error(string logString)

@@ -37,44 +37,44 @@ namespace MT_Forms.Common
 
         internal void ShowUserCharacteristicInForm()
         {
-            FormsInitialization.characterStatsForm.HealLabel.Text = "Живучесть: " + hero.Health;
-            FormsInitialization.characterStatsForm.StrangeLabel.Text = "Сила: " + hero.Strange;
-            FormsInitialization.characterStatsForm.CriticalDamageLevel.Text = "Крит: " + hero.CriticalDamage;
-            FormsInitialization.characterStatsForm.ProtectionLabel.Text = "Защита: " + hero.Protection;
-            FormsInitialization.characterStatsForm.BlackMagicProtectionLabel.Text = "Защита от чёрной магии: " + hero.BlackMagicProtection;
-            FormsInitialization.characterStatsForm.RegenerationLabel.Text = "Регенерация: " + hero.Regeneration;
+            FormsInitialization.characterStatsForm.HealLabel.Text = $@"Живучесть: {hero.Health}";
+            FormsInitialization.characterStatsForm.StrangeLabel.Text = $@"Сила: {hero.Strange}";
+            FormsInitialization.characterStatsForm.CriticalDamageLevel.Text = $@"Крит: {hero.CriticalDamage}";
+            FormsInitialization.characterStatsForm.ProtectionLabel.Text = $@"Защита: {hero.Protection}";
+            FormsInitialization.characterStatsForm.BlackMagicProtectionLabel.Text = $@"Защита от чёрной магии: {hero.BlackMagicProtection}";
+            FormsInitialization.characterStatsForm.RegenerationLabel.Text = $@"Регенерация: {hero.Regeneration}";
 
             switch (_character.CharacterClass)
             {
                 case "Маг":
-                    FormsInitialization.characterStatsForm.AmuletLabel1.Text = string.Format($"{0} ({1} ур.)", ((Magician)hero).VzryvEfira.Item1, ((Magician)hero).VzryvEfira.Item2);
-                    FormsInitialization.characterStatsForm.AmuletLabel2.Text = string.Format($"{0} ({1} ур.)", ((Magician)hero).SferyArcany.Item1, ((Magician)hero).SferyArcany.Item2);
-                    FormsInitialization.characterStatsForm.AmuletLabel3.Text = string.Format($"{0} ({1} ур.)", ((Magician)hero).PritokSily.Item1, ((Magician)hero).PritokSily.Item2);
-                    FormsInitialization.characterStatsForm.AmuletLabel4.Text = string.Format($"{0} ({1} ур.)", ((Magician)hero).TenSmerti.Item1, ((Magician)hero).TenSmerti.Item2); ;
-                    FormsInitialization.characterStatsForm.AmuletLabel5.Text = string.Format($"{0} ({1} ур.)", ((Magician)hero).GromMolnia.Item1, ((Magician)hero).GromMolnia.Item2);
-                    FormsInitialization.characterStatsForm.AmuletLabel6.Text = string.Format($"{0} ({1} ур.)", ((Magician)hero).Prizyv.Item1, ((Magician)hero).Prizyv.Item2);
-                    FormsInitialization.characterStatsForm.AmuletLabel7.Text = string.Format($"{0} ({1} ур.)", ((Magician)hero).LedianoiUdar.Item1, ((Magician)hero).LedianoiUdar.Item2);
-                    FormsInitialization.characterStatsForm.AmuletLabel8.Text = string.Format($"{0} ({1} ур.)", ((Magician)hero).Nevidimost.Item1, ((Magician)hero).Nevidimost.Item2);
+                    FormsInitialization.characterStatsForm.AmuletLabel1.Text = $@"{((Magician)hero).VzryvEfira.Item1} ({((Magician)hero).VzryvEfira.Item2} ур.)";
+                    FormsInitialization.characterStatsForm.AmuletLabel2.Text = $@"{((Magician)hero).SferyArcany.Item1} ({((Magician)hero).SferyArcany.Item2} ур.)";
+                    FormsInitialization.characterStatsForm.AmuletLabel3.Text = $@"{((Magician)hero).PritokSily.Item1} ({((Magician)hero).PritokSily.Item2} ур.)";
+                    FormsInitialization.characterStatsForm.AmuletLabel4.Text = $@"{((Magician)hero).TenSmerti.Item1} ({((Magician)hero).TenSmerti.Item2} ур.)"; 
+                    FormsInitialization.characterStatsForm.AmuletLabel5.Text = $@"{((Magician)hero).GromMolnia.Item1} ({((Magician)hero).GromMolnia.Item2} ур.)";
+                    FormsInitialization.characterStatsForm.AmuletLabel6.Text = $@"{((Magician)hero).Prizyv.Item1} ({((Magician)hero).Prizyv.Item2} ур.)";
+                    FormsInitialization.characterStatsForm.AmuletLabel7.Text = $@"{((Magician)hero).LedianoiUdar.Item1} ({((Magician)hero).LedianoiUdar.Item2} ур.)";
+                    FormsInitialization.characterStatsForm.AmuletLabel8.Text = $@"{((Magician)hero).Nevidimost.Item1} ({((Magician)hero).Nevidimost.Item2} ур.)";
                     break;
                 case "Воин":
-                    FormsInitialization.characterStatsForm.AmuletLabel1.Text = string.Format($"{0} ({1} ур.)", ((Warrior)hero).ZaschitaBogov.Item1, ((Warrior)hero).ZaschitaBogov.Item2);
-                    FormsInitialization.characterStatsForm.AmuletLabel2.Text = string.Format($"{0} ({1} ур.)", ((Warrior)hero).RyvokZhizni.Item1, ((Warrior)hero).RyvokZhizni.Item2);
-                    FormsInitialization.characterStatsForm.AmuletLabel3.Text = string.Format($"{0} ({1} ур.)", ((Warrior)hero).IarostBogov.Item1, ((Warrior)hero).IarostBogov.Item2);
-                    FormsInitialization.characterStatsForm.AmuletLabel4.Text = string.Format($"{0} ({1} ур.)", ((Warrior)hero).TalismanDoblesti.Item1, ((Warrior)hero).TalismanDoblesti.Item2);
-                    FormsInitialization.characterStatsForm.AmuletLabel5.Text = string.Format($"{0} ({1} ур.)", ((Warrior)hero).GromMolnia.Item1, ((Warrior)hero).GromMolnia.Item2);
-                    FormsInitialization.characterStatsForm.AmuletLabel6.Text = string.Format($"{0} ({1} ур.)", ((Warrior)hero).Prizyv.Item1, ((Warrior)hero).Prizyv.Item2);
-                    FormsInitialization.characterStatsForm.AmuletLabel7.Text = string.Format($"{0} ({1} ур.)", ((Warrior)hero).LedianoiUdar.Item1, ((Warrior)hero).LedianoiUdar.Item2);
-                    FormsInitialization.characterStatsForm.AmuletLabel8.Text = string.Format($"{0} ({1} ур.)", ((Warrior)hero).Nevidimost.Item1, ((Warrior)hero).Nevidimost.Item2);
+                    FormsInitialization.characterStatsForm.AmuletLabel1.Text = $@"{((Warrior)hero).ZaschitaBogov.Item1} ({((Warrior)hero).ZaschitaBogov.Item2} ур.)";
+                    FormsInitialization.characterStatsForm.AmuletLabel2.Text = $@"{((Warrior)hero).RyvokZhizni.Item1} ({((Warrior)hero).RyvokZhizni.Item2} ур.)";
+                    FormsInitialization.characterStatsForm.AmuletLabel3.Text = $@"{((Warrior)hero).IarostBogov.Item1} ({((Warrior)hero).IarostBogov.Item2} ур.)";
+                    FormsInitialization.characterStatsForm.AmuletLabel4.Text = $@"{((Warrior)hero).TalismanDoblesti.Item1} ({((Warrior)hero).TalismanDoblesti.Item2} ур.)";
+                    FormsInitialization.characterStatsForm.AmuletLabel5.Text = $@"{((Warrior)hero).GromMolnia.Item1} ({((Warrior)hero).GromMolnia.Item2} ур.)";
+                    FormsInitialization.characterStatsForm.AmuletLabel6.Text = $@"{((Warrior)hero).Prizyv.Item1} ({((Warrior)hero).Prizyv.Item2} ур.)";
+                    FormsInitialization.characterStatsForm.AmuletLabel7.Text = $@"{((Warrior)hero).LedianoiUdar.Item1} ({((Warrior)hero).LedianoiUdar.Item2} ур.)";
+                    FormsInitialization.characterStatsForm.AmuletLabel8.Text = $@"{((Warrior)hero).Nevidimost.Item1} ({((Warrior)hero).Nevidimost.Item2} ур.)";
                     break;
                 case "Монах":
-                    FormsInitialization.characterStatsForm.AmuletLabel1.Text = string.Format($"{0} ({1} ур.)", ((Monk)hero).ListokLotosa.Item1, ((Monk)hero).ListokLotosa.Item2);
-                    FormsInitialization.characterStatsForm.AmuletLabel2.Text = string.Format($"{0} ({1} ур.)", ((Monk)hero).ProcliatieGlaiva.Item1, ((Monk)hero).ProcliatieGlaiva.Item2);
-                    FormsInitialization.characterStatsForm.AmuletLabel3.Text = string.Format($"{0} ({1} ур.)", ((Monk)hero).FormaDemona.Item1, ((Monk)hero).FormaDemona.Item2);
-                    FormsInitialization.characterStatsForm.AmuletLabel4.Text = string.Format($"{0} ({1} ур.)", ((Monk)hero).KrovaviiTsvetok.Item1, ((Monk)hero).KrovaviiTsvetok.Item2);
-                    FormsInitialization.characterStatsForm.AmuletLabel5.Text = string.Format($"{0} ({1} ур.)", ((Monk)hero).GromMolnia.Item1, ((Monk)hero).GromMolnia.Item2);
-                    FormsInitialization.characterStatsForm.AmuletLabel6.Text = string.Format($"{0} ({1} ур.)", ((Monk)hero).Prizyv.Item1, ((Monk)hero).Prizyv.Item2);
-                    FormsInitialization.characterStatsForm.AmuletLabel7.Text = string.Format($"{0} ({1} ур.)", ((Monk)hero).LedianoiUdar.Item1, ((Monk)hero).LedianoiUdar.Item2);
-                    FormsInitialization.characterStatsForm.AmuletLabel8.Text = string.Format($"{0} ({1} ур.)", ((Monk)hero).Nevidimost.Item1, ((Monk)hero).Nevidimost.Item2);
+                    FormsInitialization.characterStatsForm.AmuletLabel1.Text = $@"{((Monk)hero).ListokLotosa.Item1} ({((Monk)hero).ListokLotosa.Item2} ур.)";
+                    FormsInitialization.characterStatsForm.AmuletLabel2.Text = $@"{((Monk)hero).ProcliatieGlaiva.Item1} ({((Monk)hero).ProcliatieGlaiva.Item2} ур.)";
+                    FormsInitialization.characterStatsForm.AmuletLabel3.Text = $@"{((Monk)hero).FormaDemona.Item1} ({((Monk)hero).FormaDemona.Item2} ур.)";
+                    FormsInitialization.characterStatsForm.AmuletLabel4.Text = $@"{((Monk)hero).KrovaviiTsvetok.Item1} ({((Monk)hero).KrovaviiTsvetok.Item2} ур.)";
+                    FormsInitialization.characterStatsForm.AmuletLabel5.Text = $@"{((Monk)hero).GromMolnia.Item1} ({((Monk)hero).GromMolnia.Item2} ур.)";
+                    FormsInitialization.characterStatsForm.AmuletLabel6.Text = $@"{((Monk)hero).Prizyv.Item1} ({((Monk)hero).Prizyv.Item2} ур.)";
+                    FormsInitialization.characterStatsForm.AmuletLabel7.Text = $@"{((Monk)hero).LedianoiUdar.Item1} ({((Monk)hero).LedianoiUdar.Item2} ур.)";
+                    FormsInitialization.characterStatsForm.AmuletLabel8.Text = $@"{((Monk)hero).Nevidimost.Item1} ({((Monk)hero).Nevidimost.Item2} ур.)";
                     break;
             }
         }
