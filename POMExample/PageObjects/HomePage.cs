@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
 using POMExample.TestData;
 
@@ -27,6 +28,8 @@ namespace POMExample.PageObjects
         {
             ExplicitWait.Until(condition => notebooksAndComputersMenuLink.Displayed);
             notebooksAndComputersMenuLink.Click();
+            //var action = new Actions(Driver);
+            //action.MoveToElement(notebooksAndComputersMenuLink).Click().Perform();
             return new NotebooksAndComputersPage();
         }
 
