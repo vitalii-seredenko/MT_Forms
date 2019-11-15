@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POMExample", "POMExample\POMExample.csproj", "{0EDEC3AE-F0C1-49D3-8F8D-3C3900438D2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0EDEC3AE-F0C1-49D3-8F8D-3C3900438D2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EDEC3AE-F0C1-49D3-8F8D-3C3900438D2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EDEC3AE-F0C1-49D3-8F8D-3C3900438D2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EDEC3AE-F0C1-49D3-8F8D-3C3900438D2B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E200189-87AF-4A07-A3A8-684241B1F7E3}
+	EndGlobalSection
+EndGlobal
