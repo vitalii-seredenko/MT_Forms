@@ -74,10 +74,12 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.captchaTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CaptchaProcessingForm";
             this.ShowIcon = false;
+            this.Load += new System.EventHandler(this.CaptchaProcessingForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

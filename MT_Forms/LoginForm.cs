@@ -37,15 +37,17 @@ namespace MT_Forms
 
         private void GoToMTButton_Click(object sender, EventArgs e)
         {
-            new Login().GoToMt();
+            if(!string.IsNullOrEmpty(Login.loginName) || !string.IsNullOrEmpty(Login.password))
+                new Login().GoToMt();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            new Core.Application().DisposeDriver();
+            if (!string.IsNullOrEmpty(Login.loginName) || !string.IsNullOrEmpty(Login.password))
+                new Core.Application().DisposeDriver();
         }
 
-        private void VisokayaTemnitsaButton_Click(object sender, EventArgs e)
+        private void VysokayaTemnitsaButton_Click(object sender, EventArgs e)
         {
             new VysokaiaTemnitsa().VysokaiaTemnitsaScript();
         }

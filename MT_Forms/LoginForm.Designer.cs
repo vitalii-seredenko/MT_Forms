@@ -62,7 +62,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Пройти \"Высокая Темница\"";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.VisokayaTemnitsaButton_Click);
+            this.button1.Click += new System.EventHandler(this.VysokayaTemnitsaButton_Click);
             // 
             // goToMTButton
             // 
@@ -279,7 +279,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(264, 356);
+            this.ClientSize = new System.Drawing.Size(713, 356);
             this.Controls.Add(this.showOrHideCharacterStatsButton);
             this.Controls.Add(this.showFatalLogButton);
             this.Controls.Add(this.showErrorLogButton);
@@ -298,7 +298,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginForm";
-            this.ShowIcon = false;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.loginGroupBox.ResumeLayout(false);
             this.loginGroupBox.PerformLayout();

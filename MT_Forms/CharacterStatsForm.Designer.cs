@@ -230,7 +230,10 @@
             this.Controls.Add(this.strangeLabel);
             this.Controls.Add(this.healthLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CharacterStatsForm";
+            this.ShowIcon = false;
             this.Text = "Данные о персонаже";
             this.Load += new System.EventHandler(this.CharacterStatsForm_Load);
             this.ResumeLayout(false);

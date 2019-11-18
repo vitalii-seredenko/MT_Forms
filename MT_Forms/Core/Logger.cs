@@ -7,13 +7,20 @@ namespace MT_Forms.Core
 {
     internal class Logger
     {
-        private static List<string> logList = new List<string>();
+        private static readonly List<string> LogList = new List<string>();
+        private static readonly string LogDirectoryPath = $"{Environment.CurrentDirectory}\\logs";
         private static readonly string LogFilePath = $"{Environment.CurrentDirectory}\\logs\\{DateTime.Now.ToShortDateString()}.txt";
+
+        internal void CreateDirectoryForTextLog()
+        {
+            if (!Directory.Exists(LogDirectoryPath))
+                Directory.CreateDirectory(LogDirectoryPath);
+        }
 
         internal static void WriteAllLogInLogBox()
         {
             FormsInitialization.loginForm.LogBox.Items.Clear();
-            foreach (var logMessage in logList)
+            foreach (var logMessage in LogList)
             {
                 FormsInitialization.loginForm.LogBox.Items.Add(logMessage);
             }
@@ -22,7 +29,7 @@ namespace MT_Forms.Core
         internal static void WriteInfoLogInLogBox()
         {
             FormsInitialization.loginForm.LogBox.Items.Clear();
-            var infoLogList = logList.Where(item => item.Contains("INFO"));
+            var infoLogList = LogList.Where(item => item.Contains("INFO"));
             foreach (var logMessage in infoLogList)
             {
                 FormsInitialization.loginForm.LogBox.Items.Add(logMessage);
@@ -32,7 +39,7 @@ namespace MT_Forms.Core
         internal static void WriteErrorLogInLogBox()
         {
             FormsInitialization.loginForm.LogBox.Items.Clear();
-            var infoLogList = logList.Where(item => item.Contains("ERROR"));
+            var infoLogList = LogList.Where(item => item.Contains("ERROR"));
             foreach (var logMessage in infoLogList)
             {
                 FormsInitialization.loginForm.LogBox.Items.Add(logMessage);
@@ -42,7 +49,7 @@ namespace MT_Forms.Core
         internal static void WriteFatalLogInLogBox()
         {
             FormsInitialization.loginForm.LogBox.Items.Clear();
-            var infoLogList = logList.Where(item => item.Contains("FATAL"));
+            var infoLogList = LogList.Where(item => item.Contains("FATAL"));
             foreach (var logMessage in infoLogList)
             {
                 FormsInitialization.loginForm.LogBox.Items.Add(logMessage);
@@ -52,37 +59,36 @@ namespace MT_Forms.Core
         internal void Info(string logString)
         {
             var infoLogString = logString.Contains("Application started") ? $"\n\n{DateTime.Now} | INFO  | {logString}" : $"{DateTime.Now} | INFO  | {logString}";
-            logList.Add(infoLogString);
+            LogList.Add(infoLogString);
+            CreateDirectoryForTextLog();
             using (var logFile = new StreamWriter(LogFilePath, true))
             {
-                //openFile
                 logFile.WriteLine(infoLogString);
-                if(logString.Contains("Application finished"))
-                    logFile.Close();
+                logFile.Close();
             }
         }
 
         internal void Error(string logString)
         {
             var errorLogString = $"{DateTime.Now} | ERROR | {logString}";
-            logList.Add(errorLogString);
+            LogList.Add(errorLogString);
+            CreateDirectoryForTextLog();
             using (var logFile = new StreamWriter(LogFilePath, true))
             {
                 logFile.WriteLine(errorLogString);
-                if (logString.Contains("Application finished"))
-                    logFile.Close();
+                logFile.Close();
             }
         }
 
         internal void Fatal(string logString)
         {
             var fatalLogString = $"{DateTime.Now} | FATAL | {logString}";
-            logList.Add(fatalLogString);
+            LogList.Add(fatalLogString);
+            CreateDirectoryForTextLog();
             using (var logFile = new StreamWriter(LogFilePath, true))
             {
                 logFile.WriteLine(fatalLogString);
-                if (logString.Contains("Application finished"))
-                    logFile.Close();
+                logFile.Close();
             }
         }
     }

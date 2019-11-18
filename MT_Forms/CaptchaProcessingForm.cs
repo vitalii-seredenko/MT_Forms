@@ -20,5 +20,10 @@ namespace MT_Forms
         {
             new CaptchaProcessing().ProcessingCaptcha();
         }
+
+        private void CaptchaProcessingForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
