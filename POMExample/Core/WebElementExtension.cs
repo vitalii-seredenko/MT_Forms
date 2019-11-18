@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading;
-using NUnit.Framework;
 using OpenQA.Selenium;
 
 namespace POMExample.Core
@@ -10,7 +9,7 @@ namespace POMExample.Core
     {
         public static IWebElement WaitElement(this IWebElement element, int seconds = 5)
         {
-            Stopwatch timer = new Stopwatch();
+            var timer = new Stopwatch();
             timer.Start();
             while (timer.Elapsed < TimeSpan.FromSeconds(seconds))
             {
@@ -21,7 +20,7 @@ namespace POMExample.Core
                 }
                 catch (WebDriverException)
                 {
-                    Thread.Sleep(1000);
+                    Thread.Sleep(500);
                 }
             }
             timer.Stop();
