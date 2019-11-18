@@ -1,8 +1,7 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
-using OpenQA.Selenium.Support.UI;
 using POMExample.Core;
 
 namespace POMExample.PageObjects
@@ -10,12 +9,12 @@ namespace POMExample.PageObjects
     internal class SiteHeader
     {
         protected readonly IWebDriver Driver = DriverSingleton.Driver;
-        protected readonly WebDriverWait ExplicitWait;
+        protected readonly Actions Actions;
 
         internal SiteHeader()
         {
             PageFactory.InitElements(Driver, this);
-            ExplicitWait = new WebDriverWait(Driver, TimeSpan.FromSeconds(5000));
+            Actions = new Actions(Driver);
         }
 
         #region WebElements

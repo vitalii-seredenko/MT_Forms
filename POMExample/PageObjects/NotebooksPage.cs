@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using POMExample.Core;
 using POMExample.TestData;
 
 namespace POMExample.PageObjects
@@ -25,8 +26,7 @@ namespace POMExample.PageObjects
 
         internal void ClickOnFirstPopularNotebook()
         {
-            ExplicitWait.Until(condition => firstPopularNotebookLink.Displayed);
-            firstPopularNotebookLink.Click();
+            firstPopularNotebookLink.WaitElement().Click();
         }
 
         #endregion

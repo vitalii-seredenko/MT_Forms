@@ -57,11 +57,12 @@
     <Compile Include="CommonMethods\Navigation.cs" />
     <Compile Include="Core\DriverFactory.cs" />
     <Compile Include="Core\DriverSingleton.cs" />
+    <Compile Include="Core\WebElementExtension.cs" />
     <Compile Include="PageObjects\HomePage.cs" />
     <Compile Include="PageObjects\NotebooksAndComputersPage.cs" />
     <Compile Include="PageObjects\SiteHeader.cs" />
     <Compile Include="PageObjects\NotebooksPage.cs" />
-    <Compile Include="TestClass.cs" />
+    <Compile Include="TestScenarios\TestClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestData\PageUrls.cs" />
   </ItemGroup>

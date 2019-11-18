@@ -4,7 +4,7 @@ using POMExample.CommonMethods;
 using POMExample.Core;
 using POMExample.PageObjects;
 
-namespace POMExample
+namespace POMExample.TestScenarios
 {
     internal class TestClass
     {
@@ -18,7 +18,7 @@ namespace POMExample
         }
 
         [Test]
-        public void SearchTextFromAboutPage()
+        public void SearchFirstPopularNotebook()
         {
             var navigation = new Navigation();
             ((HomePage)navigation.NavigateToPage("Home page")).GoToNotebooksAndComputersPage().GoToNotebooksPage().ClickOnFirstPopularNotebook();
@@ -28,7 +28,7 @@ namespace POMExample
         [TearDown]
         public void TearDown()
         {
-            _driver.Dispose();
+            //_driver.Dispose();
         }
     }
 }

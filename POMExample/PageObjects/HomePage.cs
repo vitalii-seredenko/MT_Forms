@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
+using POMExample.Core;
 using POMExample.TestData;
 
 namespace POMExample.PageObjects
@@ -18,7 +18,7 @@ namespace POMExample.PageObjects
         #region WebElements
 
         [FindsBy(How = How.XPath, Using = "//a[@class='menu-categories__link' and text()='Ноутбуки и компьютеры']")]
-        private IWebElement notebooksAndComputersMenuLink;
+        private IWebElement notebooksAndComputersMenuLinkInGeneralMenu;
 
         #endregion
 
@@ -26,10 +26,7 @@ namespace POMExample.PageObjects
 
         internal NotebooksAndComputersPage GoToNotebooksAndComputersPage()
         {
-            ExplicitWait.Until(condition => notebooksAndComputersMenuLink.Displayed);
-            notebooksAndComputersMenuLink.Click();
-            //var action = new Actions(Driver);
-            //action.MoveToElement(notebooksAndComputersMenuLink).Click().Perform();
+            Actions.DoubleClick(notebooksAndComputersMenuLinkInGeneralMenu).Build().Perform();
             return new NotebooksAndComputersPage();
         }
 
