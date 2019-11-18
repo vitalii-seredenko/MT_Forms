@@ -16,9 +16,9 @@ namespace MT_Forms.Common
         internal DungeonDifficulty GetDungeonDifficulty()
         {
             var dungeonDifficulty = DungeonDifficulty.Normal;
-                if (FormsInitialization.loginForm.HardDifficultyRadioButton.Checked)
+                if (FormsInitialization.mainProgramForm.HardDifficultyRadioButton.Checked)
                     dungeonDifficulty = DungeonDifficulty.Hard;
-                if (FormsInitialization.loginForm.ImpossibleDifficultyRadioButton.Checked)
+                if (FormsInitialization.mainProgramForm.ImpossibleDifficultyRadioButton.Checked)
                     dungeonDifficulty = DungeonDifficulty.Impossible;
             return dungeonDifficulty;
         }

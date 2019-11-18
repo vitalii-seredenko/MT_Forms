@@ -95,6 +95,12 @@
     </Compile>
     <Compile Include="Core\FormsInitialization.cs" />
     <Compile Include="LogicForForms\ChangeSize.cs" />
+    <Compile Include="MainProgramForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainProgramForm.Designer.cs">
+      <DependentUpon>MainProgramForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PageObjects\BaseTownPage.cs" />
     <Compile Include="PageObjects\DungeonButtons.cs" />
     <Compile Include="PageObjects\GeneralBasePage.cs" />
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CaptchaProcessingForm.resx">
       <DependentUpon>CaptchaProcessingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainProgramForm.resx">
+      <DependentUpon>MainProgramForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

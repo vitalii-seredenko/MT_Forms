@@ -4,10 +4,10 @@
     {
         internal void ChangeForm1WidthForShowLog()
         {
-            if(Core.FormsInitialization.loginForm.Width == 280)
-                Core.FormsInitialization.loginForm.Width = 700;
-            else if(Core.FormsInitialization.loginForm.Width == 700)
-                Core.FormsInitialization.loginForm.Width = 280;
+            if(Core.FormsInitialization.mainProgramForm.Width == 280)
+                Core.FormsInitialization.mainProgramForm.Width = 695;
+            else if(Core.FormsInitialization.mainProgramForm.Width == 695)
+                Core.FormsInitialization.mainProgramForm.Width = 280;
         }
     }
 }

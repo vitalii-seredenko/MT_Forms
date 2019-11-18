@@ -46,6 +46,8 @@ namespace MT_Forms.Common
             {
                 userCharacteristic.GetUser();
                 FormsInitialization.captchaProcessingForm.Hide();
+                FormsInitialization.mainProgramForm.Show();
+                FormsInitialization.loginForm.Hide();
             }
         }
     }

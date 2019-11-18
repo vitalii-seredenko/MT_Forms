@@ -19,40 +19,40 @@ namespace MT_Forms.Core
 
         internal static void WriteAllLogInLogBox()
         {
-            FormsInitialization.loginForm.LogBox.Items.Clear();
+            FormsInitialization.mainProgramForm.LogBox.Items.Clear();
             foreach (var logMessage in LogList)
             {
-                FormsInitialization.loginForm.LogBox.Items.Add(logMessage);
+                FormsInitialization.mainProgramForm.LogBox.Items.Add(logMessage);
             }
         }
 
         internal static void WriteInfoLogInLogBox()
         {
-            FormsInitialization.loginForm.LogBox.Items.Clear();
+            FormsInitialization.mainProgramForm.LogBox.Items.Clear();
             var infoLogList = LogList.Where(item => item.Contains("INFO"));
             foreach (var logMessage in infoLogList)
             {
-                FormsInitialization.loginForm.LogBox.Items.Add(logMessage);
+                FormsInitialization.mainProgramForm.LogBox.Items.Add(logMessage);
             }
         }
 
         internal static void WriteErrorLogInLogBox()
         {
-            FormsInitialization.loginForm.LogBox.Items.Clear();
+            FormsInitialization.mainProgramForm.LogBox.Items.Clear();
             var infoLogList = LogList.Where(item => item.Contains("ERROR"));
             foreach (var logMessage in infoLogList)
             {
-                FormsInitialization.loginForm.LogBox.Items.Add(logMessage);
+                FormsInitialization.mainProgramForm.LogBox.Items.Add(logMessage);
             }
         }
 
         internal static void WriteFatalLogInLogBox()
         {
-            FormsInitialization.loginForm.LogBox.Items.Clear();
+            FormsInitialization.mainProgramForm.LogBox.Items.Clear();
             var infoLogList = LogList.Where(item => item.Contains("FATAL"));
             foreach (var logMessage in infoLogList)
             {
-                FormsInitialization.loginForm.LogBox.Items.Add(logMessage);
+                FormsInitialization.mainProgramForm.LogBox.Items.Add(logMessage);
             }
         }
 
