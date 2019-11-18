@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MT_Forms.Core;
 
 namespace MT_Forms.LogicForCharacters
@@ -23,23 +24,22 @@ namespace MT_Forms.LogicForCharacters
         internal string CharacterClass
         {
             get => _characterClass;
-            //change to array
             set
             {
-                switch (value)
+                var classArray = new List<string>{ "Маг", "Воин", "Монах" };
+                foreach (var className in classArray)
                 {
-                    case "Маг":
-                        _characterClass = "Маг";
+                    if (value.Equals(className))
+                    {
+                        _characterClass = className;
                         break;
-                    case "Воин":
-                        _characterClass = "Воин";
-                        break;
-                    case "Монах":
-                        _characterClass = "Монах";
-                        break;
-                    default: 
-                        new Logger().Error($"Value '{value}' does not a character class");
-                        throw new ArgumentException($"Value '{0}' does not a character class", value);
+                    }
+                }
+
+                if (string.IsNullOrEmpty(_characterClass))
+                {
+                    new Logger().Error($"Value '{value}' does not a character class");
+                    throw new ArgumentException($"Value '{0}' does not a character class", value);
                 }
             }
         }
