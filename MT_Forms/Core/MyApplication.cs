@@ -1,15 +1,16 @@
-﻿using OpenQA.Selenium;
+﻿using MT_Forms.Core.Driver;
+using OpenQA.Selenium;
 
 namespace MT_Forms.Core
 {
-    internal class Application
+    internal class MyApplication
     {
         private readonly IWebDriver _driver;
-        private readonly Logger _logger;
+        private readonly Logger.Logger _logger;
 
-        internal Application()
+        internal MyApplication()
         {
-            _logger = new Logger();
+            _logger = new Logger.Logger();
             _driver = DriverSingleton.Driver;
         }
 

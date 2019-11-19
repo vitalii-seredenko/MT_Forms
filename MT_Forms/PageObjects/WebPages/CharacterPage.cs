@@ -1,18 +1,15 @@
 ﻿using System.Text.RegularExpressions;
-using MT_Forms.Core;
+using MT_Forms.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace MT_Forms.PageObjects
+namespace MT_Forms.PageObjects.WebPages
 {
-    internal class CharacterPage
+    internal class CharacterPage : GeneralBasePage
     {
-        private readonly IWebDriver _driver;
-
         internal CharacterPage()
         {
-            _driver = DriverSingleton.Driver;
-            PageFactory.InitElements(_driver, this);
+            PageFactory.InitElements(driver, this);
         }
 
         #region WebElements
@@ -71,23 +68,15 @@ namespace MT_Forms.PageObjects
 
         #endregion
 
+        #region Methods
+
         internal string CutLettersFromHeroLevelTextBox(IWebElement heroAmuletLevelTextBox)
         {
             var regex = new Regex("\\d+");
-            var levelMatch = regex.Match(ReturnElementTextIfElementPresent(heroAmuletLevelTextBox));
+            var levelMatch = regex.Match(heroAmuletLevelTextBox.ReturnElementTextIfElementPresent());
             return levelMatch.Value;
         }
 
-        internal string ReturnElementTextIfElementPresent(IWebElement heroAmuletLevelTextBox)
-        {
-            try
-            {
-                return heroAmuletLevelTextBox.Displayed ? heroAmuletLevelTextBox.Text : "0";
-            }
-            catch (NoSuchElementException)
-            {
-                return "0";
-            }
-        }
+        #endregion
     }
 }

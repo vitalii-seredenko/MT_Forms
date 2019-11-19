@@ -1,18 +1,15 @@
-﻿using MT_Forms.Core;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace MT_Forms.PageObjects
+namespace MT_Forms.PageObjects.WebPages
 {
-    internal class BaseTownPage
+    internal class BaseTownPage : GeneralBasePage
     {
-        private readonly IWebDriver _driver;
         private int _heroesHealth;
 
         internal BaseTownPage()
         {
-            _driver = DriverSingleton.Driver;
-            PageFactory.InitElements(_driver, this);
+            PageFactory.InitElements(driver, this);
         }
 
         #region WebElements
@@ -29,48 +26,10 @@ namespace MT_Forms.PageObjects
         internal IWebElement heroesHealthTextBox;
         [FindsBy(How = How.XPath, Using = "//a[@href='https://m.vten.ru/user']")]
         internal IWebElement characterButton;
-        
-        #endregion
-
-        #region CheckElementIsPresent
-
-        internal bool ContinueButtonIsPresent()
-        {
-            try
-            {
-                return continueButton.Displayed;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-        }
-
-        internal bool BillboardElementIsPresent()
-        {
-            try
-            {
-                return billboardElement.Displayed;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-        }
-
-        internal bool CityPictureIsPresent()
-        {
-            try
-            {
-                return cityPicture.Displayed;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-        }
 
         #endregion
+
+        #region Methods
 
         internal void GetHeroesHealth()
         {
@@ -81,5 +40,7 @@ namespace MT_Forms.PageObjects
         {
             return _heroesHealth * 0.2 < int.Parse(heroesHealthTextBox.Text);
         }
+
+        #endregion
     }
 }

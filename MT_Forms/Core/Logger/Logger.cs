@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace MT_Forms.Core
+namespace MT_Forms.Core.Logger
 {
     internal class Logger
     {
         private static readonly List<string> LogList = new List<string>();
-        private static readonly string LogDirectoryPath = $"{Environment.CurrentDirectory}\\logs";
-        private static readonly string LogFilePath = $"{Environment.CurrentDirectory}\\logs\\{DateTime.Now.ToShortDateString()}.txt";
+        private static readonly string LogDirectoryPath = $@"{Environment.CurrentDirectory}\logs";
+        private static readonly string LogFilePath = $@"{Environment.CurrentDirectory}\logs\{DateTime.Now.ToShortDateString()}.txt";
 
         internal void CreateDirectoryForTextLog()
         {
@@ -19,40 +19,40 @@ namespace MT_Forms.Core
 
         internal static void WriteAllLogInLogBox()
         {
-            FormsInitialization.mainProgramForm.LogBox.Items.Clear();
+            FormsStorage.mainProgramForm.LogBox.Items.Clear();
             foreach (var logMessage in LogList)
             {
-                FormsInitialization.mainProgramForm.LogBox.Items.Add(logMessage);
+                FormsStorage.mainProgramForm.LogBox.Items.Add(logMessage);
             }
         }
 
         internal static void WriteInfoLogInLogBox()
         {
-            FormsInitialization.mainProgramForm.LogBox.Items.Clear();
+            FormsStorage.mainProgramForm.LogBox.Items.Clear();
             var infoLogList = LogList.Where(item => item.Contains("INFO"));
             foreach (var logMessage in infoLogList)
             {
-                FormsInitialization.mainProgramForm.LogBox.Items.Add(logMessage);
+                FormsStorage.mainProgramForm.LogBox.Items.Add(logMessage);
             }
         }
 
         internal static void WriteErrorLogInLogBox()
         {
-            FormsInitialization.mainProgramForm.LogBox.Items.Clear();
+            FormsStorage.mainProgramForm.LogBox.Items.Clear();
             var infoLogList = LogList.Where(item => item.Contains("ERROR"));
             foreach (var logMessage in infoLogList)
             {
-                FormsInitialization.mainProgramForm.LogBox.Items.Add(logMessage);
+                FormsStorage.mainProgramForm.LogBox.Items.Add(logMessage);
             }
         }
 
         internal static void WriteFatalLogInLogBox()
         {
-            FormsInitialization.mainProgramForm.LogBox.Items.Clear();
+            FormsStorage.mainProgramForm.LogBox.Items.Clear();
             var infoLogList = LogList.Where(item => item.Contains("FATAL"));
             foreach (var logMessage in infoLogList)
             {
-                FormsInitialization.mainProgramForm.LogBox.Items.Add(logMessage);
+                FormsStorage.mainProgramForm.LogBox.Items.Add(logMessage);
             }
         }
 

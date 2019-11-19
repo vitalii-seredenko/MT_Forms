@@ -42,12 +42,13 @@
             this.showInfoLogButton = new System.Windows.Forms.Button();
             this.showLogButton = new System.Windows.Forms.Button();
             this.logBox = new System.Windows.Forms.ListBox();
+            this.exitButton = new System.Windows.Forms.Button();
             this.difficultyCheckBoxesGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // showOrHideCharacterStatsButton
             // 
-            this.showOrHideCharacterStatsButton.Location = new System.Drawing.Point(13, 160);
+            this.showOrHideCharacterStatsButton.Location = new System.Drawing.Point(13, 189);
             this.showOrHideCharacterStatsButton.Name = "showOrHideCharacterStatsButton";
             this.showOrHideCharacterStatsButton.Size = new System.Drawing.Size(239, 23);
             this.showOrHideCharacterStatsButton.TabIndex = 26;
@@ -59,7 +60,7 @@
             // 
             this.showOrHideLogButton.BackColor = System.Drawing.Color.DarkKhaki;
             this.showOrHideLogButton.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.showOrHideLogButton.Location = new System.Drawing.Point(13, 189);
+            this.showOrHideLogButton.Location = new System.Drawing.Point(13, 218);
             this.showOrHideLogButton.Name = "showOrHideLogButton";
             this.showOrHideLogButton.Size = new System.Drawing.Size(240, 26);
             this.showOrHideLogButton.TabIndex = 25;
@@ -72,7 +73,7 @@
             this.difficultyCheckBoxesGroupBox.Controls.Add(this.impossibleDifficultyRadioButton);
             this.difficultyCheckBoxesGroupBox.Controls.Add(this.normalDifficultyRadioButton);
             this.difficultyCheckBoxesGroupBox.Controls.Add(this.hardDifficultyRadioButton);
-            this.difficultyCheckBoxesGroupBox.Location = new System.Drawing.Point(12, 12);
+            this.difficultyCheckBoxesGroupBox.Location = new System.Drawing.Point(12, 41);
             this.difficultyCheckBoxesGroupBox.Name = "difficultyCheckBoxesGroupBox";
             this.difficultyCheckBoxesGroupBox.Size = new System.Drawing.Size(241, 44);
             this.difficultyCheckBoxesGroupBox.TabIndex = 24;
@@ -116,7 +117,7 @@
             // goForTheCasketAndToEndCheckBox
             // 
             this.goForTheCasketAndToEndCheckBox.AutoSize = true;
-            this.goForTheCasketAndToEndCheckBox.Location = new System.Drawing.Point(128, 103);
+            this.goForTheCasketAndToEndCheckBox.Location = new System.Drawing.Point(128, 132);
             this.goForTheCasketAndToEndCheckBox.Name = "goForTheCasketAndToEndCheckBox";
             this.goForTheCasketAndToEndCheckBox.Size = new System.Drawing.Size(129, 43);
             this.goForTheCasketAndToEndCheckBox.TabIndex = 23;
@@ -127,7 +128,7 @@
             // goForTheCasketCheckBox
             // 
             this.goForTheCasketCheckBox.AutoSize = true;
-            this.goForTheCasketCheckBox.Location = new System.Drawing.Point(128, 70);
+            this.goForTheCasketCheckBox.Location = new System.Drawing.Point(128, 99);
             this.goForTheCasketCheckBox.Name = "goForTheCasketCheckBox";
             this.goForTheCasketCheckBox.Size = new System.Drawing.Size(132, 30);
             this.goForTheCasketCheckBox.TabIndex = 22;
@@ -137,7 +138,7 @@
             // 
             // VysokayaTemnitsaButton
             // 
-            this.VysokayaTemnitsaButton.Location = new System.Drawing.Point(12, 62);
+            this.VysokayaTemnitsaButton.Location = new System.Drawing.Point(12, 91);
             this.VysokayaTemnitsaButton.Name = "VysokayaTemnitsaButton";
             this.VysokayaTemnitsaButton.Size = new System.Drawing.Size(106, 84);
             this.VysokayaTemnitsaButton.TabIndex = 21;
@@ -195,11 +196,22 @@
             this.logBox.Size = new System.Drawing.Size(398, 277);
             this.logBox.TabIndex = 27;
             // 
+            // exitButton
+            // 
+            this.exitButton.Location = new System.Drawing.Point(40, 12);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(181, 23);
+            this.exitButton.TabIndex = 32;
+            this.exitButton.Text = "Выйти из Мира Теней";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
             // MainProgramForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(264, 331);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.showFatalLogButton);
             this.Controls.Add(this.showErrorLogButton);
             this.Controls.Add(this.showInfoLogButton);
@@ -215,6 +227,7 @@
             this.MinimizeBox = false;
             this.Name = "MainProgramForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.difficultyCheckBoxesGroupBox.ResumeLayout(false);
             this.difficultyCheckBoxesGroupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -238,5 +251,6 @@
         private System.Windows.Forms.Button showInfoLogButton;
         private System.Windows.Forms.Button showLogButton;
         private System.Windows.Forms.ListBox logBox;
+        private System.Windows.Forms.Button exitButton;
     }
 }

@@ -1,29 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using MT_Forms.Core;
+using MT_Forms.Core.Logger;
 
 namespace MT_Forms.LogicForCharacters
 {
     internal class Character
     {
-        protected string _characterClass;
-        protected int _health;
-        protected int _strength;
-        protected int _protection;
-        protected int _criticalDamage;
-        protected int _blackMagicProtection;
-        protected int _regeneration;
+        private protected string characterClass;
+        private protected int health;
+        private protected int strength;
+        private protected int protection;
+        private protected int criticalDamage;
+        private protected int blackMagicProtection;
+        private protected int regeneration;
 
-        internal int Health => _health;
-        internal int Strange => _strength;
-        internal int Protection => _protection;
-        internal int CriticalDamage => _criticalDamage;
-        internal int BlackMagicProtection => _blackMagicProtection;
-        internal int Regeneration => _regeneration;
+        internal int Health => health;
+        internal int Strange => strength;
+        internal int Protection => protection;
+        internal int CriticalDamage => criticalDamage;
+        internal int BlackMagicProtection => blackMagicProtection;
+        internal int Regeneration => regeneration;
 
         internal string CharacterClass
         {
-            get => _characterClass;
+            get => characterClass;
             set
             {
                 var classArray = new List<string>{ "Маг", "Воин", "Монах" };
@@ -31,22 +31,23 @@ namespace MT_Forms.LogicForCharacters
                 {
                     if (value.Equals(className))
                     {
-                        _characterClass = className;
+                        characterClass = className;
                         break;
                     }
                 }
 
-                if (string.IsNullOrEmpty(_characterClass))
+                if (string.IsNullOrEmpty(characterClass))
                 {
-                    new Logger().Error($"Value '{value}' does not a character class");
-                    throw new ArgumentException($"Value '{0}' does not a character class", value);
+                    var exception = new ArgumentException($"Value '{0}' does not a character class", value);
+                    new Logger().Error(exception.Message);
+                    throw exception;
                 }
             }
         }
 
         internal int CharacterSumOfStats()
         {
-            return _health + _strength + _protection;
+            return health + strength + protection;
         }
     }
 }

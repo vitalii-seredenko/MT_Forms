@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace MT_Forms.Core
+namespace MT_Forms.Core.Driver
 {
     internal enum Drivers
     {

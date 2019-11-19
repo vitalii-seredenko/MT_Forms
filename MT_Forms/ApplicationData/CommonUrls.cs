@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using DungeonDifficulty = MT_Forms.Common.Difficulty.DungeonDifficulty;
+﻿using System.Collections.Generic;
 
 namespace MT_Forms.ApplicationData
 {
     internal class CommonUrls
     {
+        internal const string GameUrl = "https://m.vten.ru/";
+
         private readonly Dictionary<string, string> _dungeonUrls = new Dictionary<string, string>
         {
             {"MonastyrPokoia", "https://m.vten.ru/dungeon/landing/RestMonastery"},

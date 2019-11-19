@@ -1,8 +1,8 @@
-﻿using MT_Forms.Core;
+﻿using MT_Forms.Core.Driver;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace MT_Forms.PageObjects
+namespace MT_Forms.PageObjects.Buttons
 {
     internal class QuestsButtons
     {

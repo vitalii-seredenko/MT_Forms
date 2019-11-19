@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 
-namespace MT_Forms.Core
+namespace MT_Forms.Core.Driver
 {
     internal class DriverFactory
     {
@@ -11,10 +11,13 @@ namespace MT_Forms.Core
         {
            IWebDriver driver;
 
-            switch (driverName)
+           var co = new ChromeOptions();
+           co.AddArgument("no-sandbox");
+
+           switch (driverName)
             {
                 case Drivers.Chrome:
-                    driver = new ChromeDriver();
+                    driver = new ChromeDriver(co);
                     break;
                 case Drivers.FireFox:
                     driver = new FirefoxDriver();

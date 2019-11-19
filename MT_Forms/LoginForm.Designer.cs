@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.goToMTButton = new System.Windows.Forms.Button();
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.loginGroupBox = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.heroNameLabel = new System.Windows.Forms.Label();
+            this.passwordLabel = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.loginGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +57,7 @@
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(113, 20);
             this.loginTextBox.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.loginTextBox, "Введите имя персонажа");
             this.loginTextBox.TextChanged += new System.EventHandler(this.LoginTextBox_TextChanged);
             // 
             // passwordTextBox
@@ -64,12 +67,13 @@
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(113, 20);
             this.passwordTextBox.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.passwordTextBox, "Введите пароль");
             this.passwordTextBox.TextChanged += new System.EventHandler(this.PasswordTextBox_TextChanged);
             // 
             // loginGroupBox
             // 
-            this.loginGroupBox.Controls.Add(this.label3);
-            this.loginGroupBox.Controls.Add(this.label2);
+            this.loginGroupBox.Controls.Add(this.heroNameLabel);
+            this.loginGroupBox.Controls.Add(this.passwordLabel);
             this.loginGroupBox.Controls.Add(this.exitButton);
             this.loginGroupBox.Controls.Add(this.passwordTextBox);
             this.loginGroupBox.Controls.Add(this.goToMTButton);
@@ -81,23 +85,25 @@
             this.loginGroupBox.TabStop = false;
             this.loginGroupBox.Text = "Логин";
             // 
-            // label3
+            // heroNameLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Имя персонажа";
+            this.heroNameLabel.AutoSize = true;
+            this.heroNameLabel.Location = new System.Drawing.Point(15, 19);
+            this.heroNameLabel.Name = "heroNameLabel";
+            this.heroNameLabel.Size = new System.Drawing.Size(88, 13);
+            this.heroNameLabel.TabIndex = 11;
+            this.heroNameLabel.Text = "Имя персонажа";
+            this.toolTip1.SetToolTip(this.heroNameLabel, "Введите имя персонажа");
             // 
-            // label2
+            // passwordLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Пароль";
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Location = new System.Drawing.Point(28, 42);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(45, 13);
+            this.passwordLabel.TabIndex = 10;
+            this.passwordLabel.Text = "Пароль";
+            this.toolTip1.SetToolTip(this.passwordLabel, "Введите пароль");
             // 
             // exitButton
             // 
@@ -118,10 +124,12 @@
             this.Controls.Add(this.loginGroupBox);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginForm";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.HelpButton_Click);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.loginGroupBox.ResumeLayout(false);
             this.loginGroupBox.PerformLayout();
@@ -135,8 +143,9 @@
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.GroupBox loginGroupBox;
         private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label heroNameLabel;
+        private System.Windows.Forms.Label passwordLabel;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

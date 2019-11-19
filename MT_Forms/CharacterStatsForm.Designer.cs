@@ -234,6 +234,7 @@
             this.MinimizeBox = false;
             this.Name = "CharacterStatsForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Данные о персонаже";
             this.Load += new System.EventHandler(this.CharacterStatsForm_Load);
             this.ResumeLayout(false);

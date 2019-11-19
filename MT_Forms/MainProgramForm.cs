@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using MT_Forms.Common;
 using MT_Forms.Core;
+using MT_Forms.Core.Logger;
 using MT_Forms.LogicForForms;
 using MT_Forms.Scripts;
 
@@ -39,13 +40,13 @@ namespace MT_Forms
 
         private void ShowOrHideCharacterStatsButton_Click(object sender, EventArgs e)
         {
-            FormsInitialization.characterStatsForm.Show();
+            FormsStorage.characterStatsForm.Show();
             new UserCharacteristic().ShowUserCharacteristicInForm();
         }
 
         private void ShowOrHideLogButton_Click(object sender, EventArgs e)
         {
-            new ChangeSize().ChangeForm1WidthForShowLog();
+            new ChangeSize().ChangeMainFormWidthForShowLog();
         }
 
         private void ShowLogButton_Click(object sender, EventArgs e)
@@ -66,6 +67,11 @@ namespace MT_Forms
         private void ShowFatalLogButton_Click(object sender, EventArgs e)
         {
             Logger.WriteFatalLogInLogBox();
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            new MyApplication().DisposeDriver();
         }
     }
 }

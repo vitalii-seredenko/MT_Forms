@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Windows.Forms;
 using MT_Forms.Core;
+using MT_Forms.Core.Logger;
 
 namespace MT_Forms
 {
@@ -10,9 +12,9 @@ namespace MT_Forms
         {
             var logger = new Logger();
             logger.Info("<-----------New application session started----------->");
-            System.Windows.Forms.Application.EnableVisualStyles();
+            Application.EnableVisualStyles();
             //System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
-            System.Windows.Forms.Application.Run(FormsInitialization.loginForm);
+            Application.Run(FormsStorage.loginForm);
             logger.Info("<-----------Application finished----------->\n");
         }
     }

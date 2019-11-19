@@ -1,17 +1,13 @@
-﻿using MT_Forms.Core;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace MT_Forms.PageObjects
+namespace MT_Forms.PageObjects.WebPages
 {
-    internal class LoginPage
+    internal class LoginPage : GeneralBasePage
     {
-        private readonly IWebDriver _driver;
-
         internal LoginPage()
         {
-            _driver = DriverSingleton.Driver;
-            PageFactory.InitElements(_driver, this);
+            PageFactory.InitElements(driver, this);
         }
 
         #region WebElements
@@ -33,43 +29,9 @@ namespace MT_Forms.PageObjects
 
         #endregion
 
-        #region CheckElementIsPresent
+        #region Methods
 
-        internal bool InvalidLoginOrPasswordErrorMessageIsPresent()
-        {
-            try
-            {
-                return invalidLoginOrPasswordErrorMessage.Displayed;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-        }
-
-        internal bool InvalidCaptchaErrorMessageIsPresent()
-        {
-            try
-            {
-                return invalidCaptchaErrorMessage.Displayed;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-        }
-
-        internal bool СaptchaTextBoxIsPresent()
-        {
-            try
-            {
-                return captchaTextBox.Displayed;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-        }
+       
 
         #endregion
     }

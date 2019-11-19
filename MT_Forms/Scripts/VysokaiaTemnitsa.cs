@@ -1,7 +1,9 @@
 ﻿using MT_Forms.ApplicationData;
 using MT_Forms.Common;
 using MT_Forms.Core;
-using MT_Forms.PageObjects;
+using MT_Forms.Core.Logger;
+using MT_Forms.Extensions;
+using MT_Forms.PageObjects.Buttons;
 
 namespace MT_Forms.Scripts
 {
@@ -22,30 +24,30 @@ namespace MT_Forms.Scripts
 
         internal void VysokaiaTemnitsaScript()
         {
-            var application = new Application();
+            var application = new MyApplication();
             var commonUrls = new CommonUrls();
             var difficulty = new Difficulty();
-            if (!FormsInitialization.mainProgramForm.GoForTheCasketAndToEndCheckBox.Checked && !FormsInitialization.mainProgramForm.GoForTheCasketCheckBox.Checked)
+            if (!FormsStorage.mainProgramForm.GoForTheCasketAndToEndCheckBox.Checked && !FormsStorage.mainProgramForm.GoForTheCasketCheckBox.Checked)
             {
                 application.NavigateToUrl(difficulty.ChooseDungeonDifficulty(DungeonName, difficulty.GetDungeonDifficulty()));
-                _dungeonButtons.enterInDungeon.Click();
-                _dungeonButtons.startBattle.Click();
+                _dungeonButtons.enterInDungeon.WaitElementAndClick();
+                _dungeonButtons.startBattle.WaitElementAndClick();
                 GoInDungeonForTheItems();
             }
-            else if (FormsInitialization.mainProgramForm.GoForTheCasketAndToEndCheckBox.Checked == false)
+            else if (FormsStorage.mainProgramForm.GoForTheCasketAndToEndCheckBox.Checked == false)
             {
                 application.NavigateToUrl(commonUrls.GetQuestUrl(DailyQuestName));
-                _questsButtons.findGangButton.Click();
-                _dungeonButtons.enterInDungeon.Click();
-                _dungeonButtons.startBattle.Click();
+                _questsButtons.findGangButton.WaitElementAndClick();
+                _dungeonButtons.enterInDungeon.WaitElementAndClick();
+                _dungeonButtons.startBattle.WaitElementAndClick();
                 GoInDungeonForTheCasketAndItems();
             }
-            else if (FormsInitialization.mainProgramForm.GoForTheCasketCheckBox.Checked == false)
+            else if (FormsStorage.mainProgramForm.GoForTheCasketCheckBox.Checked == false)
             {
                 application.NavigateToUrl(commonUrls.GetQuestUrl(DailyQuestName));
-                _questsButtons.findGangButton.Click();
-                _dungeonButtons.enterInDungeon.Click();
-                _dungeonButtons.startBattle.Click();
+                _questsButtons.findGangButton.WaitElementAndClick();
+                _dungeonButtons.enterInDungeon.WaitElementAndClick();
+                _dungeonButtons.startBattle.WaitElementAndClick();
                 GoInDungeonOnlyForTheCasket();
             }
         }
@@ -57,11 +59,11 @@ namespace MT_Forms.Scripts
             {
                 if (!_dungeonButtons.WaveIsComplete() && !_dungeonButtons.DungeonIsComplete() && !_dungeonButtons.GiveRewardLinkIsPresent())
                 {
-                    _dungeonButtons.ClickOnFirstAttackButton();
+                    _dungeonButtons.firstAttackButton.ClickOnElementWithRandomInterval();
                 }
                 else if (_dungeonButtons.WaveIsComplete())
                 {
-                    _dungeonButtons.continueBattle.Click();
+                    _dungeonButtons.continueBattle.WaitElementAndClick();
                 }
                 else if (_dungeonButtons.DungeonIsComplete())
                 {
@@ -78,19 +80,19 @@ namespace MT_Forms.Scripts
             {
                 if (!_dungeonButtons.WaveIsComplete() && !_dungeonButtons.DungeonIsComplete() && !_dungeonButtons.GiveRewardLinkIsPresent())
                 {
-                    _dungeonButtons.ClickOnFirstAttackButton();
+                    _dungeonButtons.firstAttackButton.ClickOnElementWithRandomInterval();
                 }
                 else if (_dungeonButtons.WaveIsComplete())
                 {
-                    _dungeonButtons.continueBattle.Click();
+                    _dungeonButtons.continueBattle.WaitElementAndClick();
                 }
                 else if (_dungeonButtons.DungeonIsComplete())
                 {
                     break;
                 }
             }
-            _dungeonButtons.giveRewardLink.Click();
-            _questsButtons.continueAdventures.Click();
+            _dungeonButtons.giveRewardLink.WaitElementAndClick();
+            _questsButtons.continueAdventures.WaitElementAndClick();
         }
 
         private void GoInDungeonOnlyForTheCasket()
@@ -100,16 +102,16 @@ namespace MT_Forms.Scripts
             {
                 if (!_dungeonButtons.WaveIsComplete() && !_dungeonButtons.DungeonIsComplete() && !_dungeonButtons.GiveRewardLinkIsPresent())
                 {
-                    _dungeonButtons.ClickOnFirstAttackButton();
+                    _dungeonButtons.firstAttackButton.ClickOnElementWithRandomInterval();
                 }
                 else if (_dungeonButtons.WaveIsComplete())
                 {
-                    _dungeonButtons.continueBattle.Click();
+                    _dungeonButtons.continueBattle.WaitElementAndClick();
                 }
                 else if (_dungeonButtons.GiveRewardLinkIsPresent())
                 {
-                    _dungeonButtons.giveRewardLink.Click();
-                    _questsButtons.continueAdventures.Click();
+                    _dungeonButtons.giveRewardLink.WaitElementAndClick();
+                    _questsButtons.continueAdventures.WaitElementAndClick();
                     break;
                 }
             }

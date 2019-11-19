@@ -2,12 +2,12 @@
 {
     internal class ChangeSize
     {
-        internal void ChangeForm1WidthForShowLog()
+        internal void ChangeMainFormWidthForShowLog()
         {
-            if(Core.FormsInitialization.mainProgramForm.Width == 280)
-                Core.FormsInitialization.mainProgramForm.Width = 695;
-            else if(Core.FormsInitialization.mainProgramForm.Width == 695)
-                Core.FormsInitialization.mainProgramForm.Width = 280;
+            if(Core.FormsStorage.mainProgramForm.Width == 280)
+                Core.FormsStorage.mainProgramForm.Width = 695;
+            else if(Core.FormsStorage.mainProgramForm.Width == 695)
+                Core.FormsStorage.mainProgramForm.Width = 280;
         }
     }
 }

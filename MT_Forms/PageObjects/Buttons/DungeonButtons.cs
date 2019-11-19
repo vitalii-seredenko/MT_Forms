@@ -1,20 +1,17 @@
 ﻿using System;
-using System.Threading;
-using MT_Forms.Core;
+using MT_Forms.Core.Driver;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace MT_Forms.PageObjects
+namespace MT_Forms.PageObjects.Buttons
 {
     internal class DungeonButtons
     {
         private readonly IWebDriver _driver;
-        private readonly Random _random;
 
         internal DungeonButtons()
         {
             _driver = DriverSingleton.Driver;
-            _random = new Random();
             PageFactory.InitElements(_driver, this);
         }
 
@@ -38,12 +35,6 @@ namespace MT_Forms.PageObjects
         internal IWebElement giveRewardLink;
 
         #endregion
-
-        internal void ClickOnFirstAttackButton()
-        {
-            Thread.Sleep(_random.Next(1500, 2500));
-            firstAttackButton.Click();
-        }
 
         internal bool WaveIsComplete()
         {

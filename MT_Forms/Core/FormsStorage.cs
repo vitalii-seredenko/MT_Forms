@@ -1,6 +1,6 @@
 ﻿namespace MT_Forms.Core
 {
-    internal class FormsInitialization
+    internal class FormsStorage
     {
         internal static LoginForm loginForm = new LoginForm();
         internal static MainProgramForm mainProgramForm = new MainProgramForm();

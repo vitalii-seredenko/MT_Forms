@@ -1,6 +1,8 @@
 ﻿using System.Windows.Forms;
-using MT_Forms.Core;
-using MT_Forms.PageObjects;
+using MT_Forms.ApplicationData;
+using MT_Forms.Core.Logger;
+using MT_Forms.Extensions;
+using MT_Forms.PageObjects.WebPages;
 using Keys = OpenQA.Selenium.Keys;
 
 namespace MT_Forms.Common
@@ -21,13 +23,13 @@ namespace MT_Forms.Common
         internal void GoToMt()
         {
             var generalBasePage = new GeneralBasePage();
-            var application = new Core.Application();
+            var application = new Core.MyApplication();
             application.MaximizeBrowserWindow();
-            application.NavigateToUrl("https://m.vten.ru/");
-            _loginPage.startGameButton.Click();
-            if (generalBasePage.LightVersionButtonIsPresent())
+            application.NavigateToUrl(CommonUrls.GameUrl);
+            _loginPage.startGameButton.WaitElementAndClick();
+            if (generalBasePage.lightVersionButton.IsElementPresent())
             {
-                generalBasePage.SwitchToLightVersion();
+                generalBasePage.lightVersionButton.WaitElementAndClick();
             }
             LoginWithParameters();
             _logger.Info("Program successfully logged in MT");
@@ -35,13 +37,13 @@ namespace MT_Forms.Common
 
         internal void LoginWithParameters()
         {
-            _loginPage.inputLoginForm.SendKeys(Keys.Control + "a");
+            _loginPage.inputLoginForm.WaitElement().SendKeys(Keys.Control + "a");
             _loginPage.inputLoginForm.SendKeys(loginName);
-            _loginPage.inputPasswordForm.SendKeys(Keys.Control + "a");
+            _loginPage.inputPasswordForm.WaitElement().SendKeys(Keys.Control + "a");
             _loginPage.inputPasswordForm.SendKeys(password);
-            _loginPage.submitButton.Click();
+            _loginPage.submitButton.WaitElementAndClick();
             new CaptchaProcessing().CallCaptchaProcessingDialogWindow();
-            if (_loginPage.InvalidLoginOrPasswordErrorMessageIsPresent())
+            if (_loginPage.invalidLoginOrPasswordErrorMessage.IsElementPresent())
             {
                 MessageBox.Show("Неверное имя или пароль!", "Ошибка");
                 _logger.Error("User entered an invalid username or password");

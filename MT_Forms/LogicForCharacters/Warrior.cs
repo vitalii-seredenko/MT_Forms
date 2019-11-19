@@ -24,12 +24,12 @@
 
         internal Warrior(string health, string strange, string protection, string criticalDamage, string blackMagicProtection, string regeneration, string zaschitaBogovLevel, string iarostBogovLevel, string ryvokZhizniLevel, string gromMolniaLevel, string talismanDoblestiLevel, string nevidimostLevel, string prizyvLevel, string ledianoiUdarLevel)
         {
-            int.TryParse(health, out _health);
-            int.TryParse(strange, out _strength);
-            int.TryParse(protection, out _protection);
-            int.TryParse(criticalDamage, out _criticalDamage);
-            int.TryParse(blackMagicProtection, out _blackMagicProtection);
-            int.TryParse(regeneration, out _regeneration);
+            int.TryParse(health, out base.health);
+            int.TryParse(strange, out strength);
+            int.TryParse(protection, out base.protection);
+            int.TryParse(criticalDamage, out base.criticalDamage);
+            int.TryParse(blackMagicProtection, out base.blackMagicProtection);
+            int.TryParse(regeneration, out base.regeneration);
 
             _zaschitaBogov.zaschitaBogov = "Защита Богов";
             int.TryParse(zaschitaBogovLevel, out _zaschitaBogov.zaschitaBogovLevel);

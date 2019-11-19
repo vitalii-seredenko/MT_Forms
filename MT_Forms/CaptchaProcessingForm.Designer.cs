@@ -79,6 +79,7 @@
             this.MinimizeBox = false;
             this.Name = "CaptchaProcessingForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.CaptchaProcessingForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
