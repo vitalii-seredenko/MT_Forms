@@ -19,40 +19,40 @@ namespace MT_Forms.Core.Logger
 
         internal static void WriteAllLogInLogBox()
         {
-            FormsStorage.mainProgramForm.LogBox.Items.Clear();
+            FormsStorage.logForm.LogBox.Items.Clear();
             foreach (var logMessage in LogList)
             {
-                FormsStorage.mainProgramForm.LogBox.Items.Add(logMessage);
+                FormsStorage.logForm.LogBox.Items.Add(logMessage);
             }
         }
 
         internal static void WriteInfoLogInLogBox()
         {
-            FormsStorage.mainProgramForm.LogBox.Items.Clear();
+            FormsStorage.logForm.LogBox.Items.Clear();
             var infoLogList = LogList.Where(item => item.Contains("INFO"));
             foreach (var logMessage in infoLogList)
             {
-                FormsStorage.mainProgramForm.LogBox.Items.Add(logMessage);
+                FormsStorage.logForm.LogBox.Items.Add(logMessage);
             }
         }
 
         internal static void WriteErrorLogInLogBox()
         {
-            FormsStorage.mainProgramForm.LogBox.Items.Clear();
+            FormsStorage.logForm.LogBox.Items.Clear();
             var infoLogList = LogList.Where(item => item.Contains("ERROR"));
             foreach (var logMessage in infoLogList)
             {
-                FormsStorage.mainProgramForm.LogBox.Items.Add(logMessage);
+                FormsStorage.logForm.LogBox.Items.Add(logMessage);
             }
         }
 
         internal static void WriteFatalLogInLogBox()
         {
-            FormsStorage.mainProgramForm.LogBox.Items.Clear();
+            FormsStorage.logForm.LogBox.Items.Clear();
             var infoLogList = LogList.Where(item => item.Contains("FATAL"));
             foreach (var logMessage in infoLogList)
             {
-                FormsStorage.mainProgramForm.LogBox.Items.Add(logMessage);
+                FormsStorage.logForm.LogBox.Items.Add(logMessage);
             }
         }
 

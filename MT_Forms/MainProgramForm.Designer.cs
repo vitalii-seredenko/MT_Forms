@@ -37,18 +37,13 @@
             this.goForTheCasketAndToEndCheckBox = new System.Windows.Forms.CheckBox();
             this.goForTheCasketCheckBox = new System.Windows.Forms.CheckBox();
             this.VysokayaTemnitsaButton = new System.Windows.Forms.Button();
-            this.showFatalLogButton = new System.Windows.Forms.Button();
-            this.showErrorLogButton = new System.Windows.Forms.Button();
-            this.showInfoLogButton = new System.Windows.Forms.Button();
-            this.showLogButton = new System.Windows.Forms.Button();
-            this.logBox = new System.Windows.Forms.ListBox();
             this.exitButton = new System.Windows.Forms.Button();
             this.difficultyCheckBoxesGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // showOrHideCharacterStatsButton
             // 
-            this.showOrHideCharacterStatsButton.Location = new System.Drawing.Point(13, 189);
+            this.showOrHideCharacterStatsButton.Location = new System.Drawing.Point(12, 181);
             this.showOrHideCharacterStatsButton.Name = "showOrHideCharacterStatsButton";
             this.showOrHideCharacterStatsButton.Size = new System.Drawing.Size(239, 23);
             this.showOrHideCharacterStatsButton.TabIndex = 26;
@@ -60,7 +55,7 @@
             // 
             this.showOrHideLogButton.BackColor = System.Drawing.Color.DarkKhaki;
             this.showOrHideLogButton.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.showOrHideLogButton.Location = new System.Drawing.Point(13, 218);
+            this.showOrHideLogButton.Location = new System.Drawing.Point(13, 210);
             this.showOrHideLogButton.Name = "showOrHideLogButton";
             this.showOrHideLogButton.Size = new System.Drawing.Size(240, 26);
             this.showOrHideLogButton.TabIndex = 25;
@@ -146,56 +141,6 @@
             this.VysokayaTemnitsaButton.UseVisualStyleBackColor = true;
             this.VysokayaTemnitsaButton.Click += new System.EventHandler(this.VysokayaTemnitsaButton_Click);
             // 
-            // showFatalLogButton
-            // 
-            this.showFatalLogButton.Location = new System.Drawing.Point(569, 295);
-            this.showFatalLogButton.Name = "showFatalLogButton";
-            this.showFatalLogButton.Size = new System.Drawing.Size(95, 23);
-            this.showFatalLogButton.TabIndex = 31;
-            this.showFatalLogButton.Text = "Только FATAL";
-            this.showFatalLogButton.UseVisualStyleBackColor = true;
-            this.showFatalLogButton.Click += new System.EventHandler(this.ShowFatalLogButton_Click);
-            // 
-            // showErrorLogButton
-            // 
-            this.showErrorLogButton.Location = new System.Drawing.Point(468, 295);
-            this.showErrorLogButton.Name = "showErrorLogButton";
-            this.showErrorLogButton.Size = new System.Drawing.Size(95, 23);
-            this.showErrorLogButton.TabIndex = 30;
-            this.showErrorLogButton.Text = "Только ERROR";
-            this.showErrorLogButton.UseVisualStyleBackColor = true;
-            this.showErrorLogButton.Click += new System.EventHandler(this.ShowErrorLogButton_Click);
-            // 
-            // showInfoLogButton
-            // 
-            this.showInfoLogButton.Location = new System.Drawing.Point(367, 295);
-            this.showInfoLogButton.Name = "showInfoLogButton";
-            this.showInfoLogButton.Size = new System.Drawing.Size(95, 23);
-            this.showInfoLogButton.TabIndex = 29;
-            this.showInfoLogButton.Text = "Только INFO";
-            this.showInfoLogButton.UseVisualStyleBackColor = true;
-            this.showInfoLogButton.Click += new System.EventHandler(this.ShowInfoLogButton_Click);
-            // 
-            // showLogButton
-            // 
-            this.showLogButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
-            this.showLogButton.Location = new System.Drawing.Point(266, 295);
-            this.showLogButton.Name = "showLogButton";
-            this.showLogButton.Size = new System.Drawing.Size(95, 23);
-            this.showLogButton.TabIndex = 28;
-            this.showLogButton.Text = "Показать весь лог";
-            this.showLogButton.UseVisualStyleBackColor = true;
-            this.showLogButton.Click += new System.EventHandler(this.ShowLogButton_Click);
-            // 
-            // logBox
-            // 
-            this.logBox.FormattingEnabled = true;
-            this.logBox.HorizontalScrollbar = true;
-            this.logBox.Location = new System.Drawing.Point(266, 12);
-            this.logBox.Name = "logBox";
-            this.logBox.Size = new System.Drawing.Size(398, 277);
-            this.logBox.TabIndex = 27;
-            // 
             // exitButton
             // 
             this.exitButton.Location = new System.Drawing.Point(40, 12);
@@ -210,13 +155,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(264, 331);
+            this.ClientSize = new System.Drawing.Size(264, 243);
             this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.showFatalLogButton);
-            this.Controls.Add(this.showErrorLogButton);
-            this.Controls.Add(this.showInfoLogButton);
-            this.Controls.Add(this.showLogButton);
-            this.Controls.Add(this.logBox);
             this.Controls.Add(this.showOrHideCharacterStatsButton);
             this.Controls.Add(this.showOrHideLogButton);
             this.Controls.Add(this.difficultyCheckBoxesGroupBox);
@@ -246,11 +186,6 @@
         private System.Windows.Forms.CheckBox goForTheCasketAndToEndCheckBox;
         private System.Windows.Forms.CheckBox goForTheCasketCheckBox;
         private System.Windows.Forms.Button VysokayaTemnitsaButton;
-        private System.Windows.Forms.Button showFatalLogButton;
-        private System.Windows.Forms.Button showErrorLogButton;
-        private System.Windows.Forms.Button showInfoLogButton;
-        private System.Windows.Forms.Button showLogButton;
-        private System.Windows.Forms.ListBox logBox;
         private System.Windows.Forms.Button exitButton;
     }
 }

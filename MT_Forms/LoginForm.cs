@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Windows.Forms;
 using MT_Forms.Common;
 using MT_Forms.Core;
@@ -35,7 +36,7 @@ namespace MT_Forms
             }
             else
             {
-                toolTip1.SetToolTip(goToMTButton, "Введите имя персонажа и пароль!");
+                toolTip1.SetToolTip(goToMTButton, "Заполните пустые поля!");
             }
         }
 
@@ -48,6 +49,13 @@ namespace MT_Forms
         {
             MessageBox.Show("Автор: m_dsst\n\n            2019", "О программе");
             //FormsStorage.loginForm.Cursor = Cursors.Arrow;
+        }
+
+        private void ShowOrHideLogButton_Click(object sender, EventArgs e)
+        {
+            var th = new Thread(() => Application.Run(FormsStorage.logForm));
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
         }
     }
 }

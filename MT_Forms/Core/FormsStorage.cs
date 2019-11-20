@@ -6,5 +6,6 @@
         internal static MainProgramForm mainProgramForm = new MainProgramForm();
         internal static CaptchaProcessingForm captchaProcessingForm = new CaptchaProcessingForm();
         internal static CharacterStatsForm characterStatsForm = new CharacterStatsForm();
+        internal static LogForm logForm = new LogForm();
     }
 }

@@ -11,13 +11,10 @@ namespace MT_Forms.Core.Driver
         {
            IWebDriver driver;
 
-           var co = new ChromeOptions();
-           co.AddArgument("no-sandbox");
-
            switch (driverName)
             {
                 case Drivers.Chrome:
-                    driver = new ChromeDriver(co);
+                    driver = new ChromeDriver();
                     break;
                 case Drivers.FireFox:
                     driver = new FirefoxDriver();

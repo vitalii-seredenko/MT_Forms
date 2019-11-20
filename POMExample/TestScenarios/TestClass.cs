@@ -28,7 +28,7 @@ namespace POMExample.TestScenarios
         [TearDown]
         public void TearDown()
         {
-            //_driver.Dispose();
+            _driver.Dispose();
         }
     }
 }

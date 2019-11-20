@@ -38,6 +38,7 @@
             this.passwordLabel = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.showOrHideLogButton = new System.Windows.Forms.Button();
             this.loginGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,12 +116,25 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // showOrHideLogButton
+            // 
+            this.showOrHideLogButton.BackColor = System.Drawing.Color.DarkKhaki;
+            this.showOrHideLogButton.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.showOrHideLogButton.Location = new System.Drawing.Point(12, 146);
+            this.showOrHideLogButton.Name = "showOrHideLogButton";
+            this.showOrHideLogButton.Size = new System.Drawing.Size(240, 26);
+            this.showOrHideLogButton.TabIndex = 26;
+            this.showOrHideLogButton.Text = "Показать/Скрыть окно лога событий";
+            this.showOrHideLogButton.UseVisualStyleBackColor = false;
+            this.showOrHideLogButton.Click += new System.EventHandler(this.ShowOrHideLogButton_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(264, 151);
+            this.ClientSize = new System.Drawing.Size(264, 181);
+            this.Controls.Add(this.showOrHideLogButton);
             this.Controls.Add(this.loginGroupBox);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -146,6 +160,7 @@
         private System.Windows.Forms.Label heroNameLabel;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button showOrHideLogButton;
     }
 }
 

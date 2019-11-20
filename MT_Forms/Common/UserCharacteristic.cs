@@ -22,7 +22,7 @@ namespace MT_Forms.Common
         internal void GetUser()
         {
             _baseTownPage.characterButton.WaitElementAndClick();
-            switch (_character.CharacterClass = _characterPage.characterClassTextBox.Text)
+            switch (_character.CharacterClass = _characterPage.characterClassTextBox.WaitElement().Text)
             {
                 case "Маг":
                     hero = new Magician(_characterPage.characterHealthTextBox.Text, _characterPage.characterStrangeTextBox.Text, _characterPage.characterProtectionTextBox.Text, _characterPage.characterCriticalDamageTextBox.Text, _characterPage.characterBlackMagicProtectionTextBox.ReturnElementTextIfElementPresent(), _characterPage.characterRegenerationTextBox.Text, _characterPage.vzryvEfiraLevelTextBox.CutLettersFromTextBox(), _characterPage.pritokSilyLevelTextBox.CutLettersFromTextBox(), _characterPage.sferyArcanyLevelTextBox.CutLettersFromTextBox(), _characterPage.gromMolniaLevelTextBox.CutLettersFromTextBox(), _characterPage.tenSmertiLevelTextBox.CutLettersFromTextBox(), _characterPage.nevidimostLevelTextBox.CutLettersFromTextBox(), _characterPage.prizyvLevelTextBox.CutLettersFromTextBox(), _characterPage.ledianoiUdarLevelTextBox.CutLettersFromTextBox());
