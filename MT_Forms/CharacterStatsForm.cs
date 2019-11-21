@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using MT_Forms.Core;
 
 namespace MT_Forms
 {
@@ -28,6 +29,11 @@ namespace MT_Forms
         private void CharacterStatsForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void CharacterStatsForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormsStorage.characterStatsForm = new CharacterStatsForm();
         }
     }
 }

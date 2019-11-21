@@ -6,7 +6,7 @@ namespace MT_Forms.LogicForCharacters
 {
     internal class Character
     {
-        private protected string characterClass;
+        private protected string heroClass;
         private protected int health;
         private protected int strength;
         private protected int protection;
@@ -21,9 +21,9 @@ namespace MT_Forms.LogicForCharacters
         internal int BlackMagicProtection => blackMagicProtection;
         internal int Regeneration => regeneration;
 
-        internal string CharacterClass
+        internal string HeroClass
         {
-            get => characterClass;
+            get => heroClass;
             set
             {
                 var classArray = new List<string>{ "Маг", "Воин", "Монах" };
@@ -31,12 +31,12 @@ namespace MT_Forms.LogicForCharacters
                 {
                     if (value.Equals(className))
                     {
-                        characterClass = className;
+                        heroClass = className;
                         break;
                     }
                 }
 
-                if (string.IsNullOrEmpty(characterClass))
+                if (string.IsNullOrEmpty(heroClass))
                 {
                     var exception = new ArgumentException($"Value '{0}' does not a character class", value);
                     new Logger().Error(exception.Message);

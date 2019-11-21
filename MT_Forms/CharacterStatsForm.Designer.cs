@@ -236,6 +236,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Данные о персонаже";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CharacterStatsForm_FormClosed);
             this.Load += new System.EventHandler(this.CharacterStatsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -17,7 +17,7 @@ namespace MT_Forms.Core
 
         internal void DisposeDriver()
         {
-            _driver?.Dispose();
+            _driver.Dispose();
         }
 
         internal void MaximizeBrowserWindow()

@@ -1,18 +1,13 @@
-﻿using System;
-using MT_Forms.Core.Driver;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+﻿using OpenQA.Selenium;
+using SeleniumExtras.PageObjects;
 
 namespace MT_Forms.PageObjects.Buttons
 {
-    internal class DungeonButtons
+    internal class DungeonButtons : Buttons
     {
-        private readonly IWebDriver _driver;
-
         internal DungeonButtons()
         {
-            _driver = DriverSingleton.Driver;
-            PageFactory.InitElements(_driver, this);
+            PageFactory.InitElements(driver, this);
         }
 
         #region WebElements

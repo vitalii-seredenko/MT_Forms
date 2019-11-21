@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using MT_Forms.Core;
 using MT_Forms.Core.Logger;
 
 namespace MT_Forms
@@ -33,6 +34,11 @@ namespace MT_Forms
         private void ShowFatalLogButton_Click(object sender, EventArgs e)
         {
             _logger.WriteFatalLogInLogBox();
+        }
+
+        private void LogForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormsStorage.logForm = new LogForm();
         }
     }
 }

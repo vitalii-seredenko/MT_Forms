@@ -14,8 +14,20 @@ namespace MT_Forms
             logger.Info("<-----------New application session started----------->");
             Application.EnableVisualStyles();
             //System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(FormsStorage.loginForm);
-            logger.Info("<-----------Application finished----------->\n");
+            try
+            {
+                Application.Run(FormsStorage.loginForm);
+            }
+            catch (Exception exception)
+            {
+                logger.Fatal(exception.Message);
+                MessageBox.Show("Возникла ошибка :(", "Fatal error");
+                new MyApplication().DisposeDriver();
+            }
+            finally
+            {
+                logger.Info("<-----------Application finished----------->\n");
+            }
         }
     }
 }

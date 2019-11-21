@@ -9,20 +9,18 @@ namespace MT_Forms.Common
     {
         internal static Character hero = new Character();
         private readonly BaseTownPage _baseTownPage;
-        private readonly Character _character;
         private readonly CharacterPage _characterPage;
 
         internal UserCharacteristic()
         {
             _baseTownPage = new BaseTownPage();
-            _character = new Character();
             _characterPage = new CharacterPage();
         }
 
         internal void GetUser()
         {
             _baseTownPage.characterButton.WaitElementAndClick();
-            switch (_character.CharacterClass = _characterPage.characterClassTextBox.WaitElement().Text)
+            switch (hero.HeroClass = _characterPage.characterClassTextBox.WaitElement().Text)
             {
                 case "Маг":
                     hero = new Magician(_characterPage.characterHealthTextBox.Text, _characterPage.characterStrangeTextBox.Text, _characterPage.characterProtectionTextBox.Text, _characterPage.characterCriticalDamageTextBox.Text, _characterPage.characterBlackMagicProtectionTextBox.ReturnElementTextIfElementPresent(), _characterPage.characterRegenerationTextBox.Text, _characterPage.vzryvEfiraLevelTextBox.CutLettersFromTextBox(), _characterPage.pritokSilyLevelTextBox.CutLettersFromTextBox(), _characterPage.sferyArcanyLevelTextBox.CutLettersFromTextBox(), _characterPage.gromMolniaLevelTextBox.CutLettersFromTextBox(), _characterPage.tenSmertiLevelTextBox.CutLettersFromTextBox(), _characterPage.nevidimostLevelTextBox.CutLettersFromTextBox(), _characterPage.prizyvLevelTextBox.CutLettersFromTextBox(), _characterPage.ledianoiUdarLevelTextBox.CutLettersFromTextBox());
@@ -45,7 +43,7 @@ namespace MT_Forms.Common
             FormsStorage.characterStatsForm.BlackMagicProtectionLabel.Text = $@"Защита от чёрной магии: {hero.BlackMagicProtection}";
             FormsStorage.characterStatsForm.RegenerationLabel.Text = $@"Регенерация: {hero.Regeneration}";
 
-            switch (_character.CharacterClass)
+            switch (hero.HeroClass)
             {
                 case "Маг":
                     FormsStorage.characterStatsForm.AmuletLabel1.Text = $@"{((Magician)hero).VzryvEfira.Item1} ({((Magician)hero).VzryvEfira.Item2} ур.)";

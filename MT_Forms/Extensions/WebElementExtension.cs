@@ -6,7 +6,7 @@ using OpenQA.Selenium;
 
 namespace MT_Forms.Extensions
 {
-    static class WebElementExtension
+    internal static class WebElementExtension
     {
         internal static IWebElement WaitElement(this IWebElement element, int seconds = 3)
         {

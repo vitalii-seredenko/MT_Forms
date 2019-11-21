@@ -1,6 +1,6 @@
 ﻿using MT_Forms.Core.Driver;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace MT_Forms.PageObjects.WebPages
 {
