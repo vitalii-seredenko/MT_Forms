@@ -6,6 +6,8 @@ namespace MT_Forms
 {
     public partial class LogForm : Form
     {
+        private readonly Logger _logger = new Logger();
+
         internal ListBox LogBox => logBox;
 
         public LogForm()
@@ -15,22 +17,22 @@ namespace MT_Forms
 
         private void ShowLogButton_Click(object sender, EventArgs e)
         {
-            Logger.WriteAllLogInLogBox();
+            _logger.WriteAllLogInLogBox();
         }
 
         private void ShowInfoLogButton_Click(object sender, EventArgs e)
         {
-            Logger.WriteInfoLogInLogBox();
+            _logger.WriteInfoLogInLogBox();
         }
 
         private void ShowErrorLogButton_Click(object sender, EventArgs e)
         {
-            Logger.WriteErrorLogInLogBox();
+            _logger.WriteErrorLogInLogBox();
         }
 
         private void ShowFatalLogButton_Click(object sender, EventArgs e)
         {
-            Logger.WriteFatalLogInLogBox();
+            _logger.WriteFatalLogInLogBox();
         }
     }
 }

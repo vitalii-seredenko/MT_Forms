@@ -8,8 +8,8 @@ namespace MT_Forms.Core.Logger
     internal class Logger
     {
         private static readonly List<string> LogList = new List<string>();
-        private static readonly string LogDirectoryPath = $@"{Environment.CurrentDirectory}\logs";
-        private static readonly string LogFilePath = $@"{Environment.CurrentDirectory}\logs\{DateTime.Now.ToShortDateString()}.txt";
+        private static readonly string LogDirectoryPath = $@"{AppDomain.CurrentDomain.BaseDirectory}\logs";
+        private static readonly string LogFilePath = $@"{AppDomain.CurrentDomain.BaseDirectory}\logs\{DateTime.Now.ToShortDateString()}.txt";
 
         internal void CreateDirectoryForTextLog()
         {
@@ -17,7 +17,7 @@ namespace MT_Forms.Core.Logger
                 Directory.CreateDirectory(LogDirectoryPath);
         }
 
-        internal static void WriteAllLogInLogBox()
+        internal void WriteAllLogInLogBox()
         {
             FormsStorage.logForm.LogBox.Items.Clear();
             foreach (var logMessage in LogList)
@@ -26,7 +26,7 @@ namespace MT_Forms.Core.Logger
             }
         }
 
-        internal static void WriteInfoLogInLogBox()
+        internal void WriteInfoLogInLogBox()
         {
             FormsStorage.logForm.LogBox.Items.Clear();
             var infoLogList = LogList.Where(item => item.Contains("INFO"));
@@ -36,7 +36,7 @@ namespace MT_Forms.Core.Logger
             }
         }
 
-        internal static void WriteErrorLogInLogBox()
+        internal void WriteErrorLogInLogBox()
         {
             FormsStorage.logForm.LogBox.Items.Clear();
             var infoLogList = LogList.Where(item => item.Contains("ERROR"));
@@ -46,7 +46,7 @@ namespace MT_Forms.Core.Logger
             }
         }
 
-        internal static void WriteFatalLogInLogBox()
+        internal void WriteFatalLogInLogBox()
         {
             FormsStorage.logForm.LogBox.Items.Clear();
             var infoLogList = LogList.Where(item => item.Contains("FATAL"));

@@ -10,7 +10,7 @@ namespace POMExample.CommonMethods
     {
         private readonly IWebDriver _driver = DriverSingleton.Driver;
 
-        internal SiteHeader NavigateToPage(string pageName)
+        internal object NavigateToPage(string pageName)
         {
             switch (pageName)
             {
