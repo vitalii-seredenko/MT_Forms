@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogForm));
             this.showFatalLogButton = new System.Windows.Forms.Button();
             this.showErrorLogButton = new System.Windows.Forms.Button();
             this.showInfoLogButton = new System.Windows.Forms.Button();
@@ -95,9 +96,10 @@
             this.Controls.Add(this.showInfoLogButton);
             this.Controls.Add(this.showLogButton);
             this.Controls.Add(this.logBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LogForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "LogForm";
+            this.Text = "Program log";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LogForm_FormClosed);
             this.ResumeLayout(false);
 

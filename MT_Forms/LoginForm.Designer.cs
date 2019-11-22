@@ -37,8 +37,9 @@
             this.heroNameLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipForLabelsAndTextBoxes = new System.Windows.Forms.ToolTip(this.components);
             this.showOrHideLogButton = new System.Windows.Forms.Button();
+            this.toolTipForButtons = new System.Windows.Forms.ToolTip(this.components);
             this.loginGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(113, 20);
             this.loginTextBox.TabIndex = 2;
-            this.toolTip1.SetToolTip(this.loginTextBox, "Введите имя персонажа");
+            this.toolTipForLabelsAndTextBoxes.SetToolTip(this.loginTextBox, "Введите имя персонажа");
             this.loginTextBox.TextChanged += new System.EventHandler(this.LoginTextBox_TextChanged);
             // 
             // passwordTextBox
@@ -68,7 +69,7 @@
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(113, 20);
             this.passwordTextBox.TabIndex = 5;
-            this.toolTip1.SetToolTip(this.passwordTextBox, "Введите пароль");
+            this.toolTipForLabelsAndTextBoxes.SetToolTip(this.passwordTextBox, "Введите пароль");
             this.passwordTextBox.TextChanged += new System.EventHandler(this.PasswordTextBox_TextChanged);
             // 
             // loginGroupBox
@@ -94,7 +95,7 @@
             this.heroNameLabel.Size = new System.Drawing.Size(88, 13);
             this.heroNameLabel.TabIndex = 11;
             this.heroNameLabel.Text = "Имя персонажа";
-            this.toolTip1.SetToolTip(this.heroNameLabel, "Введите имя персонажа");
+            this.toolTipForLabelsAndTextBoxes.SetToolTip(this.heroNameLabel, "Введите имя персонажа");
             // 
             // passwordLabel
             // 
@@ -104,7 +105,7 @@
             this.passwordLabel.Size = new System.Drawing.Size(45, 13);
             this.passwordLabel.TabIndex = 10;
             this.passwordLabel.Text = "Пароль";
-            this.toolTip1.SetToolTip(this.passwordLabel, "Введите пароль");
+            this.toolTipForLabelsAndTextBoxes.SetToolTip(this.passwordLabel, "Введите пароль");
             // 
             // exitButton
             // 
@@ -122,18 +123,22 @@
             this.showOrHideLogButton.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.showOrHideLogButton.Location = new System.Drawing.Point(12, 146);
             this.showOrHideLogButton.Name = "showOrHideLogButton";
-            this.showOrHideLogButton.Size = new System.Drawing.Size(240, 26);
+            this.showOrHideLogButton.Size = new System.Drawing.Size(240, 23);
             this.showOrHideLogButton.TabIndex = 26;
             this.showOrHideLogButton.Text = "Показать/Скрыть окно лога событий";
             this.showOrHideLogButton.UseVisualStyleBackColor = false;
             this.showOrHideLogButton.Click += new System.EventHandler(this.ShowOrHideLogButton_Click);
+            // 
+            // toolTipForButtons
+            // 
+            this.toolTipForButtons.Active = false;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(264, 181);
+            this.ClientSize = new System.Drawing.Size(264, 176);
             this.Controls.Add(this.showOrHideLogButton);
             this.Controls.Add(this.loginGroupBox);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -143,8 +148,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginForm";
+            this.Text = "MT_Forms";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.HelpButton_Click);
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.loginGroupBox.ResumeLayout(false);
             this.loginGroupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -159,8 +164,9 @@
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label heroNameLabel;
         private System.Windows.Forms.Label passwordLabel;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTipForLabelsAndTextBoxes;
         private System.Windows.Forms.Button showOrHideLogButton;
+        private System.Windows.Forms.ToolTip toolTipForButtons;
     }
 }
 

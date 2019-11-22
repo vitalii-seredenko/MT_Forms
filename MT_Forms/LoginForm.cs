@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
 using MT_Forms.Common;
@@ -11,11 +12,6 @@ namespace MT_Forms
         internal LoginForm()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void LoginTextBox_TextChanged(object sender, EventArgs e)
@@ -36,7 +32,7 @@ namespace MT_Forms
             }
             else
             {
-                toolTip1.SetToolTip(goToMTButton, "Заполните пустые поля!");
+                toolTipForButtons.SetToolTip(goToMTButton, "Сперва заполните пустые поля!");
             }
         }
 
@@ -53,9 +49,11 @@ namespace MT_Forms
 
         private void ShowOrHideLogButton_Click(object sender, EventArgs e)
         {
-            var th = new Thread(() => Application.Run(FormsStorage.logForm));
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
+            if (!FormsStorage.logForm.Visible)
+            {
+                var workerThread = new Thread(() => Application.Run(FormsStorage.logForm));
+                workerThread.Start();
+            }
         }
     }
 }

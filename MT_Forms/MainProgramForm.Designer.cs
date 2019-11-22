@@ -57,7 +57,7 @@
             this.showOrHideLogButton.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.showOrHideLogButton.Location = new System.Drawing.Point(13, 210);
             this.showOrHideLogButton.Name = "showOrHideLogButton";
-            this.showOrHideLogButton.Size = new System.Drawing.Size(240, 26);
+            this.showOrHideLogButton.Size = new System.Drawing.Size(240, 21);
             this.showOrHideLogButton.TabIndex = 25;
             this.showOrHideLogButton.Text = "Показать/Скрыть окно лога событий";
             this.showOrHideLogButton.UseVisualStyleBackColor = false;
@@ -168,6 +168,7 @@
             this.Name = "MainProgramForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "MT_Forms";
             this.difficultyCheckBoxesGroupBox.ResumeLayout(false);
             this.difficultyCheckBoxesGroupBox.PerformLayout();
             this.ResumeLayout(false);

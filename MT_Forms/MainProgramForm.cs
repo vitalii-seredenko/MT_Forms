@@ -44,9 +44,11 @@ namespace MT_Forms
 
         private void ShowOrHideLogButton_Click(object sender, EventArgs e)
         {
-            var th = new Thread(() => Application.Run(FormsStorage.logForm));
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
+            if (!FormsStorage.logForm.Visible)
+            {
+                var workerThread = new Thread(() => Application.Run(FormsStorage.logForm));
+                workerThread.Start();
+            }
         }
 
         private void ExitButton_Click(object sender, EventArgs e)

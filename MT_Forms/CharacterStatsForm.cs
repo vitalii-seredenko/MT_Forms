@@ -26,11 +26,6 @@ namespace MT_Forms
             InitializeComponent();
         }
 
-        private void CharacterStatsForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void CharacterStatsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             FormsStorage.characterStatsForm = new CharacterStatsForm();

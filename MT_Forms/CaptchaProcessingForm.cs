@@ -18,12 +18,14 @@ namespace MT_Forms
 
         private void EnterCaptchaButton_Click(object sender, EventArgs e)
         {
-            new CaptchaProcessing().ProcessingCaptcha();
-        }
-
-        private void CaptchaProcessingForm_Load(object sender, EventArgs e)
-        {
-
+            if (!string.IsNullOrEmpty(CaptchaProcessing.captcha))
+            {
+                new CaptchaProcessing().ProcessingCaptcha();
+            }
+            else
+            {
+                toolTipForButtons.SetToolTip(enterButton,"Поле капчи не должно быть пустым!");
+            }
         }
     }
 }

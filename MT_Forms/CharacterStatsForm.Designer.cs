@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CharacterStatsForm));
             this.healthLabel = new System.Windows.Forms.Label();
             this.strangeLabel = new System.Windows.Forms.Label();
             this.criticalDamageLevel = new System.Windows.Forms.Label();
@@ -230,14 +231,13 @@
             this.Controls.Add(this.strangeLabel);
             this.Controls.Add(this.healthLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CharacterStatsForm";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Данные о персонаже";
+            this.Text = "Character stats";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CharacterStatsForm_FormClosed);
-            this.Load += new System.EventHandler(this.CharacterStatsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
