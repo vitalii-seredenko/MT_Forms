@@ -90,6 +90,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(424, 326);
             this.Controls.Add(this.showFatalLogButton);
             this.Controls.Add(this.showErrorLogButton);
@@ -97,6 +98,8 @@
             this.Controls.Add(this.showLogButton);
             this.Controls.Add(this.logBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LogForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Program log";

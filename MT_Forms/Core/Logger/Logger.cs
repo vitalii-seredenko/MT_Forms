@@ -20,8 +20,8 @@ namespace MT_Forms.Core.Logger
         internal void WriteAllLogInLogBox()
         {
             FormsStorage.logForm.LogBox.Items.Clear();
-            foreach (var logMessage in LogList)
-            {
+            foreach (var logMessage in LogList) 
+            { 
                 FormsStorage.logForm.LogBox.Items.Add(logMessage);
             }
         }
@@ -39,8 +39,8 @@ namespace MT_Forms.Core.Logger
         internal void WriteErrorLogInLogBox()
         {
             FormsStorage.logForm.LogBox.Items.Clear();
-            var infoLogList = LogList.Where(item => item.Contains("ERROR"));
-            foreach (var logMessage in infoLogList)
+            var errorLogList = LogList.Where(item => item.Contains("ERROR"));
+            foreach (var logMessage in errorLogList)
             {
                 FormsStorage.logForm.LogBox.Items.Add(logMessage);
             }
@@ -49,8 +49,8 @@ namespace MT_Forms.Core.Logger
         internal void WriteFatalLogInLogBox()
         {
             FormsStorage.logForm.LogBox.Items.Clear();
-            var infoLogList = LogList.Where(item => item.Contains("FATAL"));
-            foreach (var logMessage in infoLogList)
+            var fatalLogList = LogList.Where(item => item.Contains("FATAL"));
+            foreach (var logMessage in fatalLogList)
             {
                 FormsStorage.logForm.LogBox.Items.Add(logMessage);
             }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainProgramForm));
             this.showOrHideCharacterStatsButton = new System.Windows.Forms.Button();
             this.showOrHideLogButton = new System.Windows.Forms.Button();
             this.difficultyCheckBoxesGroupBox = new System.Windows.Forms.GroupBox();
@@ -163,10 +164,10 @@
             this.Controls.Add(this.goForTheCasketAndToEndCheckBox);
             this.Controls.Add(this.goForTheCasketCheckBox);
             this.Controls.Add(this.VysokayaTemnitsaButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainProgramForm";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MT_Forms";
             this.difficultyCheckBoxesGroupBox.ResumeLayout(false);
