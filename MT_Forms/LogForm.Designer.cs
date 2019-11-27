@@ -38,7 +38,7 @@
             // 
             // showFatalLogButton
             // 
-            this.showFatalLogButton.Location = new System.Drawing.Point(315, 295);
+            this.showFatalLogButton.Location = new System.Drawing.Point(331, 295);
             this.showFatalLogButton.Name = "showFatalLogButton";
             this.showFatalLogButton.Size = new System.Drawing.Size(95, 23);
             this.showFatalLogButton.TabIndex = 37;
@@ -48,7 +48,7 @@
             // 
             // showErrorLogButton
             // 
-            this.showErrorLogButton.Location = new System.Drawing.Point(214, 295);
+            this.showErrorLogButton.Location = new System.Drawing.Point(230, 295);
             this.showErrorLogButton.Name = "showErrorLogButton";
             this.showErrorLogButton.Size = new System.Drawing.Size(95, 23);
             this.showErrorLogButton.TabIndex = 36;
@@ -58,7 +58,7 @@
             // 
             // showInfoLogButton
             // 
-            this.showInfoLogButton.Location = new System.Drawing.Point(113, 295);
+            this.showInfoLogButton.Location = new System.Drawing.Point(129, 295);
             this.showInfoLogButton.Name = "showInfoLogButton";
             this.showInfoLogButton.Size = new System.Drawing.Size(95, 23);
             this.showInfoLogButton.TabIndex = 35;
@@ -68,10 +68,10 @@
             // 
             // showLogButton
             // 
-            this.showLogButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.showLogButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.showLogButton.Location = new System.Drawing.Point(12, 295);
             this.showLogButton.Name = "showLogButton";
-            this.showLogButton.Size = new System.Drawing.Size(95, 23);
+            this.showLogButton.Size = new System.Drawing.Size(111, 23);
             this.showLogButton.TabIndex = 34;
             this.showLogButton.Text = "Показать весь лог";
             this.showLogButton.UseVisualStyleBackColor = true;
@@ -83,7 +83,7 @@
             this.logBox.HorizontalScrollbar = true;
             this.logBox.Location = new System.Drawing.Point(12, 12);
             this.logBox.Name = "logBox";
-            this.logBox.Size = new System.Drawing.Size(398, 277);
+            this.logBox.Size = new System.Drawing.Size(414, 277);
             this.logBox.TabIndex = 33;
             // 
             // LogForm
@@ -91,7 +91,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(424, 326);
+            this.ClientSize = new System.Drawing.Size(439, 326);
             this.Controls.Add(this.showFatalLogButton);
             this.Controls.Add(this.showErrorLogButton);
             this.Controls.Add(this.showInfoLogButton);
