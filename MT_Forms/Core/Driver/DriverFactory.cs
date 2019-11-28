@@ -11,17 +11,22 @@ namespace MT_Forms.Core.Driver
         {
            IWebDriver driver;
 
+           var service = ChromeDriverService.CreateDefaultService();
+           var options = new ChromeOptions();
+           service.HideCommandPromptWindow = true;
+           options.AddArguments("start-maximized");
+
            switch (driverName)
-            {
+           {
                 case Drivers.Chrome:
-                    driver = new ChromeDriver();
+                    driver = new ChromeDriver(service, options);
                     break;
                 case Drivers.FireFox:
                     driver = new FirefoxDriver();
                     break;
-                default:
+                default: 
                     throw new ArgumentException($"Driver {driverName} does not support");
-            }
+           }
             return driver;
         }
     }

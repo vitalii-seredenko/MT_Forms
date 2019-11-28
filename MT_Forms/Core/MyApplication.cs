@@ -20,11 +20,6 @@ namespace MT_Forms.Core
             _driver.Dispose();
         }
 
-        internal void MaximizeBrowserWindow()
-        {
-            _driver.Manage().Window.Maximize();
-        }
-
         internal void NavigateToUrl(string url)
         {
             try

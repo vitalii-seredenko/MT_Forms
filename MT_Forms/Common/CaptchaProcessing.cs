@@ -11,17 +11,19 @@ namespace MT_Forms.Common
     {
         internal static string captcha;
         private readonly BaseTownPage _baseTownPage;
+        private readonly LoginPage _loginPage;
         private readonly Logger _logger;
 
         internal CaptchaProcessing()
         {
             _logger = new Logger();
             _baseTownPage = new BaseTownPage();
+            _loginPage = new LoginPage();
         }
 
         internal void CallCaptchaProcessingDialogWindow()
         {
-            if (new LoginPage().captchaTextBox.IsElementPresent())
+            if (_loginPage.captchaTextBox.IsElementPresent())
             {
                 FormsStorage.captchaProcessingForm.ShowDialog();
             }
@@ -29,11 +31,10 @@ namespace MT_Forms.Common
 
         internal void ProcessingCaptcha()
         {
-            var loginPage = new LoginPage();
-            loginPage.captchaTextBox.WaitElement().SendKeys(Keys.Control + "a");
-            loginPage.captchaTextBox.SendKeys(captcha);
-            loginPage.submitButton.WaitElementAndClick();
-            if (loginPage.invalidCaptchaErrorMessage.IsElementPresent())
+            _loginPage.captchaTextBox.WaitElement().SendKeys(Keys.Control + "a");
+            _loginPage.captchaTextBox.SendKeys(captcha);
+            _loginPage.submitButton.WaitElementAndClick();
+            if (_loginPage.invalidCaptchaErrorMessage.IsElementPresent())
             {
                 MessageBox.Show("Введите капчу заново!", "Ошибка");
                 _logger.Error("User entered an invalid captcha");
@@ -43,10 +44,9 @@ namespace MT_Forms.Common
 
         internal void CloseCaptchaProcessingDialogWindow()
         {
-            var userCharacteristic = new UserCharacteristic();
             if (_baseTownPage.cityPicture.IsElementPresent())
             {
-                userCharacteristic.GetUser();
+                new UserCharacteristic().GetUser();
                 FormsStorage.captchaProcessingForm.Hide();
                 FormsStorage.mainProgramForm.Show();
                 FormsStorage.loginForm.Hide();

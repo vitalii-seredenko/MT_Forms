@@ -24,7 +24,6 @@ namespace MT_Forms.Common
         {
             var generalBasePage = new GeneralBasePage();
             var application = new Core.MyApplication();
-            application.MaximizeBrowserWindow();
             application.NavigateToUrl(CommonUrls.GameUrl);
             _loginPage.startGameButton.WaitElementAndClick();
             if (generalBasePage.lightVersionButton.IsElementPresent())

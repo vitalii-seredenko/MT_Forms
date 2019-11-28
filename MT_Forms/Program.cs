@@ -26,7 +26,7 @@ namespace MT_Forms
             }
             finally
             {
-                logger.Info("<-----------Application finished----------->\n");
+                logger.Info("<-----------------Application finished---------------->\n");
             }
         }
     }
