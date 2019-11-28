@@ -22,7 +22,8 @@ namespace POMExample.TestScenarios
         {
             var navigation = new Navigation();
             ((HomePage)navigation.NavigateToPage("Home page")).GoToNotebooksAndComputersPage().GoToNotebooksPage().ClickOnFirstPopularNotebook();
-            ////Some assertion here
+            //Some assertion here
+            // hhhh
         }
 
         [TearDown]
