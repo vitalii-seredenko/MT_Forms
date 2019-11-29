@@ -1,7 +1,7 @@
-﻿using System.Text.RegularExpressions;
-using MT_Forms.Extensions;
+﻿using MT_Forms.Extensions;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using System.Text.RegularExpressions;
 
 namespace MT_Forms.PageObjects.WebPages
 {

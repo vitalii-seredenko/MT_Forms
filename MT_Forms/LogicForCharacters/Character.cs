@@ -1,6 +1,6 @@
-﻿using System;
+﻿using MT_Forms.Core.Logger;
+using System;
 using System.Collections.Generic;
-using MT_Forms.Core.Logger;
 
 namespace MT_Forms.LogicForCharacters
 {
@@ -26,7 +26,7 @@ namespace MT_Forms.LogicForCharacters
             get => heroClass;
             set
             {
-                var classArray = new List<string>{ "Маг", "Воин", "Монах" };
+                var classArray = new List<string> { "Маг", "Воин", "Монах" };
                 foreach (var className in classArray)
                 {
                     if (value.Equals(className))

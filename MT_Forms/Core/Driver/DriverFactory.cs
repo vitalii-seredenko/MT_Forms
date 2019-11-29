@@ -1,7 +1,7 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
+using System;
 
 namespace MT_Forms.Core.Driver
 {
@@ -9,24 +9,24 @@ namespace MT_Forms.Core.Driver
     {
         internal IWebDriver GetDriver(Drivers driverName)
         {
-           IWebDriver driver;
+            IWebDriver driver;
 
-           var service = ChromeDriverService.CreateDefaultService();
-           var options = new ChromeOptions();
-           service.HideCommandPromptWindow = true;
-           options.AddArguments("start-maximized");
+            var service = ChromeDriverService.CreateDefaultService();
+            var options = new ChromeOptions();
+            service.HideCommandPromptWindow = true;
+            options.AddArguments("start-maximized");
 
-           switch (driverName)
-           {
+            switch (driverName)
+            {
                 case Drivers.Chrome:
                     driver = new ChromeDriver(service, options);
                     break;
                 case Drivers.FireFox:
                     driver = new FirefoxDriver();
                     break;
-                default: 
+                default:
                     throw new ArgumentException($"Driver {driverName} does not support");
-           }
+            }
             return driver;
         }
     }

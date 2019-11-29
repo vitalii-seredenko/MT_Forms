@@ -49,7 +49,7 @@ namespace MT_Forms.Common
                     FormsStorage.characterStatsForm.AmuletLabel1.Text = $@"{((Magician)hero).VzryvEfira.Item1} ({((Magician)hero).VzryvEfira.Item2} ур.)";
                     FormsStorage.characterStatsForm.AmuletLabel2.Text = $@"{((Magician)hero).SferyArcany.Item1} ({((Magician)hero).SferyArcany.Item2} ур.)";
                     FormsStorage.characterStatsForm.AmuletLabel3.Text = $@"{((Magician)hero).PritokSily.Item1} ({((Magician)hero).PritokSily.Item2} ур.)";
-                    FormsStorage.characterStatsForm.AmuletLabel4.Text = $@"{((Magician)hero).TenSmerti.Item1} ({((Magician)hero).TenSmerti.Item2} ур.)"; 
+                    FormsStorage.characterStatsForm.AmuletLabel4.Text = $@"{((Magician)hero).TenSmerti.Item1} ({((Magician)hero).TenSmerti.Item2} ур.)";
                     FormsStorage.characterStatsForm.AmuletLabel5.Text = $@"{((Magician)hero).GromMolnia.Item1} ({((Magician)hero).GromMolnia.Item2} ур.)";
                     FormsStorage.characterStatsForm.AmuletLabel6.Text = $@"{((Magician)hero).Prizyv.Item1} ({((Magician)hero).Prizyv.Item2} ур.)";
                     FormsStorage.characterStatsForm.AmuletLabel7.Text = $@"{((Magician)hero).LedianoiUdar.Item1} ({((Magician)hero).LedianoiUdar.Item2} ур.)";

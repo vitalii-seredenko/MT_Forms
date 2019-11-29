@@ -1,6 +1,6 @@
-﻿using System;
-using MT_Forms.ApplicationData;
+﻿using MT_Forms.ApplicationData;
 using MT_Forms.Core;
+using System;
 
 namespace MT_Forms.Common
 {
@@ -16,10 +16,10 @@ namespace MT_Forms.Common
         internal DungeonDifficulty GetDungeonDifficulty()
         {
             var dungeonDifficulty = DungeonDifficulty.Normal;
-                if (FormsStorage.mainProgramForm.HardDifficultyRadioButton.Checked)
-                    dungeonDifficulty = DungeonDifficulty.Hard;
-                if (FormsStorage.mainProgramForm.ImpossibleDifficultyRadioButton.Checked)
-                    dungeonDifficulty = DungeonDifficulty.Impossible;
+            if (FormsStorage.mainProgramForm.HardDifficultyRadioButton.Checked)
+                dungeonDifficulty = DungeonDifficulty.Hard;
+            if (FormsStorage.mainProgramForm.ImpossibleDifficultyRadioButton.Checked)
+                dungeonDifficulty = DungeonDifficulty.Impossible;
             return dungeonDifficulty;
         }
 

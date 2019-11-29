@@ -1,8 +1,8 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Threading;
-using OpenQA.Selenium;
 
 namespace MT_Forms.Extensions
 {
@@ -36,7 +36,7 @@ namespace MT_Forms.Extensions
             {
                 try
                 {
-                    if (element.Displayed) 
+                    if (element.Displayed)
                         element.Click();
                 }
                 catch (WebDriverException)
@@ -51,7 +51,7 @@ namespace MT_Forms.Extensions
         {
             var timer = new Stopwatch();
             timer.Start();
-            while (timer.Elapsed > TimeSpan.FromSeconds(new Random().Next(1500,3000)))
+            while (timer.Elapsed > TimeSpan.FromSeconds(new Random().Next(1500, 3000)))
             {
                 element.Click();
             }

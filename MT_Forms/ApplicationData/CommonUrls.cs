@@ -15,7 +15,7 @@ namespace MT_Forms.ApplicationData
             {"PorogiShedowGarda", "https://m.vten.ru/dungeon/landing/ShadowGuard"}
         };
 
-        private readonly Dictionary<string,string> _questUrls = new Dictionary<string, string>
+        private readonly Dictionary<string, string> _questUrls = new Dictionary<string, string>
         {
             {"Спокойствие Высокой Темницы", "https://m.vten.ru/quest/qHeroicHighDungeonDaily"},
         };

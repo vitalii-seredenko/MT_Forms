@@ -26,12 +26,11 @@ namespace MT_Forms.PageObjects.WebPages
         internal IWebElement invalidCaptchaErrorMessage;
         [FindsBy(How = How.XPath, Using = "//span[@class='feedbackPanelERROR' and contains(text(), 'Неверное имя или пароль')]")]
         internal IWebElement invalidLoginOrPasswordErrorMessage;
-
         #endregion
 
         #region Methods
 
-       
+
 
         #endregion
     }

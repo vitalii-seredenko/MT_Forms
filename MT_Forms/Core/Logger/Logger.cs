@@ -20,8 +20,8 @@ namespace MT_Forms.Core.Logger
         internal void WriteAllLogInLogBox()
         {
             FormsStorage.logForm.LogBox.Items.Clear();
-            foreach (var logMessage in LogList) 
-            { 
+            foreach (var logMessage in LogList)
+            {
                 FormsStorage.logForm.LogBox.Items.Add(logMessage);
             }
         }

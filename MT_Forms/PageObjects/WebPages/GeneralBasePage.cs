@@ -10,7 +10,7 @@ namespace MT_Forms.PageObjects.WebPages
 
         internal GeneralBasePage()
         {
-             driver = DriverSingleton.Driver;
+            driver = DriverSingleton.Driver;
             PageFactory.InitElements(driver, this);
         }
 
