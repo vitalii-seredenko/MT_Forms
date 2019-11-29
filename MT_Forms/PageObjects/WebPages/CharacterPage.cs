@@ -1,7 +1,5 @@
-﻿using MT_Forms.Extensions;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
-using System.Text.RegularExpressions;
 
 namespace MT_Forms.PageObjects.WebPages
 {
@@ -70,12 +68,6 @@ namespace MT_Forms.PageObjects.WebPages
 
         #region Methods
 
-        internal string CutLettersFromHeroLevelTextBox(IWebElement heroAmuletLevelTextBox)
-        {
-            var regex = new Regex("\\d+");
-            var levelMatch = regex.Match(heroAmuletLevelTextBox.ReturnElementTextIfElementPresent());
-            return levelMatch.Value;
-        }
 
         #endregion
     }
