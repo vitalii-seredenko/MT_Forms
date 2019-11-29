@@ -1,9 +1,9 @@
-﻿using System;
-using System.Threading;
-using System.Windows.Forms;
-using MT_Forms.Common;
+﻿using MT_Forms.Common;
 using MT_Forms.Core;
 using MT_Forms.Scripts;
+using System;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace MT_Forms
 {
@@ -18,6 +18,11 @@ namespace MT_Forms
         internal CheckBox GoForTheCasketAndToEndCheckBox => goForTheCasketAndToEndCheckBox;
         internal RadioButton HardDifficultyRadioButton => hardDifficultyRadioButton;
         internal RadioButton ImpossibleDifficultyRadioButton => impossibleDifficultyRadioButton;
+
+        private void MainProgramForm_Load(object sender, EventArgs e)
+        {
+
+        }
 
         private void VysokayaTemnitsaButton_Click(object sender, EventArgs e)
         {

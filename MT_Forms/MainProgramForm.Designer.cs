@@ -170,6 +170,7 @@
             this.Name = "MainProgramForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MT_Forms";
+            this.Load += new System.EventHandler(this.MainProgramForm_Load);
             this.difficultyCheckBoxesGroupBox.ResumeLayout(false);
             this.difficultyCheckBoxesGroupBox.PerformLayout();
             this.ResumeLayout(false);

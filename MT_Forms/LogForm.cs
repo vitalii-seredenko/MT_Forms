@@ -1,8 +1,8 @@
-﻿using System;
+﻿using MT_Forms.Core;
+using MT_Forms.Core.Logger;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using MT_Forms.Core;
-using MT_Forms.Core.Logger;
 
 namespace MT_Forms
 {
@@ -26,13 +26,18 @@ namespace MT_Forms
             showFatalLogButton.Click += ChangeLogButtonsTextIfButtonClicked;
         }
 
+        private void LogForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void ChangeLogButtonsTextIfButtonClicked(object sender, EventArgs e)
         {
             showLogButton.Text = _showLogButtonWasClicked ? _buttonsText[0] : _buttonsText[1];
             showInfoLogButton.Text = _showInfoLogButtonWasClicked ? _buttonsText[0] : _buttonsText[2];
             showErrorLogButton.Text = _showErrorLogButtonWasClicked ? _buttonsText[0] : _buttonsText[3];
             showFatalLogButton.Text = _showFatalLogButtonWasClicked ? _buttonsText[0] : _buttonsText[4];
-            _showLogButtonWasClicked = _showInfoLogButtonWasClicked =_showErrorLogButtonWasClicked = _showFatalLogButtonWasClicked = false;
+            _showLogButtonWasClicked = _showInfoLogButtonWasClicked = _showErrorLogButtonWasClicked = _showFatalLogButtonWasClicked = false;
         }
 
         private void ShowLogButton_Click(object sender, EventArgs e)

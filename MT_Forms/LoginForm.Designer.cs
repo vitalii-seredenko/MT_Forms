@@ -150,6 +150,7 @@
             this.Name = "LoginForm";
             this.Text = "MT_Forms";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.HelpButton_Click);
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.loginGroupBox.ResumeLayout(false);
             this.loginGroupBox.PerformLayout();
             this.ResumeLayout(false);

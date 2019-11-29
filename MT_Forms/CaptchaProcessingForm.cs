@@ -1,6 +1,6 @@
-﻿using System;
+﻿using MT_Forms.Common;
+using System;
 using System.Windows.Forms;
-using MT_Forms.Common;
 
 namespace MT_Forms
 {
@@ -9,6 +9,11 @@ namespace MT_Forms
         internal CaptchaProcessingForm()
         {
             InitializeComponent();
+        }
+
+        private void CaptchaProcessingForm_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void CaptchaTextBox_TextChanged(object sender, EventArgs e)
@@ -24,7 +29,7 @@ namespace MT_Forms
             }
             else
             {
-                toolTipForButtons.SetToolTip(enterButton,"Поле капчи не должно быть пустым!");
+                toolTipForButtons.SetToolTip(enterButton, "Поле капчи не должно быть пустым!");
             }
         }
     }

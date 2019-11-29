@@ -1,6 +1,6 @@
-﻿using System;
+﻿using MT_Forms.Core;
+using System;
 using System.Windows.Forms;
-using MT_Forms.Core;
 
 namespace MT_Forms
 {
@@ -24,6 +24,11 @@ namespace MT_Forms
         public CharacterStatsForm()
         {
             InitializeComponent();
+        }
+
+        private void CharacterStatsForm_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void CharacterStatsForm_FormClosed(object sender, FormClosedEventArgs e)

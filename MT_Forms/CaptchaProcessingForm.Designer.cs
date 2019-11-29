@@ -86,6 +86,7 @@
             this.Name = "CaptchaProcessingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MT_Forms";
+            this.Load += new System.EventHandler(this.CaptchaProcessingForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

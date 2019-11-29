@@ -1,8 +1,8 @@
-﻿using System;
+﻿using MT_Forms.Common;
+using MT_Forms.Core;
+using System;
 using System.Threading;
 using System.Windows.Forms;
-using MT_Forms.Common;
-using MT_Forms.Core;
 
 namespace MT_Forms
 {
@@ -11,6 +11,11 @@ namespace MT_Forms
         internal LoginForm()
         {
             InitializeComponent();
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void LoginTextBox_TextChanged(object sender, EventArgs e)
