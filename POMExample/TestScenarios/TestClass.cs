@@ -18,7 +18,7 @@ namespace POMExample.TestScenarios
             _driver.Manage().Window.Maximize();
         }
 
-        [Test]
+        [Test] [Category("Smoke")]
         public void SearchFirstPopularNotebook()
         {
             var navigation = new Navigation();
