@@ -1,8 +1,8 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using POMExample.Core;
 using POMExample.PageObjects;
 using POMExample.TestData;
+using System;
 
 namespace POMExample.CommonMethods
 {

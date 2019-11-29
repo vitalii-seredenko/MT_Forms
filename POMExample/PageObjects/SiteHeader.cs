@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
-using SeleniumExtras.PageObjects;
 using POMExample.Core;
+using SeleniumExtras.PageObjects;
 
 namespace POMExample.PageObjects
 {

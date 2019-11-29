@@ -1,7 +1,7 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using System.Diagnostics;
 using System.Threading;
-using OpenQA.Selenium;
 
 namespace POMExample.Core
 {
@@ -15,7 +15,7 @@ namespace POMExample.Core
             {
                 try
                 {
-                    if(element.Displayed)
+                    if (element.Displayed)
                         return element;
                 }
                 catch (WebDriverException)

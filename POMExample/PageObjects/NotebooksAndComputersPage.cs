@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using SeleniumExtras.PageObjects;
 using POMExample.Core;
 using POMExample.TestData;
+using SeleniumExtras.PageObjects;
 
 namespace POMExample.PageObjects
 {
