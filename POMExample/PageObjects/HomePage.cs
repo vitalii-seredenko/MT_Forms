@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
-using POMExample.Core;
+using SeleniumExtras.PageObjects;
 using POMExample.TestData;
 
 namespace POMExample.PageObjects
