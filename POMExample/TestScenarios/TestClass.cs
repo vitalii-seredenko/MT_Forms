@@ -6,6 +6,7 @@ using POMExample.PageObjects;
 
 namespace POMExample.TestScenarios
 {
+    [TestFixture]
     internal class TestClass
     {
         private IWebDriver _driver;
