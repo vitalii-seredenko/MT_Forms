@@ -5,11 +5,6 @@ namespace MT_Forms.PageObjects.Buttons
 {
     internal abstract class Buttons
     {
-        protected readonly IWebDriver driver;
-
-        internal Buttons()
-        {
-            driver = DriverSingleton.Driver;
-        }
+        protected readonly IWebDriver driver = DriverSingleton.Driver;
     }
 }

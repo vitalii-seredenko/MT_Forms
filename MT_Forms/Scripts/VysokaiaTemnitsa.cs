@@ -9,18 +9,11 @@ namespace MT_Forms.Scripts
 {
     internal class VysokaiaTemnitsa
     {
-        private readonly Logger _logger;
-        private readonly DungeonButtons _dungeonButtons;
-        private readonly QuestsButtons _questsButtons;
+        private readonly Logger _logger = new Logger();
+        private readonly DungeonButtons _dungeonButtons = new DungeonButtons();
+        private readonly QuestsButtons _questsButtons = new QuestsButtons();
         private const string DungeonName = "VysokaiaTemnitsa";
         private const string DailyQuestName = "Спокойствие Высокой Темницы";
-
-        internal VysokaiaTemnitsa()
-        {
-            _logger = new Logger();
-            _dungeonButtons = new DungeonButtons();
-            _questsButtons = new QuestsButtons();
-        }
 
         internal void VysokaiaTemnitsaScript()
         {

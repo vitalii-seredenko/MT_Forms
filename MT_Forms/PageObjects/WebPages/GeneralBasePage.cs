@@ -6,11 +6,10 @@ namespace MT_Forms.PageObjects.WebPages
 {
     internal class GeneralBasePage
     {
-        protected readonly IWebDriver driver;
+        protected readonly IWebDriver driver = DriverSingleton.Driver;
 
         internal GeneralBasePage()
         {
-            driver = DriverSingleton.Driver;
             PageFactory.InitElements(driver, this);
         }
 
