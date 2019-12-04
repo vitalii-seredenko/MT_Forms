@@ -7,18 +7,16 @@ namespace MT_Forms.LogicForCharacters
     internal class UserCharacteristic
     {
         internal static Character hero = new Character();
-        private readonly BaseTownPage _baseTownPage;
         private readonly CharacterPage _characterPage;
 
         internal UserCharacteristic()
         {
-            _baseTownPage = new BaseTownPage();
             _characterPage = new CharacterPage();
         }
 
         internal void GetUser()
         {
-            _baseTownPage.characterButton.WaitElementAndClick();
+            new BaseTownPage().characterButton.WaitElementAndClick();
             switch (hero.HeroClass = _characterPage.characterClassTextBox.WaitElement().Text)
             {
                 case "Маг":
