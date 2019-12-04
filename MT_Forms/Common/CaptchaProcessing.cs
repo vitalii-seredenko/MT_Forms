@@ -3,6 +3,7 @@ using MT_Forms.Core.Logger;
 using MT_Forms.Extensions;
 using MT_Forms.PageObjects.WebPages;
 using System.Windows.Forms;
+using MT_Forms.LogicForCharacters;
 using Keys = OpenQA.Selenium.Keys;
 
 namespace MT_Forms.Common

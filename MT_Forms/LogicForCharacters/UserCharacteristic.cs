@@ -1,9 +1,8 @@
 ﻿using MT_Forms.Core;
 using MT_Forms.Extensions;
-using MT_Forms.LogicForCharacters;
 using MT_Forms.PageObjects.WebPages;
 
-namespace MT_Forms.Common
+namespace MT_Forms.LogicForCharacters
 {
     internal class UserCharacteristic
     {

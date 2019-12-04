@@ -76,7 +76,7 @@
     <Compile Include="ApplicationData\CommonUrls.cs" />
     <Compile Include="Common\Difficulty.cs" />
     <Compile Include="Common\Login.cs" />
-    <Compile Include="Common\UserCharacteristic.cs" />
+    <Compile Include="LogicForCharacters\UserCharacteristic.cs" />
     <Compile Include="Extensions\WebElementExtension.cs" />
     <Compile Include="LogForm.cs">
       <SubType>Form</SubType>

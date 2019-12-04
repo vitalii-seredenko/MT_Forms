@@ -1,9 +1,9 @@
-﻿using MT_Forms.Common;
-using MT_Forms.Core;
+﻿using MT_Forms.Core;
 using MT_Forms.Scripts;
 using System;
 using System.Threading;
 using System.Windows.Forms;
+using MT_Forms.LogicForCharacters;
 
 namespace MT_Forms
 {
